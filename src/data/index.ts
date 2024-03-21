@@ -20,3 +20,14 @@ export const menuData = [
     url: "/news",
   },
 ];
+
+export const partners = [
+  { name: "partner 1", partner: "logo" },
+  { name: "partner 2", partner: "logo" },
+  { name: "partner 3", partner: "logo" },
+  { name: "partner 4", partner: "logo" },
+  { name: "partner 5", partner: "logo" },
+  { name: "partner 6", partner: "logo" },
+  { name: "partner 6", partner: "logo" },
+  { name: "partner 6", partner: "logo" },
+];
