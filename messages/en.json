@@ -1,5 +1,9 @@
 {
   "Index": {
-    "title": "Hello world!"
+    "about": "About Us",
+    "work": "Our Work",
+    "tourism": "Tourism",
+    "news": "News",
+    "donate": "Donate"
   }
 }
