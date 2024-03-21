@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PartnerSection from "@/components/PartnerSection";
 import { useTranslations } from "next-intl";
@@ -8,6 +9,7 @@ export default function Index() {
     <div>
       <Navbar donate={t("donate")} />
       <PartnerSection />
+      <Footer />
     </div>
   );
 }

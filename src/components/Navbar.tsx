@@ -51,7 +51,7 @@ const Navbar = async ({ donate }: Props) => {
           <Button className="bg-primary hover:bg-orange-400 text-white font-normal">
             {donate}
           </Button>
-          <button onClick={handleLanguage} className="text-white font-medium">
+          <button onClick={handleLanguage} className=" font-medium">
             MN/EN
           </button>
         </div>
