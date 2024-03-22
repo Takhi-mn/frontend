@@ -7,7 +7,7 @@ export const menuData = [
   {
     titleEn: "Our Work",
     titleMn: "Үйл ажиллагаа",
-    url: "/tourism",
+    url: "/ourwork",
   },
   {
     titleEn: "Tourism",
