@@ -5,5 +5,10 @@
     "tourism": "Tourism",
     "news": "News",
     "donate": "Donate"
+  },
+  "Footer": {
+    "company1": "2024 Khomyn Talyn Takhi NGO. All rights reserved.",
+    "company2": "Developed by ProHub",
+    "company3": "Designed by UXology"
   }
 }
