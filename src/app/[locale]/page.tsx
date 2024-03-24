@@ -17,7 +17,6 @@ export default function Index() {
         company3={f("company3")}
       />
       <Policy />
-      <Tree />
     </div>
   );
 }
