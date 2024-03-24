@@ -1,3 +1,8 @@
-import Component from "./Component";
+import NavbarNew from "./NavbarNew";
+import Footer from "./Footer";
+import Policy from "./Policy";
+import HeroSection from "./heroSection";
+import PartnerSection from "./PartnerSection";
+import MapSection from "@/app/[locale]/ourwork/reintroduction/components/map-section";
 
-export { Component };
+export { NavbarNew, Footer, Policy, HeroSection, PartnerSection, MapSection };

@@ -4,7 +4,7 @@ import "./globals.css";
 import LanguageProvider from "@/context/LanguageProvider";
 import { ThemeProvider } from "@/context/ThemeProvider";
 import { Toaster } from "@/components/ui/toaster";
-import NavbarNew from "@/components/NavbarNew";
+import { NavbarNew, Footer } from "@/components";
 import DataProvider from "@/context/DataProvider";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -34,7 +34,8 @@ export default function LocaleLayout({
             <DataProvider>
               <main>
                 <NavbarNew />
-                {children}
+                <div className="sm:ml-[102px]">{children}</div>
+
                 <Toaster />
               </main>
             </DataProvider>
