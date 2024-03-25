@@ -4,6 +4,8 @@ import "./globals.css";
 import LanguageProvider from "@/context/LanguageProvider";
 import { ThemeProvider } from "@/context/ThemeProvider";
 import { Toaster } from "@/components/ui/toaster";
+import { NavbarNew, Footer } from "@/components";
+import DataProvider from "@/context/DataProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,10 +31,14 @@ export default function LocaleLayout({
           disableTransitionOnChange
         >
           <LanguageProvider>
-            <main>
-              {children}
-              <Toaster />
-            </main>
+            <DataProvider>
+              <main>
+                <NavbarNew />
+                <div className="sm:ml-[102px]">{children}</div>
+
+                <Toaster />
+              </main>
+            </DataProvider>
           </LanguageProvider>
         </ThemeProvider>
       </body>

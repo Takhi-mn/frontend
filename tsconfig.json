@@ -22,11 +22,11 @@
     }
   },
   "include": [
+    "video.d.ts",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts",
-    "src/app/[locale]/ourwork/reintroduction/components/test-slider.jsx"
+    ".next/types/**/*.ts"
   ],
   "exclude": ["node_modules"]
 }
