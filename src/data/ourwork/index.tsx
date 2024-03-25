@@ -1,3 +1,12 @@
+import {
+  localSustainable,
+  majorAchievements,
+  nationalParkManagement,
+  resources,
+  resources1,
+  wildlifeConservation,
+} from "@/assets";
+
 export const footerText = [
   {
     titleEn: "TAKHI REINTRODUCTION",
@@ -36,3 +45,40 @@ export const homePageText = {
   p: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tortor nibh, aliquam id eros in, eleifend bibendum ex. Aenean quis eleifend tellus. Curabitur vel ullamcorper ex.",
   btn: "Read More",
 };
+export const ourWorks = [
+  {
+    img: `${nationalParkManagement.src}`,
+    title: "National Park Management",
+    url: "ourwork/reintroduction",
+  },
+  {
+    img: `${localSustainable.src}`,
+    title: "Local Sustainable Delopment",
+    url: "",
+  },
+  {
+    img: `${resources.src}`,
+    title: "Recources",
+    url: "",
+  },
+  {
+    img: `${resources1.src}`,
+    title: "Recources",
+    url: "",
+  },
+  {
+    img: `${nationalParkManagement.src}`,
+    title: "Takhi Reintroduction",
+    url: "",
+  },
+  {
+    img: `${wildlifeConservation.src}`,
+    title: "Wildlife Conservation",
+    url: "",
+  },
+  {
+    img: `${majorAchievements.src}`,
+    title: "Major Achievements",
+    url: "",
+  },
+];
