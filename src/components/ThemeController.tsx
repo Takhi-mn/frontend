@@ -26,7 +26,7 @@ export function ThemeController() {
       </DropdownMenuTrigger>
       <DropdownMenuContent
         align="end"
-        className="bg-transparent text-white border-0 shadow-none"
+        className="bg-transparent text-white ml-1"
       >
         <DropdownMenuItem onClick={() => setTheme("light")}>
           Light

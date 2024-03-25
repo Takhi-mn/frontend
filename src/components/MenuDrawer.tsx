@@ -40,6 +40,7 @@ const MenuDrawer = ({ isOpen, isMobile }: Props) => {
         <ul className="mt-10">
           {taxonomies?.map((taxonomie) => (
             <li
+              key={taxonomie.id}
               className=" group font-serif text-3xl mt-4 gap-5
              hover:text-zinc-600 transition-all"
             >
@@ -55,7 +56,10 @@ const MenuDrawer = ({ isOpen, isMobile }: Props) => {
                 className="hidden group-hover:block "
               >
                 {taxonomie.children?.map((child) => (
-                  <li className="font-sans text-lg hover:text-zinc-800">
+                  <li
+                    key={child.id}
+                    className="font-sans text-lg hover:text-zinc-800"
+                  >
                     {child.name}
                   </li>
                 ))}
