@@ -1,20 +1,16 @@
-"use client";
-
-import { useRouter } from "next/navigation";
+import { ourWorks } from "@/data/ourwork";
 import React from "react";
-import { homePageText } from "@/data/ourwork";
+import OurWorkPageCard from "./ourWorkPageCard";
 
 const OurWorkPage = () => {
-  const router = useRouter();
   return (
-    <div className="bg-workPageBackground bg-cover w-screen h-screen flex flex-col justify-center items-center gap-32">
-      <h1 className="font-bold text-5xl text-primary max-w-sm text-center">
-        {homePageText.title}
-      </h1>
-      <h3 className="font-semibold text-white text-center text-3xl max-w-2xl">
-        {homePageText.p}
-      </h3>
-      <h6 className=" text-lg text-primary">{homePageText.btn}</h6>
+    <div className="flex flex-col items-center container ">
+      <h1 className="text-[64px] self-start">Our Works</h1>
+      <div className="grid grid-cols-12 grid-rows-12 w-full h-[714px] justify-center gap-4">
+        {ourWorks.map((ourwork, index) => (
+          <OurWorkPageCard key={index} data={ourwork} index={index} />
+        ))}
+      </div>
     </div>
   );
 };

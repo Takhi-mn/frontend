@@ -33,7 +33,7 @@ const PhotoSliderSection = () => {
         </p>
       </div>
       <div className="w-full flex justify-center items-center">
-        <Carousel className="w-full ">
+        <Carousel className="w-full h-auto">
           <CarouselContent className="w-[]">
             <Image
               src={coll1.src}

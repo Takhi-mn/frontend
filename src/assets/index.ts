@@ -10,6 +10,12 @@ import coll1 from "@/assets/re-introduction/collection/coll1.jpg";
 import coll2 from "@/assets/re-introduction/collection/coll2.jpg";
 import coll3 from "@/assets/re-introduction/collection/coll3.jpg";
 import coll4 from "@/assets/re-introduction/collection/coll4.jpg";
+import nationalParkManagement from "@/assets/our-work/national-park-management.png";
+import localSustainable from "@/assets/our-work/local-sustainable.png";
+import resources from "@/assets/our-work/resources.jpg";
+import resources1 from "@/assets/our-work/resources1.jpg";
+import majorAchievements from "@/assets/our-work/major-achivements.jpg";
+import wildlifeConservation from "@/assets/our-work/wildlife-conservation.jpg";
 
 export {
   logo,
@@ -24,4 +30,10 @@ export {
   five,
   six,
   horseIcon,
+  nationalParkManagement,
+  localSustainable,
+  resources,
+  resources1,
+  majorAchievements,
+  wildlifeConservation,
 };
