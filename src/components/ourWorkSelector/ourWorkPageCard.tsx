@@ -10,7 +10,7 @@ const OurWorkPageCard = ({ data, index }: any) => {
     <div
       className={`${
         "s" + index
-      } relative transform transition-all hover:scale-105`}
+      } relative w-full min-h-44 transform transition-all hover:scale-105`}
       onClick={() => router.push(`${data.url}`)}
     >
       <Image
@@ -22,7 +22,7 @@ const OurWorkPageCard = ({ data, index }: any) => {
         alt={data.title}
         style={{ borderRadius: "8px", objectFit: "cover" }}
       />
-      <h1 className="font-bold text-lg text-white absolute z-10 bottom-5 left-5">
+      <h1 className="font-bold text-lg absolute text-white z-10 bottom-5 left-5">
         {data.title}
       </h1>
     </div>
