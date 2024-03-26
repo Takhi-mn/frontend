@@ -6,7 +6,8 @@ type Props = {};
 
 const BackgroundVideo = (props: Props) => {
   return (
-    <div className="w-[1920px] absolute z-0 -left-[700px] sm:-left-[600px] md:-left-[500px] lg:-left-[400px] xl:-left-[300px] 2xl:left-0">
+    <div className="w-[1920px] absolute z-0 left-96">
+      {/* <div className="w-[1920px] absolute z-0 -left-[700px] sm:-left-[600px] md:-left-[500px] lg:-left-[400px] xl:-left-[300px] 2xl:left-0"> */}
       <Video autoPlay muted loop playsInline controls={false} src={zebra} />
     </div>
   );

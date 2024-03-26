@@ -16,6 +16,9 @@ import resources from "@/assets/our-work/resources.jpg";
 import resources1 from "@/assets/our-work/resources1.jpg";
 import majorAchievements from "@/assets/our-work/major-achivements.jpg";
 import wildlifeConservation from "@/assets/our-work/wildlife-conservation.jpg";
+import raze from "@/assets/raze.png";
+import tahi from "@/assets/tahi.png";
+import hero from "@/assets/Hero.png";
 
 export {
   logo,
@@ -36,4 +39,7 @@ export {
   resources1,
   majorAchievements,
   wildlifeConservation,
+  raze,
+  tahi,
+  hero,
 };

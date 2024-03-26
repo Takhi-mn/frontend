@@ -21,5 +21,11 @@
     "mn": "MN",
     "gr": "GR",
     "fr": "FR"
+  },
+  "Subscribe": {
+    "subscribe": "Subscribe",
+    "notify": "We will notify you with news",
+    "email": "Write your email here",
+    "submit": "Submit"
   }
 }
