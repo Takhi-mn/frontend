@@ -8,6 +8,7 @@ import GraphDataSection from "./components/graph-data-section";
 import PhotoSliderSection from "./components/photo-slider-section";
 import CardPhoto from "./components/card-photo";
 import { coll1, coll2, coll3, coll4 } from "@/assets";
+import PhotoSlider from "@/components/photoSlider";
 
 const ReIntroductionPage = () => {
   return (

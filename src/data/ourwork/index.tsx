@@ -49,7 +49,7 @@ export const ourWorks = [
   {
     img: `${nationalParkManagement.src}`,
     title: "National Park Management",
-    url: "ourwork/reintroduction",
+    url: "ourwork/re-introduction",
   },
   {
     img: `${localSustainable.src}`,
@@ -74,7 +74,7 @@ export const ourWorks = [
   {
     img: `${wildlifeConservation.src}`,
     title: "Wildlife Conservation",
-    url: "",
+    url: "ourwork/wild-life-conservation",
   },
   {
     img: `${majorAchievements.src}`,
