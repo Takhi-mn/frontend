@@ -9,6 +9,17 @@
   "Footer": {
     "company1": "2024 Khomyn Talyn Takhi NGO. All rights reserved.",
     "company2": "Developed by ProHub",
-    "company3": "Designed by UXology"
+    "company3": "Designed by UXology",
+    "news": "News",
+    "donate": "Donate",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of use"
+  },
+  "Language": {
+    "language": "Language",
+    "en": "EN",
+    "mn": "MN",
+    "gr": "GR",
+    "fr": "FR"
   }
 }

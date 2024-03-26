@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-import { workPageBack } from "./assets";
 
 const config = {
   darkMode: ["class"],
