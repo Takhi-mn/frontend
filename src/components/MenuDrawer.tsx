@@ -14,17 +14,23 @@ import { GoArrowRight } from "react-icons/go";
 import { motion, Variants } from "framer-motion";
 
 import { dataContext } from "@/context/DataProvider";
+import { languageContext } from "@/context/LanguageProvider";
 
 type Props = {
   isOpen: boolean;
   isMobile: boolean;
+  setIsOpen: any;
 };
 
-const MenuDrawer = ({ isOpen, isMobile }: Props) => {
+const MenuDrawer = ({ isOpen, isMobile, setIsOpen }: Props) => {
   const { taxonomies } = useContext(dataContext);
+  const { handleLanguage, selectedLanguage } = useContext(languageContext);
   return (
     <Drawer direction={isMobile ? "top" : "left"} open={isOpen} modal={false}>
       <DrawerContent
+        onMouseLeave={() => {
+          setIsOpen(false);
+        }}
         className={`text-white sm:py-9 px-4 sm:w-1/3 
   bg-primary sm:h-screen h-auto opacity-95 sm:left-32 ${
     isMobile ? "top-0" : "bottom-0"
@@ -32,10 +38,50 @@ const MenuDrawer = ({ isOpen, isMobile }: Props) => {
       >
         <ul className="flex gap-3">
           Language:
-          <li>EN</li>
-          <li>MN</li>
-          <li>GR</li>
-          <li>FR</li>
+          <li
+            onClick={() => {
+              handleLanguage("en");
+            }}
+            className={`cursor-pointer${
+              selectedLanguage === "en" &&
+              "font-medium border-b-2 border-b-white"
+            }`}
+          >
+            EN
+          </li>
+          <li
+            onClick={() => {
+              handleLanguage("mn");
+            }}
+            className={`cursor-pointer${
+              selectedLanguage === "mn" &&
+              "font-medium border-b-2 border-b-white"
+            }`}
+          >
+            MN
+          </li>
+          <li
+            onClick={() => {
+              handleLanguage("gr");
+            }}
+            className={`cursor-pointer${
+              selectedLanguage === "gr" &&
+              "font-medium border-b-2 border-b-white"
+            }`}
+          >
+            GR
+          </li>
+          <li
+            onClick={() => {
+              handleLanguage("fr");
+            }}
+            className={`cursor-pointer${
+              selectedLanguage === "fr" &&
+              "font-medium border-b-2 border-b-white"
+            }`}
+          >
+            FR
+          </li>
         </ul>
         <ul className="mt-10">
           {taxonomies?.map((taxonomie) => (

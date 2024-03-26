@@ -33,16 +33,23 @@ const NavbarNew = (props: Props) => {
           <IoCloseOutline
             size={25}
             color="white"
-            onClick={() => setIsOpen(false)}
+            onClick={() => {
+              if (isMobile) {
+                setIsOpen(false);
+              }
+            }}
           />
         ) : (
           <CiMenuBurger
             size={25}
             color="white"
-            onClick={() => setIsOpen(true)}
+            // onClick={() => setIsOpen(true)}
+            onMouseEnter={() => {
+              setIsOpen(true);
+            }}
           />
         )}
-        <MenuDrawer isOpen={isOpen} isMobile={isMobile} />
+        <MenuDrawer isOpen={isOpen} isMobile={isMobile} setIsOpen={setIsOpen} />
         <div className="hidden sm:block">
           <ThemeController />
         </div>
