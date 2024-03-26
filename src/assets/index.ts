@@ -19,6 +19,7 @@ import wildlifeConservation from "@/assets/our-work/wildlife-conservation.jpg";
 import raze from "@/assets/raze.png";
 import tahi from "@/assets/tahi.png";
 import hero from "@/assets/Hero.png";
+import map from "@/assets/wildlife-conservation/map.png";
 
 export {
   logo,
@@ -42,4 +43,5 @@ export {
   raze,
   tahi,
   hero,
+  map,
 };

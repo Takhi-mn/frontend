@@ -1,10 +1,10 @@
-import OurWorkPageCard from "@/app/[locale]/ourwork/components/ourWorkPageCard";
+import OurWorkPageCard from "@/components/ourWorkSelector/ourWorkPageCard";
 import { ourWorks } from "@/data/ourwork";
 import React from "react";
 
 const OurWorkSelector = () => {
   return (
-    <div className="grid grid-cols-12 grid-rows-12 w-full h-[714px] justify-center gap-4">
+    <div className="flex flex-wrap w-full justify-center gap-4 sm:grid sm:grid-cols-12 sm:grid-rows-12 sm:h-[714px] ">
       {ourWorks.map((ourwork, index) => (
         <OurWorkPageCard key={index} data={ourwork} index={index} />
       ))}

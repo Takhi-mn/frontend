@@ -1,6 +1,6 @@
 import { ourWorks } from "@/data/ourwork";
 import React from "react";
-import OurWorkPageCard from "./ourWorkPageCard";
+import OurWorkPageCard from "../../../../components/ourWorkSelector/ourWorkPageCard";
 import OurWorkSelector from "@/components/ourWorkSelector";
 
 const OurWorkPage = () => {

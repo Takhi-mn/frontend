@@ -34,8 +34,7 @@ export default function LocaleLayout({
             <DataProvider>
               <main>
                 <NavbarNew />
-                <div className="sm:ml-[102px]">{children}</div>
-
+                <div className="sm:ml-[102px] pt-20 sm:pt-0">{children}</div>
                 <Toaster />
               </main>
             </DataProvider>
