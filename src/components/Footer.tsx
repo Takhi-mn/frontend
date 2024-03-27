@@ -71,7 +71,7 @@ const Footer = ({
                   selectedLanguage === "en"
                     ? "font-semibold border-b-2 border-b-primary"
                     : "font-light"
-                }`}
+                } cursor-pointer`}
               >
                 EN
               </p>
@@ -81,7 +81,7 @@ const Footer = ({
                   selectedLanguage === "mn"
                     ? "font-semibold border-b-2 border-b-primary"
                     : "font-light"
-                }`}
+                } cursor-pointer`}
               >
                 MN
               </p>
@@ -91,7 +91,7 @@ const Footer = ({
                   selectedLanguage === "gr"
                     ? "font-semibold border-b-2 border-b-primary"
                     : "font-light"
-                }`}
+                } cursor-pointer`}
               >
                 GR
               </p>
@@ -101,7 +101,7 @@ const Footer = ({
                   selectedLanguage === "fr"
                     ? "font-semibold border-b-2 border-b-primary"
                     : "font-light"
-                }`}
+                } cursor-pointer`}
               >
                 FR
               </p>

@@ -27,7 +27,12 @@ const NavbarNew = (props: Props) => {
   }, []);
   return (
     <>
-      <nav className="fixed sm:h-screen w-screen sm:w-auto bg-primary z-50 flex sm:flex-col justify-between items-center sm:py-9 sm:px-3 px-4 py-2">
+      <nav
+        onMouseLeave={() => {
+          setIsOpen(false);
+        }}
+        className="fixed sm:h-screen w-screen sm:w-auto bg-primary z-50 flex sm:flex-col justify-between items-center sm:py-9 sm:px-3 px-4 py-2"
+      >
         <Image src={logo.src} width={80} height={80} alt="logo" />
         {isOpen ? (
           <IoCloseOutline

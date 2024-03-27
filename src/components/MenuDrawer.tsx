@@ -28,9 +28,6 @@ const MenuDrawer = ({ isOpen, isMobile, setIsOpen }: Props) => {
   return (
     <Drawer direction={isMobile ? "top" : "left"} open={isOpen} modal={false}>
       <DrawerContent
-        onMouseLeave={() => {
-          setIsOpen(false);
-        }}
         className={`text-white sm:py-9 px-4 sm:w-1/3 
   bg-primary sm:h-screen h-auto opacity-95 sm:left-32 ${
     isMobile ? "top-0" : "bottom-0"
@@ -42,10 +39,10 @@ const MenuDrawer = ({ isOpen, isMobile, setIsOpen }: Props) => {
             onClick={() => {
               handleLanguage("en");
             }}
-            className={`cursor-pointer${
+            className={` ${
               selectedLanguage === "en" &&
               "font-medium border-b-2 border-b-white"
-            }`}
+            } cursor-pointer`}
           >
             EN
           </li>
@@ -53,10 +50,10 @@ const MenuDrawer = ({ isOpen, isMobile, setIsOpen }: Props) => {
             onClick={() => {
               handleLanguage("mn");
             }}
-            className={`cursor-pointer${
+            className={`${
               selectedLanguage === "mn" &&
               "font-medium border-b-2 border-b-white"
-            }`}
+            } cursor-pointer`}
           >
             MN
           </li>
