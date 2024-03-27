@@ -47,10 +47,10 @@ const Footer = ({
       <section className="lg:w-1/2 flex flex-wrap lg:flex-nowrap">
         <div className="flex flex-wrap ">
           {taxonomies?.map((taxonomie) => (
-            <div className="w-1/2  mt-10 lg:mt-0">
+            <div key={taxonomie.name} className="w-1/2  mt-10 lg:mt-0">
               <h2 className="text-xl font-semibold">{taxonomie.name}</h2>
-              {taxonomie?.children.map((child) => (
-                <p>{child.name}</p>
+              {taxonomie?.children.map((child, index) => (
+                <p key={child.name + index}>{child.name}</p>
               ))}
             </div>
           ))}

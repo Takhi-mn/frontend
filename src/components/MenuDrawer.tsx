@@ -33,7 +33,7 @@ const MenuDrawer = ({ isOpen, isMobile, setIsOpen }: Props) => {
     isMobile ? "top-0" : "bottom-0"
   }`}
       >
-        <ul className="flex gap-3">
+        <div className="flex gap-3">
           Language:
           <li
             onClick={() => {
@@ -79,10 +79,10 @@ const MenuDrawer = ({ isOpen, isMobile, setIsOpen }: Props) => {
           >
             FR
           </li>
-        </ul>
-        <ul className="mt-10">
+        </div>
+        <div className="mt-10">
           {taxonomies?.map((taxonomie) => (
-            <li
+            <div
               key={taxonomie.id}
               className=" group font-serif text-3xl mt-4 gap-5
              hover:text-zinc-600 transition-all"
@@ -98,18 +98,18 @@ const MenuDrawer = ({ isOpen, isMobile, setIsOpen }: Props) => {
                 transition={{ type: "spring", duration: 2 }}
                 className="hidden group-hover:block "
               >
-                {taxonomie.children?.map((child) => (
-                  <li
-                    key={child.id}
+                {taxonomie.children?.map((child, index) => (
+                  <div
+                    key={child.id + index}
                     className="font-sans text-lg hover:text-zinc-800"
                   >
                     {child.name}
-                  </li>
+                  </div>
                 ))}
               </motion.div>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </DrawerContent>
     </Drawer>
   );
