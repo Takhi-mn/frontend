@@ -6,8 +6,12 @@ import { logo } from "@/assets";
 type Props = {};
 
 const MainLoader = (props: Props) => {
-  let height = window.innerHeight;
-  let width = window.innerWidth;
+  let height = 0;
+  let width = 0;
+  if (typeof window !== "undefined") {
+    height = window.innerHeight;
+    width = window.innerWidth;
+  }
   return (
     <div>
       <motion.div

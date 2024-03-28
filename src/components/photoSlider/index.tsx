@@ -35,10 +35,12 @@ export default function PhotoSlider({ photos }: any) {
         modules={[EffectCoverflow, Pagination]}
         className="mySwiper"
       >
-        {photos?.map((photo: any) => (
-          <SwiperSlide>
-            <img src={photo} style={{ borderRadius: "7px" }} />
-          </SwiperSlide>
+        {photos?.map((photo: any, index: number) => (
+          <div key={photo + index}>
+            <SwiperSlide>
+              <img src={photo} />
+            </SwiperSlide>
+          </div>
         ))}
       </Swiper>
     </>

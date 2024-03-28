@@ -20,16 +20,13 @@ const HeroSection = (props: Props) => {
         transition={{ duration: 0.5, delay: 2.5 }}
         className="w-full h-screen relative z-20 flex justify-center items-center"
       >
-        {/* <h1
+        <h1
           className=" xl:text-[400px] 
         lg:text-[300px] md:text-[200px] text-9xl  
-        font-bold stroke-black"
+        font-bold stroke-black text-primary"
         >
           TAKHI
-        </h1> */}
-        <div className="absolute z-50">
-          <img src={hero.src} alt="" />
-        </div>
+        </h1>
       </motion.div>
     </div>
   );

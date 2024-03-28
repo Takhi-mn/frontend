@@ -20,6 +20,10 @@ import raze from "@/assets/raze.png";
 import tahi from "@/assets/tahi.png";
 import hero from "@/assets/Hero.png";
 import map from "@/assets/wildlife-conservation/map.png";
+import camp1 from "@/assets/camp/camp1.png";
+import camp2 from "@/assets/camp/camp2.png";
+import camp3 from "@/assets/camp/camp3.png";
+import camp4 from "@/assets/camp/camp4.png";
 
 export {
   logo,
@@ -44,4 +48,8 @@ export {
   tahi,
   hero,
   map,
+  camp1,
+  camp2,
+  camp3,
+  camp4,
 };
