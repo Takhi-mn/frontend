@@ -54,3 +54,5 @@ export const footerData = {
     { title: "National Park management", phone: "+976 7000 4480" },
   ],
 };
+
+export const donateValues = [5, 25, 50, 100, 500, "Other"];

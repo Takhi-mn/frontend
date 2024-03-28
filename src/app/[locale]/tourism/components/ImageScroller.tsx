@@ -10,7 +10,7 @@ import "swiper/css";
 const ImageScroller = (props: Props) => {
   return (
     <div className="relative z-0 w-full">
-      <h2 className="absolute z-20 top-1/3 left-1/3 sm:left-24 md:left-44 text-4xl lg:text-6xl 2xl:text-9xl 2xl:left-1/4">
+      <h2 className="text-white absolute z-20 top-1/3 left-1/3 sm:left-24 md:left-44 text-4xl lg:text-6xl 2xl:text-9xl 2xl:left-1/4">
         TAKHI
       </h2>
       <Swiper
