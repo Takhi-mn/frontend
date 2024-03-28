@@ -8,21 +8,23 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { Badge } from "@/components/ui/badge";
+import Image from "next/image";
+import { camp1 } from "@/assets";
 type Props = {};
 
 const NewsCard = (props: Props) => {
   return (
-    <Card className="w-[350px]">
-      <CardContent></CardContent>
+    <Card className="max-w-[350px] rounded-lg ">
+      <CardContent className="p-0">
+        <Image
+          className="rounded-t-lg"
+          height={216}
+          width={350}
+          src={camp1.src}
+          alt=""
+        />
+      </CardContent>
       <CardHeader>
         <CardTitle className="line-clamp-2">
           The Government of Mongolia,represented by the Ministry of Environment
@@ -36,7 +38,13 @@ const NewsCard = (props: Props) => {
           Khomyn Tal National Park.
         </CardDescription>
       </CardHeader>
-      <CardFooter></CardFooter>
+      <CardFooter>
+        <div className="font-semibold">24/07/03</div>
+        <div className="flex justify-between mt-3">
+          <Badge className="">Marketing</Badge>
+          <p className="text-primary">Read 10 Min</p>
+        </div>
+      </CardFooter>
     </Card>
   );
 };

@@ -10,7 +10,8 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
-import { GoArrowRight } from "react-icons/go";
+import { IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowDown } from "react-icons/io";
 import { motion, Variants } from "framer-motion";
 
 import { dataContext } from "@/context/DataProvider";
@@ -25,6 +26,22 @@ type Props = {
 const MenuDrawer = ({ isOpen, isMobile, setIsOpen }: Props) => {
   const { taxonomies } = useContext(dataContext);
   const { handleLanguage, selectedLanguage } = useContext(languageContext);
+  const variants = {
+    show: {
+      display: "block",
+      height: "auto",
+      opacity: 1,
+      transition: { type: "spring", duration: 1 },
+    },
+    hide: {
+      height: 0,
+      opacity: 0,
+      transition: { duration: 0.5 },
+      transitionEnd: {
+        display: "none",
+      },
+    },
+  };
   return (
     <Drawer direction={isMobile ? "top" : "left"} open={isOpen} modal={false}>
       <DrawerContent
@@ -35,7 +52,7 @@ const MenuDrawer = ({ isOpen, isMobile, setIsOpen }: Props) => {
       >
         <div className="flex gap-3">
           Language:
-          <li
+          <div
             onClick={() => {
               handleLanguage("en");
             }}
@@ -45,8 +62,8 @@ const MenuDrawer = ({ isOpen, isMobile, setIsOpen }: Props) => {
             } cursor-pointer`}
           >
             EN
-          </li>
-          <li
+          </div>
+          <div
             onClick={() => {
               handleLanguage("mn");
             }}
@@ -56,8 +73,8 @@ const MenuDrawer = ({ isOpen, isMobile, setIsOpen }: Props) => {
             } cursor-pointer`}
           >
             MN
-          </li>
-          <li
+          </div>
+          <div
             onClick={() => {
               handleLanguage("gr");
             }}
@@ -67,8 +84,8 @@ const MenuDrawer = ({ isOpen, isMobile, setIsOpen }: Props) => {
             }`}
           >
             GR
-          </li>
-          <li
+          </div>
+          <div
             onClick={() => {
               handleLanguage("fr");
             }}
@@ -78,37 +95,44 @@ const MenuDrawer = ({ isOpen, isMobile, setIsOpen }: Props) => {
             }`}
           >
             FR
-          </li>
+          </div>
         </div>
         <div className="mt-10">
-          {taxonomies?.map((taxonomie) => (
-            <div
-              key={taxonomie.id}
-              className=" group font-serif text-3xl mt-4 gap-5
-             hover:text-zinc-600 transition-all"
-            >
-              <div className="flex items-center gap-4">
-                {taxonomie.name}
-                <GoArrowRight />
-              </div>
-
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                whileInView={{ opacity: 1, height: "auto" }}
-                transition={{ type: "spring", duration: 2 }}
-                className="hidden group-hover:block "
+          {taxonomies?.map((taxonomie) => {
+            const [onHover, setOnHover] = useState(false);
+            return (
+              <div
+                key={taxonomie.id}
+                className=" group font-sans text-2xl mt-4 gap-5
+              transition-all"
               >
-                {taxonomie.children?.map((child, index) => (
-                  <div
-                    key={child.id + index}
-                    className="font-sans text-lg hover:text-zinc-800"
-                  >
-                    {child.name}
-                  </div>
-                ))}
-              </motion.div>
-            </div>
-          ))}
+                <div
+                  onClick={() => {
+                    setOnHover(!onHover);
+                  }}
+                  className="flex items-center cursor-pointer sm:w-2/3 justify-between relative z-30"
+                >
+                  {taxonomie.name}
+                  {onHover ? <IoIosArrowDown /> : <IoIosArrowForward />}
+                </div>
+
+                <motion.div
+                  variants={variants}
+                  animate={onHover ? "show" : "hide"}
+                  className="sm:ml-5"
+                >
+                  {taxonomie.children?.map((child, index) => (
+                    <div
+                      key={child.id + index}
+                      className="font-sans text-lg hover:text-zinc-800 mt-5 cursor-pointer"
+                    >
+                      {child.name}
+                    </div>
+                  ))}
+                </motion.div>
+              </div>
+            );
+          })}
         </div>
       </DrawerContent>
     </Drawer>
