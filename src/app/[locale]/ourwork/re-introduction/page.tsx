@@ -9,6 +9,7 @@ import PhotoSliderSection from "./components/photo-slider-section";
 import CardPhoto from "./components/card-photo";
 import { coll1, coll2, coll3, coll4 } from "@/assets";
 import PhotoSlider from "@/components/photoSlider";
+import LearnMoreSection from "../components/learnMoreSection";
 
 const ReIntroductionPage = () => {
   return (
@@ -21,6 +22,7 @@ const ReIntroductionPage = () => {
       <PhotoSliderSection />
       <CardPhoto />
       <CardPhoto />
+      <LearnMoreSection />
     </div>
   );
 };

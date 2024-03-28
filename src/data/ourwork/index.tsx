@@ -49,12 +49,12 @@ export const ourWorks = [
   {
     img: `${nationalParkManagement.src}`,
     title: "National Park Management",
-    url: "ourwork/re-introduction",
+    url: "ourwork/natioanal-park-management",
   },
   {
     img: `${localSustainable.src}`,
     title: "Local Sustainable Delopment",
-    url: "",
+    url: "ourwork/local-sustainable-development",
   },
   {
     img: `${resources.src}`,
@@ -69,7 +69,7 @@ export const ourWorks = [
   {
     img: `${nationalParkManagement.src}`,
     title: "Takhi Reintroduction",
-    url: "",
+    url: "ourwork/re-introduction",
   },
   {
     img: `${wildlifeConservation.src}`,
@@ -79,6 +79,6 @@ export const ourWorks = [
   {
     img: `${majorAchievements.src}`,
     title: "Major Achievements",
-    url: "",
+    url: "ourwork/major-achievements",
   },
 ];

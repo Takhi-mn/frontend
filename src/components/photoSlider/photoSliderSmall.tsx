@@ -27,7 +27,7 @@ export default function PhotoSlider({ photos }: any) {
         coverflowEffect={{
           rotate: 0,
           stretch: 10,
-          depth: 300,
+          depth: 1800,
           modifier: 1,
           slideShadows: true,
         }}
