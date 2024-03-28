@@ -10,7 +10,7 @@ const OurWorkPageCard = ({ data, index }: any) => {
     <div
       className={`${
         "s" + index
-      } relative w-full min-h-44 transform transition-all hover:scale-105`}
+      } relative w-full min-h-44 group overflow-hidden`}
       onClick={() => router.push(`${data.url}`)}
     >
       <Image
@@ -18,11 +18,13 @@ const OurWorkPageCard = ({ data, index }: any) => {
         // width={0}
         // height={0}
         // sizes="100vw"
+        className="transform duration-700 transition-all group-hover:scale-125"
         fill
         alt={data.title}
         style={{ borderRadius: "8px", objectFit: "cover" }}
       />
-      <h1 className="font-bold text-lg absolute text-white z-10 bottom-5 left-5">
+
+      <h1 className="font-bold text-lg absolute text-white z-10 bottom-5 left-5 duration-700 transform transition-all group-hover:bg-black group-hover:bg-opacity-30 px-1 py-2 group-hover:rounded-md">
         {data.title}
       </h1>
     </div>
