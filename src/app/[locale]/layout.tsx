@@ -6,8 +6,13 @@ import { ThemeProvider } from "@/context/ThemeProvider";
 import { Toaster } from "@/components/ui/toaster";
 import { NavbarNew, Footer } from "@/components";
 import DataProvider from "@/context/DataProvider";
+import { Manrope } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-manrope",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Takhi",
@@ -23,7 +28,7 @@ export default function LocaleLayout({
   params: { locale: string };
 }) {
   return (
-    <html lang={locale}>
+    <html lang={locale} className={`${manrope.variable}`}>
       <body>
         <ThemeProvider
           attribute="class"
@@ -35,7 +40,7 @@ export default function LocaleLayout({
             <DataProvider>
               <main>
                 <NavbarNew />
-                <div className="sm:ml-[102px] pt-20 sm:pt-0">{children}</div>
+                <div className="sm:ml-[102px] pt-16 sm:pt-0">{children}</div>
                 <Toaster />
               </main>
             </DataProvider>
