@@ -32,14 +32,14 @@ const DonateCard = ({ donate, once, monthly }: Props) => {
       </div>
       <RadioGroup
         defaultValue="comfortable"
-        className="flex justify-center gap-10 p-10 md:scale-150"
+        className="flex justify-center gap-10 p-10"
       >
         <div className="flex items-center space-x-2">
-          <RadioGroupItem value="once" id="r1" />
+          <RadioGroupItem value="once" id="r1" className="md:w-8 md:h-8" />
           <Label htmlFor="r1">{once}</Label>
         </div>
         <div className="flex items-center space-x-2">
-          <RadioGroupItem value="monthly" id="r2" />
+          <RadioGroupItem value="monthly" id="r2" className="md:w-8 md:h-8" />
           <Label htmlFor="r2">{monthly}</Label>
         </div>
       </RadioGroup>
