@@ -3,6 +3,7 @@ import { campImages } from "@/data/camp";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import React from "react";
+import motion from "framer-motion";
 
 type Props = {};
 import "swiper/css";
