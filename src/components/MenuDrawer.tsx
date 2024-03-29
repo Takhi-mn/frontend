@@ -16,6 +16,7 @@ import { motion, Variants } from "framer-motion";
 
 import { dataContext } from "@/context/DataProvider";
 import { languageContext } from "@/context/LanguageProvider";
+import Link from "next/link";
 
 type Props = {
   isOpen: boolean;
@@ -106,14 +107,15 @@ const MenuDrawer = ({ isOpen, isMobile, setIsOpen }: Props) => {
                 className=" group font-sans text-2xl mt-4 gap-5
               transition-all"
               >
-                <div
-                  onClick={() => {
-                    setOnHover(!onHover);
-                  }}
-                  className="flex items-center cursor-pointer sm:w-2/3 justify-between relative z-30"
-                >
+                <div className="flex items-center cursor-pointer sm:w-2/3 justify-between relative z-30">
                   {taxonomie.name}
-                  {onHover ? <IoIosArrowDown /> : <IoIosArrowForward />}
+                  <div
+                    onClick={() => {
+                      setOnHover(!onHover);
+                    }}
+                  >
+                    {onHover ? <IoIosArrowDown /> : <IoIosArrowForward />}
+                  </div>
                 </div>
 
                 <motion.div
