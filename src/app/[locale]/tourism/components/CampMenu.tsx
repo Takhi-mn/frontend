@@ -8,10 +8,20 @@ const CampMenu = (props: Props) => {
   return (
     <div className="flex text-lg font-medium">
       <div className="flex-1 border-[1px] py-8">
-        <Link href="tourism/camp">Eco Camp</Link>
+        <Link
+          className="flex items-center justify-center"
+          href="camp"
+          rel="camp"
+        >
+          Eco Camp
+        </Link>
       </div>
       <div className="flex-1 border-[1px] py-8">
-        <Link href="tourism/booking">
+        <Link
+          className="flex items-center justify-center"
+          href="booking"
+          rel="booking"
+        >
           <FaTag />
           Tours/price, Booking
         </Link>

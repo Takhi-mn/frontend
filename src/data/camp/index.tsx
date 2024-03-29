@@ -1,4 +1,4 @@
-import { camp1, camp2, camp3, camp4 } from "@/assets";
+import { camp1, camp2, camp3, camp4, five, bird } from "@/assets";
 export const campImages = [
   {
     image: camp1,
@@ -21,3 +21,5 @@ export const campImages = [
     text: "BOOKING CONTACT",
   },
 ];
+
+export const animalImages = [bird.src, five.src, bird.src, five.src];

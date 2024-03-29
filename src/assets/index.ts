@@ -24,6 +24,7 @@ import camp1 from "@/assets/camp/camp1.png";
 import camp2 from "@/assets/camp/camp2.png";
 import camp3 from "@/assets/camp/camp3.png";
 import camp4 from "@/assets/camp/camp4.png";
+import bird from "@/assets/re-introduction/bird.png";
 
 export {
   logo,
@@ -52,4 +53,5 @@ export {
   camp2,
   camp3,
   camp4,
+  bird,
 };
