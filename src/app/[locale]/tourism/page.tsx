@@ -65,7 +65,7 @@ const TourismPage = (props: Props) => {
   return (
     <div className="bg-background text-foreground">
       <NewImageScroller />
-      <CampMenu />
+      <CampMenu page={"camp"} />
       <section className="container">
         <div className="my-16">
           <h1 className="text-2xl font-bold mb-14 text-center">

@@ -1,3 +1,14 @@
+import {
+  ensemble,
+  france,
+  german,
+  mava,
+  rita,
+  rolex,
+  takh,
+  yam,
+} from "@/assets";
+
 export const menuData = [
   {
     titleEn: "About us",
@@ -22,14 +33,15 @@ export const menuData = [
 ];
 
 export const partners = [
-  { name: "partner 1", partner: "logo" },
-  { name: "partner 2", partner: "logo" },
-  { name: "partner 3", partner: "logo" },
-  { name: "partner 4", partner: "logo" },
-  { name: "partner 5", partner: "logo" },
-  { name: "partner 6", partner: "logo" },
-  { name: "partner 6", partner: "logo" },
-  { name: "partner 6", partner: "logo" },
+  { name: "partner 1", partner: ensemble },
+  { name: "partner 2", partner: france },
+  { name: "partner 3", partner: rolex },
+  { name: "partner 4", partner: ensemble },
+  { name: "partner 5", partner: german },
+  { name: "partner 6", partner: rita },
+  { name: "partner 7", partner: yam },
+  { name: "partner 8", partner: takh },
+  { name: "partner 9", partner: mava },
 ];
 
 export const footerData = {

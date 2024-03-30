@@ -23,6 +23,22 @@ import camp2 from "@/assets/camp/camp2.png";
 import camp3 from "@/assets/camp/camp3.png";
 import camp4 from "@/assets/camp/camp4.png";
 import bird from "@/assets/re-introduction/bird.png";
+import durgun from "@/assets/camp/durgun.png";
+import harnuur from "@/assets/camp/harnuur.png";
+import hooloi from "@/assets/camp/hooloi.png";
+import path from "@/assets/camp/path.png";
+import seer from "@/assets/camp/seer.png";
+import book from "@/assets/camp/book.png";
+
+import ensemble from "@/assets/partners/ensemble.png";
+import france from "@/assets/partners/france.png";
+import german from "@/assets/partners/german.png";
+import mava from "@/assets/partners/mava.png";
+import rita from "@/assets/partners/rita.png";
+import rolex from "@/assets/partners/rolex.png";
+import satcom from "@/assets/partners/satcom.png";
+import takh from "@/assets/partners/takh.png";
+import yam from "@/assets/partners/yam.png";
 
 export {
   logo,
@@ -50,4 +66,19 @@ export {
   camp3,
   camp4,
   bird,
+  durgun,
+  harnuur,
+  hooloi,
+  path,
+  seer,
+  book,
+  ensemble,
+  france,
+  german,
+  mava,
+  rita,
+  rolex,
+  satcom,
+  takh,
+  yam,
 };

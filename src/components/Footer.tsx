@@ -30,7 +30,7 @@ const Footer = ({
   const { taxonomies } = useContext(dataContext);
   const { handleLanguage, selectedLanguage } = useContext(languageContext);
   return (
-    <footer className="flex flex-wrap w-full sm:p-16 sm:px-28 p-6 bg-secondary">
+    <footer className="flex flex-wrap w-full sm:p-16 sm:px-28 p-6 bg-secondary text-foreground">
       <div className=" lg:w-1/2 flex sm:block flex-col items-start">
         <div className="flex gap-5 sm:ml-4 ml-0">
           <FaFacebookF size={25} />
