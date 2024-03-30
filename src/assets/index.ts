@@ -16,8 +16,6 @@ import resources from "@/assets/our-work/resources.jpg";
 import resources1 from "@/assets/our-work/resources1.jpg";
 import majorAchievements from "@/assets/our-work/major-achivements.jpg";
 import wildlifeConservation from "@/assets/our-work/wildlife-conservation.jpg";
-import raze from "@/assets/raze.png";
-import tahi from "@/assets/tahi.png";
 import hero from "@/assets/Hero.png";
 import map from "@/assets/wildlife-conservation/map.png";
 import camp1 from "@/assets/camp/camp1.png";
@@ -45,8 +43,6 @@ export {
   resources1,
   majorAchievements,
   wildlifeConservation,
-  raze,
-  tahi,
   hero,
   map,
   camp1,

@@ -56,3 +56,36 @@ export const footerData = {
 };
 
 export const donateValues = [5, 25, 50, 100, 500, "Other"];
+
+export const historyDatas = [
+  {
+    month: "VIII",
+
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tortor nibh, aliquam id eros in, eleifend bibendum ex. Aenean quis eleifend tellus. Curabitur vel ullamcorper ex.",
+  },
+  {
+    month: "IX",
+
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tortor nibh, aliquam id eros in, eleifend bibendum ex. Aenean quis eleifend tellus. Curabitur vel ullamcorper ex.",
+  },
+  {
+    month: "X",
+
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tortor nibh, aliquam id eros in, eleifend bibendum ex. Aenean quis eleifend tellus. Curabitur vel ullamcorper ex.",
+  },
+  {
+    month: "XI",
+
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tortor nibh, aliquam id eros in, eleifend bibendum ex. Aenean quis eleifend tellus. Curabitur vel ullamcorper ex.",
+  },
+  {
+    month: "XII",
+
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tortor nibh, aliquam id eros in, eleifend bibendum ex. Aenean quis eleifend tellus. Curabitur vel ullamcorper ex.",
+  },
+  {
+    month: "I",
+
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tortor nibh, aliquam id eros in, eleifend bibendum ex. Aenean quis eleifend tellus. Curabitur vel ullamcorper ex.",
+  },
+];

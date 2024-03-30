@@ -75,6 +75,12 @@ const config = {
 
       backgroundImage: {
         workPageBackground: "url('/img/work-page-back.svg')",
+        tahi0: "url('/img/history/tahi3.png')",
+        tahi1: "url('/img/history/tahi1.png')",
+        tahi2: "url('/img/history/hostahi.png')",
+        tahi3: "url('/img/history/tahi3.png')",
+        tahi4: "url('/img/history/eejhuutahi.png')",
+        tahi5: "url('/img/history/gerbuleereetahi.png')",
       },
     },
   },
