@@ -17,8 +17,9 @@ const DonateCard = ({ donate, once, monthly }: Props) => {
     <div className="bg-white text-black rounded-md mt-7 p-2 md:p-10 flex-1">
       <h1 className="text-center text-3xl md:5xl font-medium">{donate}</h1>
       <div className="text-center flex flex-wrap md:justify-center md:mt-20">
-        {donateValues.map((value) => (
+        {donateValues.map((value, index) => (
           <div
+            key={index}
             onClick={() => {
               setSelected(value);
             }}

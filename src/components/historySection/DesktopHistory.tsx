@@ -34,6 +34,7 @@ const DesktopHistory = (props: Props) => {
       {historyDatas.map((data, index) => {
         return (
           <motion.div
+            key={data.month + index}
             onClick={() => {
               if (openIndex === index) {
                 setOpenIndex(-1);
