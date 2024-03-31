@@ -2,6 +2,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import { CiMenuBurger } from "react-icons/ci";
 import { IoCloseOutline } from "react-icons/io5";
+import { IoSearchOutline } from "react-icons/io5";
 import Image from "next/image";
 import { logo } from "@/assets";
 import { ThemeController } from "./ThemeController";
@@ -58,6 +59,7 @@ const NavbarNew = (props: Props) => {
             }}
           />
         )}
+        <IoSearchOutline size={25} color="white" />
         <MenuDrawer isOpen={isOpen} isMobile={isMobile} setIsOpen={setIsOpen} />
         <div className="hidden sm:block">
           <ThemeController />
