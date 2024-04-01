@@ -136,7 +136,6 @@ const MenuDrawer = ({ isOpen, isMobile, setIsOpen }: Props) => {
               </div>
             );
           })}
-          <input></input>
         </div>
       </DrawerContent>
     </Drawer>

@@ -5,7 +5,7 @@ type Props = {};
 
 const NewsSection = (props: Props) => {
   return (
-    <div className="flex flex-wrap gap-2 justify-between">
+    <div className="flex flex-wrap gap-2 lg:justify-between justify-center">
       <NewsCard />
       <NewsCard />
       <NewsCard />

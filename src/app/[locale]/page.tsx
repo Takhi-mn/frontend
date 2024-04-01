@@ -7,6 +7,7 @@ import {
   OurWorkSelector,
   Subscribe,
 } from "@/components";
+import BlogSection from "@/components/blogSection";
 
 import DonateSection from "@/components/donateSection";
 import HistorySection from "@/components/historySection";
@@ -47,6 +48,9 @@ export default function Index() {
         email={s("email")}
         submit={s("submit")}
       />
+      <div className="w-full p-6 sm:p-16 sm:px-28">
+        <BlogSection />
+      </div>
       <Policy />
     </div>
   );
