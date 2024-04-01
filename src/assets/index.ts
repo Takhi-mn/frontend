@@ -39,6 +39,11 @@ import rolex from "@/assets/partners/rolex.png";
 import satcom from "@/assets/partners/satcom.png";
 import takh from "@/assets/partners/takh.png";
 import yam from "@/assets/partners/yam.png";
+import location from "@/assets/about-us/location.svg";
+import sms from "@/assets/about-us/sms.svg";
+import phone from "@/assets/about-us/phone.svg";
+import managementTeam from "@/assets/about-us/management-team.png";
+import chimedOchir from "@/assets/about-us/chimed-ochir.png";
 
 export {
   logo,
@@ -81,4 +86,9 @@ export {
   satcom,
   takh,
   yam,
+  phone,
+  location,
+  sms,
+  managementTeam,
+  chimedOchir,
 };
