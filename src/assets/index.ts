@@ -28,6 +28,8 @@ import bird from "@/assets/re-introduction/bird.png";
 import location from "@/assets/about-us/location.svg";
 import sms from "@/assets/about-us/sms.svg";
 import phone from "@/assets/about-us/phone.svg";
+import managementTeam from "@/assets/about-us/management-team.png";
+import chimedOchir from "@/assets/about-us/chimed-ochir.png";
 
 export {
   logo,
@@ -60,4 +62,6 @@ export {
   phone,
   location,
   sms,
+  managementTeam,
+  chimedOchir,
 };
