@@ -25,6 +25,9 @@ import camp2 from "@/assets/camp/camp2.png";
 import camp3 from "@/assets/camp/camp3.png";
 import camp4 from "@/assets/camp/camp4.png";
 import bird from "@/assets/re-introduction/bird.png";
+import location from "@/assets/about-us/location.svg";
+import sms from "@/assets/about-us/sms.svg";
+import phone from "@/assets/about-us/phone.svg";
 
 export {
   logo,
@@ -54,4 +57,7 @@ export {
   camp3,
   camp4,
   bird,
+  phone,
+  location,
+  sms,
 };

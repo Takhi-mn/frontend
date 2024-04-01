@@ -2,6 +2,7 @@ import { horseIcon } from "@/assets";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import React from "react";
+import { location, sms, phone } from "@/assets";
 
 const AboutUsPage = () => {
   const partners = [
@@ -76,6 +77,40 @@ const AboutUsPage = () => {
               />
             </div>
           ))}
+        </div>
+      </div>
+      <div className="flex flex-col justify-center items-center gap-3 w-full">
+        <h1 className="text-[22px] font-bold">Contact</h1>
+        <div className="sm:flex sm:flex-wrap w-full sm:gap-4 sm:justify-center sm:items-center">
+          <div className=" flex flex-col justify-center items-center bg-[#F9FAFB] rounded-2xl p-4 gap-2 w-full sm:max-w-[30%]">
+            <div className=" w-12 h-12 relative">
+              <Image
+                fill
+                alt={location.src}
+                src={location.src}
+                objectFit="contain"
+              />
+            </div>
+            <h3 className="text-[14px] text-center sm:text-[16px]">
+              Zavhan Province, Durvuljin Sum, Onts bagh
+            </h3>
+          </div>
+          <div className=" flex flex-col justify-center items-center bg-[#F9FAFB] rounded-2xl p-4 gap-2 w-full sm:max-w-[30%]">
+            <div className=" w-12 h-12 relative">
+              <Image fill alt={phone.src} src={phone.src} objectFit="contain" />
+            </div>
+            <h3 className="text-[14px] text-center sm:text-[16px]">
+              70004480, 98159903
+            </h3>
+          </div>
+          <div className=" flex flex-col justify-center items-center bg-[#F9FAFB] rounded-2xl p-4 gap-2 w-full sm:max-w-[30%]">
+            <div className=" w-12 h-12 relative">
+              <Image fill alt={sms.src} src={sms.src} objectFit="contain" />
+            </div>
+            <h3 className="text-[14px] text-center sm:text-[16px]">
+              takhi@ktt.mn
+            </h3>
+          </div>
         </div>
       </div>
     </div>
