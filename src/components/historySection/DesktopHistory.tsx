@@ -29,6 +29,15 @@ const DesktopHistory = (props: Props) => {
       transition: { duration: 0.01 },
     },
   };
+  const test1 = [
+    "bg-tahi0",
+    "bg-tahi1",
+    "bg-tahi2",
+    "bg-tahi3",
+    "bg-tahi4",
+    "bg-tahi5",
+  ];
+
   return (
     <div className="lg:flex hidden justify-center text-white w-full rounded-xl">
       {historyDatas.map((data, index) => {
