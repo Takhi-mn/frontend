@@ -2,24 +2,28 @@ import Link from "next/link";
 import React from "react";
 import { FaTag } from "react-icons/fa6";
 
-type Props = {};
+type Props = {
+  page: string;
+};
 
-const CampMenu = (props: Props) => {
+const CampMenu = ({ page }: Props) => {
   return (
     <div className="flex text-lg font-medium">
-      <div className="flex-1 border-[1px] py-8">
-        <Link
-          className="flex items-center justify-center"
-          href="camp"
-          rel="camp"
-        >
+      <div
+        className={`${
+          page === "camp" && "text-primary"
+        } flex-1 border-[1px] py-8`}
+      >
+        <Link className="flex items-center justify-center" href="./" rel="camp">
           Eco Camp
         </Link>
       </div>
       <div className="flex-1 border-[1px] py-8">
         <Link
-          className="flex items-center justify-center"
-          href="booking"
+          className={`${
+            page === "booking" && "text-primary"
+          } flex items-center justify-center`}
+          href="tourism/booking"
           rel="booking"
         >
           <FaTag />

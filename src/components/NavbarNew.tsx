@@ -2,11 +2,13 @@
 import React, { useContext, useState, useEffect } from "react";
 import { CiMenuBurger } from "react-icons/ci";
 import { IoCloseOutline } from "react-icons/io5";
+import { IoSearchOutline } from "react-icons/io5";
 import Image from "next/image";
 import { logo } from "@/assets";
 import { ThemeController } from "./ThemeController";
 import { dataContext } from "@/context/DataProvider";
 import MenuDrawer from "./MenuDrawer";
+import Link from "next/link";
 
 type Props = {};
 
@@ -33,7 +35,10 @@ const NavbarNew = (props: Props) => {
         }}
         className="fixed sm:h-screen w-screen sm:w-auto bg-primary z-50 flex sm:flex-col justify-between items-center sm:py-9 sm:px-3 px-4 py-2"
       >
-        <Image src={logo.src} width={80} height={80} alt="logo" />
+        <Link href="/">
+          <Image src={logo.src} width={80} height={80} alt="logo" />
+        </Link>
+
         {isOpen ? (
           <IoCloseOutline
             size={25}
@@ -54,6 +59,7 @@ const NavbarNew = (props: Props) => {
             }}
           />
         )}
+        <IoSearchOutline size={25} color="white" />
         <MenuDrawer isOpen={isOpen} isMobile={isMobile} setIsOpen={setIsOpen} />
         <div className="hidden sm:block">
           <ThemeController />

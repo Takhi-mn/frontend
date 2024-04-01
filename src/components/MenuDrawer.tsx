@@ -46,7 +46,7 @@ const MenuDrawer = ({ isOpen, isMobile, setIsOpen }: Props) => {
   return (
     <Drawer direction={isMobile ? "top" : "left"} open={isOpen} modal={false}>
       <DrawerContent
-        className={`text-white sm:py-9 px-4 sm:w-1/3 
+        className={`text-white sm:py-9 px-4 w-full sm:w-1/3 
   bg-primary sm:h-screen h-auto opacity-95 sm:left-32 ${
     isMobile ? "top-0" : "bottom-0"
   }`}
@@ -98,7 +98,7 @@ const MenuDrawer = ({ isOpen, isMobile, setIsOpen }: Props) => {
             FR
           </div>
         </div>
-        <div className="mt-10">
+        <div className="mt-10 pb-7 sm:pb-0">
           {taxonomies?.map((taxonomie) => {
             const [onHover, setOnHover] = useState(false);
             return (
@@ -107,7 +107,7 @@ const MenuDrawer = ({ isOpen, isMobile, setIsOpen }: Props) => {
                 className=" group font-sans text-2xl mt-4 gap-5
               transition-all"
               >
-                <div className="flex items-center cursor-pointer sm:w-2/3 justify-between relative z-30">
+                <div className="flex items-center cursor-pointer sm:w-2/3 justify-between  relative z-30">
                   {taxonomie.name}
                   <div
                     onClick={() => {
@@ -119,6 +119,7 @@ const MenuDrawer = ({ isOpen, isMobile, setIsOpen }: Props) => {
                 </div>
 
                 <motion.div
+                  initial={{ display: "none" }}
                   variants={variants}
                   animate={onHover ? "show" : "hide"}
                   className="sm:ml-5"

@@ -15,10 +15,10 @@ type Props = {};
 
 const NewsCard = (props: Props) => {
   return (
-    <Card className="max-w-[350px] rounded-lg ">
+    <Card className="lg:flex-1 rounded-lg bg-muted border-0">
       <CardContent className="p-0">
         <Image
-          className="rounded-t-lg"
+          className="rounded-t-lg w-full"
           height={216}
           width={350}
           src={camp1.src}

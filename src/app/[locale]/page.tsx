@@ -7,15 +7,16 @@ import {
   OurWorkSelector,
   Subscribe,
 } from "@/components";
-import History from "@/components/History";
+import BlogSection from "@/components/blogSection";
+
 import DonateSection from "@/components/donateSection";
+import HistorySection from "@/components/historySection";
 import NewsSection from "@/components/newsSection";
 import { useTranslations } from "next-intl";
 
 export default function Index() {
   const t = useTranslations("Index");
-  const f = useTranslations("Footer");
-  const l = useTranslations("Language");
+
   const s = useTranslations("Subscribe");
   return (
     <div>
@@ -28,7 +29,7 @@ export default function Index() {
         <h1 className="text-center my-16 text-3xl font-medium">
           {t("history")}
         </h1>
-        <History />
+        <HistorySection />
       </div>
       <DonateSection
         today={t("today")}
@@ -37,6 +38,10 @@ export default function Index() {
         once={t("once")}
         monthly={t("monthly")}
       />
+
+      <div className="w-full p-6 sm:p-16 sm:px-28">
+        <NewsSection />
+      </div>
       <Subscribe
         subscribe={s("subscribe")}
         notify={s("notify")}
@@ -44,20 +49,8 @@ export default function Index() {
         submit={s("submit")}
       />
       <div className="w-full p-6 sm:p-16 sm:px-28">
-        <NewsSection />
+        <BlogSection />
       </div>
-
-      <Footer
-        company1={f("company1")}
-        company2={f("company2")}
-        company3={f("company3")}
-        news={f("news")}
-        donate={f("donate")}
-        privacy={f("privacy")}
-        terms={f("terms")}
-        language={l("language")}
-      />
-
       <Policy />
     </div>
   );

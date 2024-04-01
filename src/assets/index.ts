@@ -16,8 +16,6 @@ import resources from "@/assets/our-work/resources.jpg";
 import resources1 from "@/assets/our-work/resources1.jpg";
 import majorAchievements from "@/assets/our-work/major-achivements.jpg";
 import wildlifeConservation from "@/assets/our-work/wildlife-conservation.jpg";
-import raze from "@/assets/raze.png";
-import tahi from "@/assets/tahi.png";
 import hero from "@/assets/Hero.png";
 import map from "@/assets/wildlife-conservation/map.png";
 import camp1 from "@/assets/camp/camp1.png";
@@ -25,6 +23,22 @@ import camp2 from "@/assets/camp/camp2.png";
 import camp3 from "@/assets/camp/camp3.png";
 import camp4 from "@/assets/camp/camp4.png";
 import bird from "@/assets/re-introduction/bird.png";
+import durgun from "@/assets/camp/durgun.png";
+import harnuur from "@/assets/camp/harnuur.png";
+import hooloi from "@/assets/camp/hooloi.png";
+import path from "@/assets/camp/path.png";
+import seer from "@/assets/camp/seer.png";
+import book from "@/assets/camp/book.png";
+
+import ensemble from "@/assets/partners/ensemble.png";
+import france from "@/assets/partners/france.png";
+import german from "@/assets/partners/german.png";
+import mava from "@/assets/partners/mava.png";
+import rita from "@/assets/partners/rita.png";
+import rolex from "@/assets/partners/rolex.png";
+import satcom from "@/assets/partners/satcom.png";
+import takh from "@/assets/partners/takh.png";
+import yam from "@/assets/partners/yam.png";
 import location from "@/assets/about-us/location.svg";
 import sms from "@/assets/about-us/sms.svg";
 import phone from "@/assets/about-us/phone.svg";
@@ -50,8 +64,6 @@ export {
   resources1,
   majorAchievements,
   wildlifeConservation,
-  raze,
-  tahi,
   hero,
   map,
   camp1,
@@ -59,6 +71,21 @@ export {
   camp3,
   camp4,
   bird,
+  durgun,
+  harnuur,
+  hooloi,
+  path,
+  seer,
+  book,
+  ensemble,
+  france,
+  german,
+  mava,
+  rita,
+  rolex,
+  satcom,
+  takh,
+  yam,
   phone,
   location,
   sms,

@@ -7,6 +7,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { NavbarNew, Footer } from "@/components";
 import DataProvider from "@/context/DataProvider";
 import { Manrope } from "next/font/google";
+import { useTranslations } from "next-intl";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -27,6 +28,8 @@ export default function LocaleLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
+  const f = useTranslations("Footer");
+  const l = useTranslations("Language");
   return (
     <html lang={locale} className={`${manrope.variable}`}>
       <body>
@@ -42,6 +45,16 @@ export default function LocaleLayout({
                 <NavbarNew />
                 <div className="sm:ml-[102px] pt-16 sm:pt-0">{children}</div>
                 <Toaster />
+                <Footer
+                  company1={f("company1")}
+                  company2={f("company2")}
+                  company3={f("company3")}
+                  news={f("news")}
+                  donate={f("donate")}
+                  privacy={f("privacy")}
+                  terms={f("terms")}
+                  language={l("language")}
+                />
               </main>
             </DataProvider>
           </LanguageProvider>
