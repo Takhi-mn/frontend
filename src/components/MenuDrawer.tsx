@@ -114,7 +114,15 @@ const MenuDrawer = ({ isOpen, isMobile, setIsOpen }: Props) => {
                       setOnHover(!onHover);
                     }}
                   >
-                    {onHover ? <IoIosArrowDown /> : <IoIosArrowForward />}
+                    {taxonomie.children?.length != 0 ? (
+                      onHover ? (
+                        <IoIosArrowDown />
+                      ) : (
+                        <IoIosArrowForward />
+                      )
+                    ) : (
+                      ""
+                    )}
                   </div>
                 </div>
 

@@ -33,5 +33,17 @@
     "notify": "We will notify you with news",
     "email": "Write your email here",
     "submit": "Submit"
+  },
+  "Blog": {
+    "write": "Write Blog",
+    "name": "Full name (required)",
+    "namePlace": "Write your name here",
+    "email": "Email (required)",
+    "emailPlace": "Write your email here",
+    "title": "Title (required)",
+    "titlePlace": "Write your title here",
+    "review": "Review ",
+    "reviewPlace": "You can write more info",
+    "send": "Send"
   }
 }
