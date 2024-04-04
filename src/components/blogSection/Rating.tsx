@@ -12,6 +12,7 @@ const Rating = (props: Props) => {
       {stars.map((val) => {
         return (
           <FaStar
+            key={val}
             size={20}
             onClick={() => {
               setChecked(val);

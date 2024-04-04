@@ -1,10 +1,15 @@
 import {
+  durgun,
   ensemble,
   france,
   german,
+  harnuur,
+  hooloi,
   mava,
+  path,
   rita,
   rolex,
+  seer,
   takh,
   yam,
 } from "@/assets";
@@ -99,5 +104,56 @@ export const historyDatas = [
     month: "I",
 
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tortor nibh, aliquam id eros in, eleifend bibendum ex. Aenean quis eleifend tellus. Curabitur vel ullamcorper ex.",
+  },
+];
+
+export const campRoutes = [
+  {
+    image: durgun.src,
+    route: "Route 1",
+    title: "ARRIVAL ULAANBAATAR",
+    text: "You will be picked up at the airport and taken to UB Grand Hotel, right in the city center next to Chinggis Khaan Square. By the end of the day, all riders will have tried their gear and are ready to leave Ulaanbaatar early the following day.",
+    top: "top-[40px]",
+    left: "right-[90px]",
+  },
+  {
+    image: harnuur.src,
+    route: "Route 2",
+    title: "ARRIVAL ULAANBAATAR",
+    text: "You will be picked up at the airport and taken to UB Grand Hotel, right in the city center next to Chinggis Khaan Square. By the end of the day, all riders will have tried their gear and are ready to leave Ulaanbaatar early the following day.",
+    top: "top-[70px]",
+    left: "right-[60px]",
+  },
+  {
+    image: hooloi.src,
+    route: "Route 3",
+    title: "ARRIVAL ULAANBAATAR",
+    text: "You will be picked up at the airport and taken to UB Grand Hotel, right in the city center next to Chinggis Khaan Square. By the end of the day, all riders will have tried their gear and are ready to leave Ulaanbaatar early the following day.",
+    top: "top-[130px]",
+    left: "right-[40px]",
+  },
+  {
+    image: seer.src,
+    route: "Route 4",
+    title: "ARRIVAL ULAANBAATAR",
+    text: "You will be picked up at the airport and taken to UB Grand Hotel, right in the city center next to Chinggis Khaan Square. By the end of the day, all riders will have tried their gear and are ready to leave Ulaanbaatar early the following day.",
+    top: "top-[140px]",
+    left: "right-[110px]",
+  },
+  {
+    image: durgun.src,
+    route: "Route 5",
+    title: "ARRIVAL ULAANBAATAR",
+    text: "You will be picked up at the airport and taken to UB Grand Hotel, right in the city center next to Chinggis Khaan Square. By the end of the day, all riders will have tried their gear and are ready to leave Ulaanbaatar early the following day.",
+    top: "top-[70px]",
+    left: "right-[200px]",
+  },
+  {
+    image: hooloi.src,
+    route: "Route 6",
+    title: "ARRIVAL ULAANBAATAR",
+    text: "You will be picked up at the airport and taken to UB Grand Hotel, right in the city center next to Chinggis Khaan Square. By the end of the day, all riders will have tried their gear and are ready to leave Ulaanbaatar early the following day.",
+    top: "top-[40px]",
+    left: "right-[250px]",
   },
 ];

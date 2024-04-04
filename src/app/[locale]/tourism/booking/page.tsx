@@ -8,6 +8,7 @@ import { path } from "@/assets";
 import BookingCard from "./components/BookingCard";
 import { PartnerSection } from "@/components";
 import Contact from "./components/Contact";
+import TourPath from "./components/TourPath";
 
 type Props = {};
 
@@ -49,13 +50,7 @@ const BookingPage = (props: Props) => {
             </div>
           ))}
         </div>
-        <Image
-          src={path.src}
-          width={1000}
-          height={700}
-          alt="map"
-          className="w-full"
-        />
+        <TourPath />
         <BookingCard />
         <PartnerSection />
         <Contact />

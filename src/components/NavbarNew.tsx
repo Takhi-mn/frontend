@@ -59,7 +59,6 @@ const NavbarNew = (props: Props) => {
             }}
           />
         )}
-        <IoSearchOutline size={25} color="white" />
         <MenuDrawer isOpen={isOpen} isMobile={isMobile} setIsOpen={setIsOpen} />
         <div className="hidden sm:block">
           <ThemeController />
