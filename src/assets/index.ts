@@ -43,7 +43,13 @@ import location from "@/assets/about-us/location.svg";
 import sms from "@/assets/about-us/sms.svg";
 import phone from "@/assets/about-us/phone.svg";
 import managementTeam from "@/assets/about-us/management-team.png";
-import chimedOchir from "@/assets/about-us/chimed-ochir.png";
+import boldgiv from "@/assets/about-us/boldgiv.png";
+import batjargal from "@/assets/about-us/batjargal.png";
+import bayartogtoh from "@/assets/about-us/bayartogtoh.png";
+import chimedOchir from "@/assets/about-us/chimedOchir.png";
+import claudia from "@/assets/about-us/claudia.png";
+import jean from "@/assets/about-us/jean.png";
+import shiirav from "@/assets/about-us/shiirav.png";
 
 export {
   logo,
@@ -90,5 +96,11 @@ export {
   location,
   sms,
   managementTeam,
+  boldgiv,
+  shiirav,
+  claudia,
+  batjargal,
+  bayartogtoh,
   chimedOchir,
+  jean,
 };

@@ -1,8 +1,10 @@
+"use client";
 import { horseIcon } from "@/assets";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import React from "react";
 import { location, sms, phone } from "@/assets";
+import { useRouter } from "next/navigation";
 
 const AboutUsPage = () => {
   const partners = [
@@ -15,6 +17,7 @@ const AboutUsPage = () => {
     horseIcon.src,
     horseIcon.src,
   ];
+  const router = useRouter();
   return (
     <div className="flex flex-col justify-center items-center w-full gap-10 mb-20">
       <div className="flex flex-col justify-center items-center bg-workPageBackground w-full text-white h-[600px] bg-center gap-24">
@@ -59,7 +62,12 @@ const AboutUsPage = () => {
           KTT is a dynamic team consists of five staff in Ulaanbaatar and nine
           staff in Khomyn Tal reintroduction site
         </p>
-        <Button className="text-[14px] bg-primary">Дэлгэрэнгүй</Button>
+        <Button
+          className="text-[14px] bg-primary"
+          onClick={() => router.push("about-us/takhi-team")}
+        >
+          Дэлгэрэнгүй
+        </Button>
       </div>
       <div className="flex flex-col justify-center items-center">
         <h1 className="font-bold text-[22px] sm:text-[45px] sm:font-medium">
