@@ -72,7 +72,7 @@ const TourismPage = (props: Props) => {
             Welcome to TAKHI ECO CAMP in
           </h1>
           <p>
-            Watching Przewalski's horses in the vastness of the steppe and
+            Watching Przewalski&apos;s horses in the vastness of the steppe and
             dunes, seeing Siberian ibex, Mongolian gazelles, Taiga antelopes and
             wolf tracks in the sand, admiring a steppe eagle in the sky: the
             protected reserve in the Seer Mountain,1400 kilometers west of
@@ -87,7 +87,7 @@ const TourismPage = (props: Props) => {
             Tal National Park. An Eco volunteer program is developed, for those
             who wish to actively help the rangers on a daily basis. We look
             forward to welcoming you and sharing with you our passion for
-            Przewalski's horse and the beautiful landscapes of Khomyn tal.
+            Przewalski&apos;s horse and the beautiful landscapes of Khomyn tal.
           </p>
         </div>
         <div className="my-16">
@@ -95,7 +95,7 @@ const TourismPage = (props: Props) => {
             Tourism lodge
           </h1>
           <p>
-            Watching Przewalski's horses in the vastness of the steppe and
+            Watching Przewalski&apos;s horses in the vastness of the steppe and
             dunes, seeing Siberian ibex, Mongolian gazelles, Taiga antelopes and
             wolf tracks in the sand, admiring a steppe eagle in the sky: the
             protected reserve in the Seer Mountain,1400 kilometers west of
@@ -110,7 +110,7 @@ const TourismPage = (props: Props) => {
             Tal National Park. An Eco volunteer program is developed, for those
             who wish to actively help the rangers on a daily basis. We look
             forward to welcoming you and sharing with you our passion for
-            Przewalski's horse and the beautiful landscapes of Khomyn tal.
+            Przewalski&apos;s horse and the beautiful landscapes of Khomyn tal.
           </p>
           <p className="mt-10">
             Camp building wooden house with renewable energy supply
@@ -143,7 +143,7 @@ const TourismPage = (props: Props) => {
         <div className="my-16">
           <h1 className="text-2xl font-bold mb-14 text-center">Dining</h1>
           <h2 className="my-4 text-2xl font-bold">
-            "Good food warms the heart and feeds the soul"
+            &quot;Good food warms the heart and feeds the soul&quot;
           </h2>
           <p>
             We serve fresh vegetables, harvested from our own greenhouse. Dairy
@@ -192,8 +192,11 @@ const TourismPage = (props: Props) => {
         </div>
         <div className="mt-16 pb-10">
           <h1 className="text-2xl font-bold mb-14 text-center">We offer</h1>
-          {offers.map((offer) => (
-            <div className="flex items-center gap-2 mt-10">
+          {offers.map((offer, index) => (
+            <div
+              key={offer.text + index}
+              className="flex items-center gap-2 mt-10"
+            >
               {offer.icon}
               <p>{offer.text}</p>
             </div>

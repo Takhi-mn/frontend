@@ -46,8 +46,8 @@ const NewImageScroller = (props: Props) => {
     <div className="relative overflow-hidden">
       <div className="slider-container">
         <Slider {...settings}>
-          {campImages.map((item) => (
-            <div className="relative z-10">
+          {campImages.map((item, index) => (
+            <div key={item.image.src + index} className="relative z-10">
               <div className="w-full h-56 sm:h-96 md:h-[500px] 2xl:h-screen absolute z-10 bg-black bg-opacity-30" />
               <img
                 className="w-full h-56 sm:h-96 md:h-[500px] 2xl:h-screen object-cover relative z-0"

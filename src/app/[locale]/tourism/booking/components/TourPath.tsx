@@ -44,8 +44,8 @@ const RouteInfo = ({
         }}
         className="max-w-[60vw] flex"
       >
-        {campRoutes.map((route) => (
-          <SwiperSlide>
+        {campRoutes.map((route, index) => (
+          <SwiperSlide key={route.route + index}>
             <div className="">
               <Image
                 width={300}
@@ -87,6 +87,7 @@ const TourPath = (props: Props) => {
         <img src={path.src} className="w-[335px] h-[248px]" />
         {campRoutes.map((route, index) => (
           <div
+            key={route.route + index}
             onClick={() => {
               setSelectedRoute(index);
               mySwiper?.slideTo(index);

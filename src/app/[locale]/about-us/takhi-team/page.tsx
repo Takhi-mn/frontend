@@ -74,6 +74,7 @@ const TakhiTeamPage = () => {
         <div className=" flex flex-col sm:flex-row sm:flex-wrap w-[100%] gap-5 sm:relative overflow-hidden">
           {members.map((member: IMember) => (
             <TeamMember
+              key={member.name}
               member={member}
               handleImage={handleImage}
               imageClick={imageClick}

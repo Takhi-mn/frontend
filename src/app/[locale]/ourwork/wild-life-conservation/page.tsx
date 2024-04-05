@@ -59,8 +59,8 @@ const WildLifeConservation = () => {
           east and sand dunes along the southern border.
         </p>
       </div>
-      {datas.map((data) => (
-        <PhotoSliderSection data={data} />
+      {datas.map((data, index) => (
+        <PhotoSliderSection key={data.title + index} data={data} />
       ))}
 
       <LearnMoreSection />

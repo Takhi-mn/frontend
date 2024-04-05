@@ -75,7 +75,10 @@ const AboutUsPage = () => {
         </h1>
         <div className="flex flex-wrap justify-center items-center">
           {partners.map((partner, index) => (
-            <div className="mx-4 my-2 w-32 h-32 relative sm:w-[200px] sm:h-[200px]">
+            <div
+              key={index}
+              className="mx-4 my-2 w-32 h-32 relative sm:w-[200px] sm:h-[200px]"
+            >
               <Image
                 key={index}
                 fill

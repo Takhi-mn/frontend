@@ -25,6 +25,7 @@ type Props = {
 };
 
 const MenuDrawer = ({ isOpen, isMobile, setIsOpen }: Props) => {
+  const [onHover, setOnHover] = useState<number>();
   const { taxonomies } = useContext(dataContext);
   const { handleLanguage, selectedLanguage } = useContext(languageContext);
   const variants = {
@@ -99,8 +100,7 @@ const MenuDrawer = ({ isOpen, isMobile, setIsOpen }: Props) => {
           </div>
         </div>
         <div className="mt-10 pb-7 sm:pb-0">
-          {taxonomies?.map((taxonomie) => {
-            const [onHover, setOnHover] = useState(false);
+          {taxonomies?.map((taxonomie, index) => {
             return (
               <div
                 key={taxonomie.id}
@@ -109,16 +109,20 @@ const MenuDrawer = ({ isOpen, isMobile, setIsOpen }: Props) => {
               >
                 <div className="flex items-center cursor-pointer sm:w-2/3 justify-between  relative z-30">
                   {taxonomie.name}
-                  <div
-                    onClick={() => {
-                      setOnHover(!onHover);
-                    }}
-                  >
+                  <div>
                     {taxonomie.children?.length != 0 ? (
-                      onHover ? (
-                        <IoIosArrowDown />
+                      onHover === taxonomie.id ? (
+                        <IoIosArrowDown
+                          onClick={() => {
+                            setOnHover(0);
+                          }}
+                        />
                       ) : (
-                        <IoIosArrowForward />
+                        <IoIosArrowForward
+                          onClick={() => {
+                            setOnHover(taxonomie.id);
+                          }}
+                        />
                       )
                     ) : (
                       ""
@@ -129,7 +133,7 @@ const MenuDrawer = ({ isOpen, isMobile, setIsOpen }: Props) => {
                 <motion.div
                   initial={{ display: "none" }}
                   variants={variants}
-                  animate={onHover ? "show" : "hide"}
+                  animate={onHover === taxonomie.id ? "show" : "hide"}
                   className="sm:ml-5"
                 >
                   {taxonomie.children?.map((child, index) => (
