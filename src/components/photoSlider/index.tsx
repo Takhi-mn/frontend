@@ -3,6 +3,8 @@
 import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
+import SwiperCore from "swiper";
 
 // Import Swiper styles
 import "swiper/css";
@@ -16,10 +18,13 @@ import "./style.css";
 import { EffectCoverflow, Pagination } from "swiper/modules";
 
 export default function PhotoSlider({ photos }: any) {
-  console.log("photos", photos);
+  const [my_swiper, set_my_swiper] = useState<SwiperCore>();
   return (
     <>
       <Swiper
+        onInit={(ev) => {
+          set_my_swiper(ev);
+        }}
         effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
@@ -29,19 +34,34 @@ export default function PhotoSlider({ photos }: any) {
           stretch: 10,
           depth: 300,
           modifier: 1,
-          slideShadows: true,
+          slideShadows: false,
         }}
-        pagination={true}
-        modules={[EffectCoverflow, Pagination]}
+        modules={[EffectCoverflow]}
         className="mySwiper"
       >
         {photos?.map((photo: any, index: number) => (
           <div key={photo + index}>
             <SwiperSlide>
-              <img src={photo} />
+              <img className="w-96 h-52 object-cover rounded-sm" src={photo} />
             </SwiperSlide>
           </div>
         ))}
+        <div className="w-full flex justify-center gap-6">
+          <button
+            onClick={() => {
+              my_swiper?.slidePrev();
+            }}
+          >
+            <FaArrowLeft />
+          </button>
+          <button
+            onClick={() => {
+              my_swiper?.slideNext();
+            }}
+          >
+            <FaArrowRight />
+          </button>
+        </div>
       </Swiper>
     </>
   );

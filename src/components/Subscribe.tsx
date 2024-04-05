@@ -11,7 +11,7 @@ type Props = {
 
 const Subscribe = ({ subscribe, notify, email, submit }: Props) => {
   return (
-    <div className="w-full bg-zinc-950 ">
+    <div className="w-full bg-zinc-950">
       <div className="md:w-3/4 flex flex-col gap-5 md:justify-between md:flex-row px-4 md:px-16 py-8 text-white ">
         <div>
           <h4 className="font-medium text-xl">{subscribe}</h4>

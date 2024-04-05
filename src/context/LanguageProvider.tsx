@@ -1,6 +1,6 @@
 "use client";
 import { useParams } from "next/navigation";
-import { PropsWithChildren, createContext, useState } from "react";
+import { PropsWithChildren, createContext, useContext, useState } from "react";
 import { useRouter } from "next/navigation";
 
 interface ICreateLanguageContext {
@@ -22,6 +22,12 @@ const LanguageProvider = ({ children }: PropsWithChildren) => {
       {children}
     </languageContext.Provider>
   );
+};
+
+export const useLanguage = () => {
+  const context = useContext(languageContext);
+
+  return context;
 };
 
 export default LanguageProvider;

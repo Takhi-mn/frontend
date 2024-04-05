@@ -12,6 +12,7 @@ import BlogSection from "@/components/blogSection";
 import DonateSection from "@/components/donateSection";
 import HistorySection from "@/components/historySection";
 import NewsSection from "@/components/newsSection";
+import TourismSection from "@/components/tourismSection/TourismSection";
 import { useTranslations } from "next-intl";
 
 export default function Index() {
@@ -19,11 +20,14 @@ export default function Index() {
 
   const s = useTranslations("Subscribe");
   return (
-    <div>
+    <div className="bg-background text-foreground">
       <HeroSection />
       <div className="w-full p-6 sm:p-16 sm:px-28">
         <h1 className="text-center my-16 text-3xl font-medium">{t("work")}</h1>
         <OurWorkSelector />
+      </div>
+      <TourismSection />
+      <div className="w-full p-6 sm:p-16 sm:px-28">
         <h1 className="text-center my-16 text-3xl font-medium">{t("place")}</h1>
         <MapSection />
         <h1 className="text-center my-16 text-3xl font-medium">
@@ -38,10 +42,9 @@ export default function Index() {
         once={t("once")}
         monthly={t("monthly")}
       />
-
       <div className="w-full p-6 sm:p-16 sm:px-28">
         <NewsSection />
-      </div>
+      </div>{" "}
       <Subscribe
         subscribe={s("subscribe")}
         notify={s("notify")}

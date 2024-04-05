@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import { Button } from "@/components/ui/button";
 import {
@@ -14,55 +13,53 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Rating from "./Rating";
 import { Textarea } from "../ui/textarea";
+import { useTranslations } from "next-intl";
 type Props = {};
 
 const BlogModal = (props: Props) => {
+  const b = useTranslations("Blog");
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button>Write Blog</Button>
+        <Button>{b("write")}</Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader className="text-start">
-          <DialogTitle>Write a Blog</DialogTitle>
+          <DialogTitle>{b("write")}</DialogTitle>
         </DialogHeader>
-        <div></div>
         <Rating />
         <div className="w-full flex flex-col gap-5 mt-10">
           <div>
-            <p>Full name &#40;required&#41; </p>
+            <p>{b("name")}</p>
             <Input
               className="w-full"
               type="email"
-              placeholder="Write your name her"
+              placeholder={b("namePlace")}
             />
           </div>
           <div>
-            <p>Email &#40;required&#41; </p>
+            <p>{b("email")}</p>
             <Input
               className="w-full"
               type="email"
-              placeholder="Write your email here"
+              placeholder={b("emailPlace")}
             />
           </div>
           <div>
-            <p>Title &#40;required&#41; </p>
+            <p>{b("title")}</p>
             <Input
               className="w-full"
               type="email"
-              placeholder="Write your title her"
+              placeholder={b("titlePlace")}
             />
           </div>
           <div>
-            <p>Review </p>
-            <Textarea
-              className="w-full h-28"
-              placeholder="You can write more info."
-            />
+            <p>{b("review")}</p>
+            <Textarea className="w-full h-28" placeholder={b("reviewPlace")} />
           </div>
         </div>
         <DialogFooter>
-          <Button type="submit">Send</Button>
+          <Button type="submit">{b("send")}</Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>

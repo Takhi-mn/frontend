@@ -14,7 +14,6 @@ const BlogSection = (props: Props) => {
         <BlogCard />
       </div>
       <div className="text-center mt-7">
-        {/* <Button>Write Blog</Button> */}
         <BlogModal />
       </div>
     </section>
