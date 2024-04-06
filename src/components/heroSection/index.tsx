@@ -18,11 +18,14 @@ const HeroSection = (props: Props) => {
         initial={{ color: "#ffffff" }}
         animate={{ color: "#753100" }}
         transition={{ duration: 0.5, delay: 2.5 }}
-        className="w-full h-screen relative z-20 flex justify-center items-center"
+        className="w-full h-screen relative z-20 flex flex-col justify-center items-center"
       >
+        <h1 className="text-primary font-bold text-3xl md:text-5xl xl:7xl">
+          KHOMYN TALYN
+        </h1>
         <h1
-          className=" xl:text-[400px] 
-        lg:text-[300px] md:text-[200px] text-9xl  
+          className=" xl:text-[350px] 
+        lg:text-[250px] md:text-[180px] text-8xl  
         font-bold stroke-black text-primary"
         >
           TAKHI

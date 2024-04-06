@@ -2,7 +2,7 @@ import React from "react";
 
 const TourCard = ({ tourism }: any) => {
   return (
-    <div className="relative text-white group md:overflow-hidden cursor-pointer md:hover:scale-110 transition-all ease-in-out duration-300">
+    <div className="relative w-[350px] h-[220px] md:w-[450px] md:h-[300px] text-white group md:overflow-hidden cursor-pointer md:hover:scale-110 transition-all ease-in-out duration-300">
       <div
         className="absolute w-full h-full bg-gradient-to-b
        from-orange-700 opacity-50 md:opacity-0 

@@ -45,7 +45,7 @@ const DonateCard = ({ donate, once, monthly }: Props) => {
         </div>
       </RadioGroup>
       <div className="w-full flex justify-center">
-        <Button className="w-full md:w-2/3 hover:bg-hover md:mt-20 py-7 text-xl">
+        <Button className="w-full md:w-2/3 md:mt-20 py-7 text-xl">
           {donate}
         </Button>
       </div>

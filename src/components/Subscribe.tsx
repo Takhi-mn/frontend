@@ -21,7 +21,7 @@ const Subscribe = ({ subscribe, notify, email, submit }: Props) => {
           <Input type="email" placeholder={email} className="" />
         </div>
 
-        <Button className="px-10 hover:bg-orange-400">{submit}</Button>
+        <Button className="px-10">{submit}</Button>
       </div>
     </div>
   );
