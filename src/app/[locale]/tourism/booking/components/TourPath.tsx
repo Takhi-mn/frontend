@@ -33,16 +33,18 @@ const RouteInfo = ({
             setSelectedRoute(selectedRoute - 1);
           }
         }}
-        className="bg-primary rounded-full w-7 h-7 flex justify-center items-center -mt-80"
+        className="bg-primary rounded-full w-7 h-7 flex justify-center items-center -mt-72"
       >
         <IoIosArrowBack color="white" />
       </button>
       <Swiper
+        allowTouchMove={false}
+        noSwiping={true}
         spaceBetween={10}
         onInit={(ev) => {
           setMySwiper(ev);
         }}
-        className="max-w-[60vw] flex"
+        className="max-w-[60vw] lg:max-w-96"
       >
         {campRoutes.map((route, index) => (
           <SwiperSlide key={route.route + index}>
@@ -67,10 +69,9 @@ const RouteInfo = ({
           mySwiper.slideNext();
           if (selectedRoute! < campRoutes.length - 1) {
             setSelectedRoute(selectedRoute + 1);
-            console.log("WORKING");
           }
         }}
-        className="bg-primary rounded-full w-7 h-7 flex justify-center items-center -mt-80"
+        className="bg-primary rounded-full w-7 h-7 flex justify-center items-center -mt-72"
       >
         <IoIosArrowForward color="white" />
       </button>
@@ -82,8 +83,8 @@ const TourPath = (props: Props) => {
   const [mySwiper, setMySwiper] = useState<SwiperCore>();
   const [selectedRoute, setSelectedRoute] = useState(0);
   return (
-    <div className="w-full lg:flex justify-between">
-      <div className="w-[335px] h-[248px] relative">
+    <div className="w-full flex flex-col lg:flex-row lg:justify-between items-center ">
+      <div className=" w-[335px] h-[248px] relative">
         <img src={path.src} className="w-[335px] h-[248px]" />
         {campRoutes.map((route, index) => (
           <div

@@ -2,6 +2,7 @@
 import { logo } from "@/assets";
 import { dataContext } from "@/context/DataProvider";
 import { languageContext } from "@/context/LanguageProvider";
+import { nameConverter } from "@/lib/nameConverter";
 import Image from "next/image";
 import React, { useContext } from "react";
 import { FaFacebookF, FaTwitter, FaYoutube } from "react-icons/fa";
@@ -44,23 +45,30 @@ const Footer = ({
         <p>{company3}</p>
       </div>
 
-      <section className="lg:w-1/2 flex flex-wrap lg:flex-nowrap">
+      <section className="lg:w-1/2 flex flex-wrap gap-10 lg:flex-nowrap">
         <div className="flex flex-wrap ">
-          {taxonomies?.map((taxonomie) => (
-            <div key={taxonomie.name} className="w-1/2  mt-10 lg:mt-0">
-              <h2 className="text-xl font-semibold">{taxonomie.name}</h2>
-              {taxonomie?.children.map((child, index) => (
-                <p key={child.name + index}>{child.name}</p>
-              ))}
-            </div>
-          ))}
+          {taxonomies
+            ?.filter((taxonomie) => taxonomie.children.length > 0)
+            .map((taxonomie) => (
+              <div key={taxonomie.id} className="w-1/2  mt-10 lg:mt-0">
+                <h2 className="text-xl font-semibold">
+                  {nameConverter(taxonomie)}
+                </h2>
+                {taxonomie?.children.map((child, index) => (
+                  <p key={child.id + index}>{nameConverter(child)}</p>
+                ))}
+              </div>
+            ))}
         </div>
         <div className="w-full lg:w-1/2 mt-10 lg:mt-0 flex lg:flex-col justify-between">
           <div className="w-1/2">
-            <h3 className="text-xl font-semibold">{news}</h3>
-            <h3 className="text-xl font-semibold">{donate}</h3>
-            <h3 className="text-xl font-semibold">{privacy}</h3>
-            <h3 className="text-xl font-semibold">{terms}</h3>
+            {taxonomies
+              ?.filter((taxonomie) => taxonomie.children.length === 0)
+              .map((taxonomie) => (
+                <h3 className="text-xl font-semibold">
+                  {nameConverter(taxonomie)}
+                </h3>
+              ))}
           </div>
           <div className="w-1/2">
             <h3 className="text-xl">{language}</h3>

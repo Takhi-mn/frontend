@@ -12,12 +12,29 @@ const MainLoader = (props: Props) => {
     height = window.innerHeight;
     width = window.innerWidth;
   }
+  const variants1 = {
+    display: "block",
+    top: height,
+    transition: { delay: 2, duration: 0.5 },
+    transitionEnd: {
+      display: "none",
+    },
+  };
+  const variants2 = {
+    display: "block",
+    right: width,
+    transition: { delay: 2.5, duration: 0.5 },
+    transitionEnd: {
+      display: "none",
+    },
+  };
   return (
     <div>
       <motion.div
         initial={{ top: 0 }}
-        animate={{ top: height }}
-        transition={{ delay: 2, duration: 0.5 }}
+        animate={variants1}
+        // animate={{ top: height, transitionEnd: { display: "none" } }}
+        // transition={{ delay: 2, duration: 0.5 }}
         className="w-full h-screen flex justify-center 
     items-center bg-white absolute z-30"
       >
@@ -25,8 +42,9 @@ const MainLoader = (props: Props) => {
       </motion.div>
       <motion.div
         initial={{ right: 0 }}
-        animate={{ right: width }}
-        transition={{ delay: 2.5, duration: 0.5 }}
+        animate={variants2}
+        // animate={{ right: width, transitionEnd: { display: "none" } }}
+        // transition={{ delay: 2.5, duration: 0.5 }}
         className="w-full h-screen flex justify-center 
     items-center bg-primary absolute z-20"
       ></motion.div>

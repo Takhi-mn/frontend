@@ -19,47 +19,47 @@ const TourismPage = (props: Props) => {
   const offers = [
     {
       text: "Lecture on the Khomyn Tal National Park and our takhi reintroduction project",
-      icon: <BiChalkboard size={30} className="text-primary" />,
+      icon: <BiChalkboard size={30} className="text-foreground" />,
     },
     {
       text: "Learn to build traditional Ger",
-      icon: <FaTents size={30} className="text-primary" />,
+      icon: <FaTents size={30} className="text-foreground" />,
     },
     {
       text: "Hiking to the nearest mountains and riverbank",
-      icon: <FaHiking size={30} className="text-primary" />,
+      icon: <FaHiking size={30} className="text-foreground" />,
     },
     {
       text: "Stargazing",
-      icon: <FaRegStar size={30} className="text-primary" />,
+      icon: <FaRegStar size={30} className="text-foreground" />,
     },
     {
       text: "Sunrise walk",
-      icon: <FaWalking size={30} className="text-primary" />,
+      icon: <FaWalking size={30} className="text-foreground" />,
     },
     {
       text: "Horseback and camel riding",
-      icon: <TbHorse size={30} className="text-primary" />,
+      icon: <TbHorse size={30} className="text-foreground" />,
     },
     {
       text: "Cooking class",
-      icon: <TbCookie size={30} className="text-primary" />,
+      icon: <TbCookie size={30} className="text-foreground" />,
     },
     {
       text: "Playing sports",
-      icon: <TbBallVolleyball size={30} className="text-primary" />,
+      icon: <TbBallVolleyball size={30} className="text-foreground" />,
     },
     {
       text: "Fruit gathering in the natural sea buckthorn stands – depending on the season",
-      icon: <FaRegLemon size={30} className="text-primary" />,
+      icon: <FaRegLemon size={30} className="text-foreground" />,
     },
     {
       text: "Canvas painting",
-      icon: <TbBrush size={30} className="text-primary" />,
+      icon: <TbBrush size={30} className="text-foreground" />,
     },
     {
       text: "Library service",
-      icon: <TbBook size={30} className="text-primary" />,
+      icon: <TbBook size={30} className="text-foreground" />,
     },
   ];
   return (

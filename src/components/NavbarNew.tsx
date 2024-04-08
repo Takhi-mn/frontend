@@ -9,11 +9,13 @@ import { ThemeController } from "./ThemeController";
 import { dataContext } from "@/context/DataProvider";
 import MenuDrawer from "./MenuDrawer";
 import Link from "next/link";
+import MyDrawer from "./MyDrawer";
 
-type Props = {};
+type Props = {
+  language: string;
+};
 
-const NavbarNew = (props: Props) => {
-  const { taxonomies } = useContext(dataContext);
+const NavbarNew = (language: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
@@ -35,32 +37,35 @@ const NavbarNew = (props: Props) => {
         }}
         className="fixed sm:h-screen w-screen sm:w-auto bg-primary z-50 flex sm:flex-col justify-between items-center sm:py-9 sm:px-3 px-4 py-2"
       >
-        <Link href="/">
+        <Link className="relative z-50" href="/">
           <Image src={logo.src} width={80} height={80} alt="logo" />
         </Link>
-
-        {isOpen ? (
-          <IoCloseOutline
-            size={25}
-            color="white"
-            onClick={() => {
-              if (isMobile) {
-                setIsOpen(false);
-              }
-            }}
-          />
-        ) : (
-          <CiMenuBurger
-            size={25}
-            color="white"
-            // onClick={() => setIsOpen(true)}
-            onMouseEnter={() => {
-              setIsOpen(true);
-            }}
-          />
-        )}
-        <MenuDrawer isOpen={isOpen} isMobile={isMobile} setIsOpen={setIsOpen} />
-        <div className="hidden sm:block">
+        <div className="relative z-50">
+          {isOpen ? (
+            <IoCloseOutline
+              className="sm:hidden"
+              size={25}
+              color="white"
+              onClick={() => {
+                if (isMobile) {
+                  setIsOpen(false);
+                }
+              }}
+            />
+          ) : (
+            <CiMenuBurger
+              size={25}
+              color="white"
+              // onClick={() => setIsOpen(true)}
+              onMouseEnter={() => {
+                setIsOpen(true);
+              }}
+            />
+          )}
+        </div>
+        <div className="w-full h-full z-20 absolute bg-primary top-0 left-0" />
+        <MyDrawer isOpen={isOpen} isMobile={isMobile} setIsOpen={setIsOpen} />
+        <div className="hidden sm:block relative z-50">
           <ThemeController />
         </div>
       </nav>
