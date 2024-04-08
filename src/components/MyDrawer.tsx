@@ -6,6 +6,8 @@ import { motion } from "framer-motion";
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
 import { nameConverter } from "@/lib/nameConverter";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 type Props = {
   isOpen: boolean;
@@ -14,6 +16,7 @@ type Props = {
 };
 
 const MyDrawer = ({ isOpen, isMobile, setIsOpen }: Props) => {
+  const router = useRouter();
   const [onHover, setOnHover] = useState<number>();
   const { taxonomies } = useContext(dataContext);
   const { handleLanguage, selectedLanguage } = useContext(languageContext);
@@ -98,7 +101,13 @@ const MyDrawer = ({ isOpen, isMobile, setIsOpen }: Props) => {
               transition-all"
             >
               <div className="flex items-center cursor-pointer w-full justify-between relative z-30 hover:text-zinc-600">
-                {nameConverter(taxonomie)}
+                <Link
+                  href={`/${selectedLanguage}/${taxonomie.name_en
+                    .replace(/\s/g, "-")
+                    .toLowerCase()}`}
+                >
+                  {nameConverter(taxonomie)}
+                </Link>
                 <div>
                   {taxonomie.children?.length != 0 ? (
                     onHover === taxonomie.id ? (
@@ -131,7 +140,15 @@ const MyDrawer = ({ isOpen, isMobile, setIsOpen }: Props) => {
                     key={child.id + index}
                     className="font-sans text-lg hover:text-zinc-600 mt-5 cursor-pointer"
                   >
-                    {nameConverter(child)}
+                    <Link
+                      href={`/${selectedLanguage}/${taxonomie.name_en
+                        .replace(/\s/g, "-")
+                        .toLowerCase()}/${child.name_en
+                        .replace(/\s/g, "-")
+                        .toLowerCase()}`}
+                    >
+                      {nameConverter(child)}
+                    </Link>
                   </div>
                 ))}
               </motion.div>
