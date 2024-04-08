@@ -29,7 +29,6 @@ import hooloi from "@/assets/camp/hooloi.png";
 import path from "@/assets/camp/path.png";
 import seer from "@/assets/camp/seer.png";
 import book from "@/assets/camp/book.png";
-
 import ensemble from "@/assets/partners/ensemble.png";
 import france from "@/assets/partners/france.png";
 import german from "@/assets/partners/german.png";
@@ -50,6 +49,7 @@ import chimedOchir from "@/assets/about-us/chimedOchir.png";
 import claudia from "@/assets/about-us/claudia.png";
 import jean from "@/assets/about-us/jean.png";
 import shiirav from "@/assets/about-us/shiirav.png";
+import commentImage from "@/assets/blog/userImage.png";
 
 export {
   logo,
@@ -103,4 +103,5 @@ export {
   bayartogtoh,
   chimedOchir,
   jean,
+  commentImage,
 };
