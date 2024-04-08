@@ -11,7 +11,7 @@ const CampMenu = ({ page }: Props) => {
     <div className="flex text-lg font-medium">
       <div
         className={`${
-          page === "camp" && "text-primary"
+          page === "camp" && "text-destructive"
         } flex-1 border-[1px] py-8`}
       >
         <Link className="flex items-center justify-center" href="./" rel="camp">
@@ -21,7 +21,7 @@ const CampMenu = ({ page }: Props) => {
       <div className="flex-1 border-[1px] py-8">
         <Link
           className={`${
-            page === "booking" && "text-primary"
+            page === "booking" && "text-destructive"
           } flex items-center justify-center`}
           href="tourism/booking"
           rel="booking"

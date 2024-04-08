@@ -15,7 +15,7 @@ const DataProvider = ({ children }: PropsWithChildren) => {
   const getTaxonomies = async () => {
     try {
       const { data } = await axios.get(
-        "https://web-cms-psi.vercel.app/api/c99ae393-d8d6-4ead-a42c-7cf4a5eb713d/menu"
+        "https://web-cms-psi.vercel.app/api/13238433-f5b8-4361-9134-8cab5e727005/menu"
       );
       console.log(
         "DATA!@",

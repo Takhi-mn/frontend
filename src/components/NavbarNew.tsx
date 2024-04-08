@@ -11,9 +11,11 @@ import MenuDrawer from "./MenuDrawer";
 import Link from "next/link";
 import MyDrawer from "./MyDrawer";
 
-type Props = {};
+type Props = {
+  language: string;
+};
 
-const NavbarNew = (props: Props) => {
+const NavbarNew = (language: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
@@ -41,6 +43,7 @@ const NavbarNew = (props: Props) => {
         <div className="relative z-50">
           {isOpen ? (
             <IoCloseOutline
+              className="sm:hidden"
               size={25}
               color="white"
               onClick={() => {

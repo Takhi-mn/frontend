@@ -5,6 +5,7 @@ import React, { useContext, useState } from "react";
 import { motion } from "framer-motion";
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
+import { nameConverter } from "@/lib/nameConverter";
 
 type Props = {
   isOpen: boolean;
@@ -72,7 +73,7 @@ const MyDrawer = ({ isOpen, isMobile, setIsOpen }: Props) => {
             handleLanguage("gr");
           }}
           className={`cursor-pointer${
-            selectedLanguage === "gr" && "font-medium border-b-2 border-b-white"
+            selectedLanguage === "de" && "font-medium border-b-2 border-b-white"
           }`}
         >
           GR
@@ -97,7 +98,7 @@ const MyDrawer = ({ isOpen, isMobile, setIsOpen }: Props) => {
               transition-all"
             >
               <div className="flex items-center cursor-pointer w-full justify-between relative z-30 hover:text-zinc-600">
-                {taxonomie.name}
+                {nameConverter(taxonomie)}
                 <div>
                   {taxonomie.children?.length != 0 ? (
                     onHover === taxonomie.id ? (
@@ -130,7 +131,7 @@ const MyDrawer = ({ isOpen, isMobile, setIsOpen }: Props) => {
                     key={child.id + index}
                     className="font-sans text-lg hover:text-zinc-600 mt-5 cursor-pointer"
                   >
-                    {child.name}
+                    {nameConverter(child)}
                   </div>
                 ))}
               </motion.div>

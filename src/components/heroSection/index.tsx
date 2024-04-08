@@ -9,7 +9,7 @@ type Props = {};
 
 const HeroSection = (props: Props) => {
   return (
-    <div className="w-full h-screen overflow-hidden relative">
+    <div className="w-full h-screen bg-background overflow-hidden relative">
       <MainLoader />
       <div className="relative z-10">
         <BackgroundVideo />
