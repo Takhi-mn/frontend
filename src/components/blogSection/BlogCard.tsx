@@ -1,33 +1,37 @@
+"use client";
 import React from "react";
 import Rating from "./Rating";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { IPropsBlogData } from "@/types/blog";
+import { useRouter } from "next/navigation";
+import { useLanguage } from "@/context/LanguageProvider";
 
-type Props = {};
-
-const BlogCard = (props: Props) => {
+const BlogCard = ({ blogData }: IPropsBlogData) => {
+  const router = useRouter();
+  const { selectedLanguage } = useLanguage();
   return (
-    <div className="lg:flex-1 bg-muted p-5">
-      <h1 className="text-xl font-bold">
-        The Government of Mongolia, represented by the Ministry of Environment
-        and Tourism signed agreement with the Khomyn Talyn Takhi NGO
-      </h1>
-      <p>
-        On 25th November 2023, during the Second Forum of Environmental rangers,
-        Mr. Bat-Erdene B, Minister of Environment and Tourism and Mr. Boldgiv B,
-        Board Chairman of the “Khomyn Talyn Takhi” NGO have signed a Management
-        Agreement on executing protected area’s management of Khomyn Tal
-        National Park.
-      </p>
-      <div className="flex justify-between mt-5">
+    <div className=" min-w-[300px] max-w-[390px] flex flex-col rounded-[8px] bg-muted p-5 gap-3">
+      <div
+        onClick={() =>
+          router.push(
+            `http://localhost:3000/${selectedLanguage}/blog/${blogData.id}`
+          )
+        }
+        className="hover:cursor-pointer flex flex-col gap-3"
+      >
+        <h1 className="text-xl font-bold line-clamp-2 ">{blogData.title}</h1>
+        <p className="line-clamp-6">{blogData.blog}</p>
+      </div>
+      <div className="flex justify-between mt-5 w-full">
         <Rating />
-        <p className="font-extrabold">24/07/03</p>
+        <p className="font-extrabold ">{blogData.date}</p>
       </div>
       <div className="flex gap-3 items-center">
         <Avatar className="mt-3">
           <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
-        <h3 className="font-extrabold">Christipher N.</h3>
+        <h3 className="font-extrabold">{blogData.userName}</h3>
       </div>
     </div>
   );
