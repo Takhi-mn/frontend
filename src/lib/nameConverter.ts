@@ -22,3 +22,24 @@ export const nameConverter = (data: any) => {
       break;
   }
 };
+
+export const contentConverter = (data: any) => {
+  const { selectedLanguage } = useLanguage();
+  switch (selectedLanguage) {
+    case "mn":
+      return data.content_mn;
+      break;
+    case "en":
+      return data.content_en;
+      break;
+    case "de":
+      return data.content_de;
+      break;
+    case "fr":
+      return data.content_fr;
+      break;
+
+    default:
+      break;
+  }
+};
