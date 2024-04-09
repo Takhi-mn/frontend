@@ -16,8 +16,10 @@ export interface INews {
   contenttypeId: "string";
   images: [{ url: string }];
   taxonomy: ITaxonomies;
+  taxonomyPath: number;
   content_mn: string;
   content_en: string;
   content_de: string;
   content_fr: string;
+  createdAt: string;
 }
