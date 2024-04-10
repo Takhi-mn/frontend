@@ -1,5 +1,5 @@
 "use client";
-import { INews, ITaxonomies } from "@/types/backend";
+import { INews, ITaxonomies, IAboutUs, IPartners } from "@/types/backend";
 import axios from "axios";
 import { useParams } from "next/navigation";
 import {
@@ -16,6 +16,8 @@ interface ICreateDataContext {
   homePageNews: INews[] | undefined;
   getNewsById: (id: string) => void;
   oneNews: INews | undefined;
+  aboutUs: IAboutUs[] | undefined;
+  partners: IPartners[] | undefined;
 }
 export const dataContext = createContext<ICreateDataContext>(
   {} as ICreateDataContext
@@ -25,6 +27,8 @@ const DataProvider = ({ children }: PropsWithChildren) => {
   const [allNews, setAllNews] = useState<INews[] | undefined>();
   const [homePageNews, setHomePageNews] = useState<INews[] | undefined>();
   const [oneNews, setOneNews] = useState<INews | undefined>();
+  const [aboutUs, setAboutUs] = useState<IAboutUs[] | undefined>();
+  const [partners, setPartners] = useState<IPartners[] | undefined>();
   const getTaxonomies = async () => {
     try {
       const { data } = await axios.get(
@@ -44,6 +48,8 @@ const DataProvider = ({ children }: PropsWithChildren) => {
   useEffect(() => {
     getTaxonomies();
     getNews();
+    getAboutUs();
+    getPartners();
   }, []);
 
   const getNews = async () => {
@@ -67,9 +73,41 @@ const DataProvider = ({ children }: PropsWithChildren) => {
       console.log("ERROR IN GET NEWS BY ID");
     }
   };
+  const getAboutUs = async () => {
+    try {
+      const { data } = await axios.get(
+        "https://web-cms-psi.vercel.app/api/13238433-f5b8-4361-9134-8cab5e727005/about"
+      );
+      console.log("about-us data", data);
+      setAboutUs(data);
+    } catch (error) {
+      console.log("ERROR IN GETABOUTUS", error);
+    }
+  };
+
+  const getPartners = async () => {
+    try {
+      const { data } = await axios.get(
+        "https://web-cms-psi.vercel.app/api/13238433-f5b8-4361-9134-8cab5e727005/partners"
+      );
+      console.log("partners", data);
+      setPartners(data);
+    } catch (error) {
+      console.log("ERROR IN GETABOUTUS", error);
+    }
+  };
+
   return (
     <dataContext.Provider
-      value={{ taxonomies, allNews, homePageNews, getNewsById, oneNews }}
+      value={{
+        taxonomies,
+        allNews,
+        homePageNews,
+        getNewsById,
+        aboutUs,
+        partners,
+        oneNews,
+      }}
     >
       {children}
     </dataContext.Provider>
