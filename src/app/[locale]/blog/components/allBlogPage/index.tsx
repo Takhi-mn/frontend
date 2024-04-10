@@ -12,8 +12,8 @@ const AllBlogPage = () => {
         <BlogModal />
       </div>
       <div className="flex flex-col sm:flex-row gap-4 flex-wrap justify-center items-center">
-        {blogsData.map((blogData: IBlogData) => (
-          <BlogCard blogData={blogData} />
+        {blogsData.map((blogData: IBlogData, index) => (
+          <BlogCard key={blogData.id + index} blogData={blogData} />
         ))}
       </div>
     </div>

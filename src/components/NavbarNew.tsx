@@ -7,7 +7,6 @@ import Image from "next/image";
 import { logo } from "@/assets";
 import { ThemeController } from "./ThemeController";
 import { dataContext } from "@/context/DataProvider";
-import MenuDrawer from "./MenuDrawer";
 import Link from "next/link";
 import MyDrawer from "./MyDrawer";
 

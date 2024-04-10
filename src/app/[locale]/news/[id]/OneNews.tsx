@@ -5,14 +5,15 @@ import React from "react";
 
 type Props = {
   news: INews;
+  selectedLanguage: string | string[];
 };
 
-const OneNews = ({ news }: Props) => {
+const OneNews = ({ news, selectedLanguage }: Props) => {
   return (
     <div className="w-full pt-10">
       <div className="px-6 sm:px-28">
         <h1 className="text-3xl md:text-5xl font-bold mb-3">
-          {nameConverter(news)}
+          {nameConverter(news, selectedLanguage)}
         </h1>
         <time>{news.createdAt}</time>
       </div>
@@ -33,7 +34,9 @@ const OneNews = ({ news }: Props) => {
       <div className="flex flex-col items-center mb-16">
         <div
           className="px-6 sm:px-28 w-2/3"
-          dangerouslySetInnerHTML={{ __html: contentConverter(news) }}
+          dangerouslySetInnerHTML={{
+            __html: contentConverter(news, selectedLanguage),
+          }}
         ></div>
       </div>
     </div>

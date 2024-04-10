@@ -1,18 +1,24 @@
 "use client";
 import { useDataContext } from "@/context/DataProvider";
-import { contentConverter, nameConverter } from "@/lib/nameConverter";
-import Image from "next/image";
 import { useEffect } from "react";
 import OneNewsPageSkeleton from "./OneNewsPageSkeleton";
 import OneNews from "./OneNews";
+import { useLanguage } from "@/context/LanguageProvider";
 
 const OneNewsPage = ({ params }: { params: { id: string } }) => {
   const { getNewsById, oneNews } = useDataContext();
+  const { selectedLanguage } = useLanguage();
   useEffect(() => {
     getNewsById(params.id);
   }, []);
   return (
-    <div>{oneNews ? <OneNews news={oneNews} /> : <OneNewsPageSkeleton />}</div>
+    <div>
+      {oneNews ? (
+        <OneNews news={oneNews} selectedLanguage={selectedLanguage} />
+      ) : (
+        <OneNewsPageSkeleton />
+      )}
+    </div>
   );
 };
 

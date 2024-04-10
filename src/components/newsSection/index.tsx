@@ -18,7 +18,7 @@ const NewsSection = (props: Props) => {
         <NewsCard news={news} />
       ))} */}
       {homePageNews?.map((news) => (
-        <NewsCard news={news} />
+        <NewsCard key={news.id} news={news} />
       ))}
     </div>
   );

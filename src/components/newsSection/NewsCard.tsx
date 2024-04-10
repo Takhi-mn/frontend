@@ -35,16 +35,20 @@ const NewsCard = ({ news }: Props) => {
             />
           ) : (
             <div className="h-[240px] w-[350px] flex justify-center items-center">
-              "No image"
+              No image
             </div>
           )}
         </CardContent>
         <CardHeader>
-          <CardTitle className="line-clamp-2">{nameConverter(news)}</CardTitle>
+          <CardTitle className="line-clamp-2">
+            {nameConverter(news, selectedLanguage)}
+          </CardTitle>
           <CardDescription>
             <div
               className="line-clamp-2"
-              dangerouslySetInnerHTML={{ __html: contentConverter(news) }}
+              dangerouslySetInnerHTML={{
+                __html: contentConverter(news, selectedLanguage),
+              }}
             />
           </CardDescription>
         </CardHeader>

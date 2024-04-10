@@ -10,8 +10,8 @@ const NewsPageComp = (props: Props) => {
   console.log("News In page", allNews);
   return (
     <div className="flex flex-wrap justify-center gap-5 my-20">
-      {allNews?.map((news) => {
-        return <NewsCard news={news} />;
+      {allNews?.map((news, idx) => {
+        return <NewsCard key={news.id + idx} news={news} />;
       })}
     </div>
   );

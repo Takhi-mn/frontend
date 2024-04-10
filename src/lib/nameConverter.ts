@@ -1,9 +1,8 @@
 "use client";
-
-import { useLanguage } from "@/context/LanguageProvider";
-import { ITaxonomies } from "@/types/backend";
-export const nameConverter = (data: any) => {
-  const { selectedLanguage } = useLanguage();
+export const nameConverter = (
+  data: any,
+  selectedLanguage: string | string[]
+) => {
   switch (selectedLanguage) {
     case "mn":
       return data.name_mn;
@@ -23,8 +22,10 @@ export const nameConverter = (data: any) => {
   }
 };
 
-export const contentConverter = (data: any) => {
-  const { selectedLanguage } = useLanguage();
+export const contentConverter = (
+  data: any,
+  selectedLanguage: string | string[]
+) => {
   switch (selectedLanguage) {
     case "mn":
       return data.content_mn;

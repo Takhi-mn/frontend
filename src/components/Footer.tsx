@@ -52,10 +52,12 @@ const Footer = ({
             .map((taxonomie) => (
               <div key={taxonomie.id} className="w-1/2  mt-10 lg:mt-0">
                 <h2 className="text-xl font-semibold">
-                  {nameConverter(taxonomie)}
+                  {nameConverter(taxonomie, selectedLanguage)}
                 </h2>
                 {taxonomie?.children.map((child, index) => (
-                  <p key={child.id + index}>{nameConverter(child)}</p>
+                  <p key={child.id + index}>
+                    {nameConverter(child, selectedLanguage)}
+                  </p>
                 ))}
               </div>
             ))}
@@ -65,8 +67,8 @@ const Footer = ({
             {taxonomies
               ?.filter((taxonomie) => taxonomie.children.length === 0)
               .map((taxonomie) => (
-                <h3 className="text-xl font-semibold">
-                  {nameConverter(taxonomie)}
+                <h3 key={taxonomie.id} className="text-xl font-semibold">
+                  {nameConverter(taxonomie, selectedLanguage)}
                 </h3>
               ))}
           </div>

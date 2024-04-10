@@ -106,7 +106,7 @@ const MyDrawer = ({ isOpen, isMobile, setIsOpen }: Props) => {
                     .replace(/\s/g, "-")
                     .toLowerCase()}`}
                 >
-                  {nameConverter(taxonomie)}
+                  {nameConverter(taxonomie, selectedLanguage)}
                 </Link>
                 <div>
                   {taxonomie.children?.length != 0 ? (
@@ -147,7 +147,7 @@ const MyDrawer = ({ isOpen, isMobile, setIsOpen }: Props) => {
                         .replace(/\s/g, "-")
                         .toLowerCase()}`}
                     >
-                      {nameConverter(child)}
+                      {nameConverter(child, selectedLanguage)}
                     </Link>
                   </div>
                 ))}

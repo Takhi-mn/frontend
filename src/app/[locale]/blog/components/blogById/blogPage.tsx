@@ -32,8 +32,8 @@ const BlogPage = ({ blogData }: any) => {
       <div className="flex flex-col gap-8 sm:max-w-[60%]">
         <h1 className="sm:text-[22px]">Comments</h1>
         <div className="flex flex-col gap-4">
-          {blogData.comments.map((comment: IBlogComment) => (
-            <BlogComment commentData={comment} />
+          {blogData.comments.map((comment: IBlogComment, index: number) => (
+            <BlogComment key={comment.date + index} commentData={comment} />
           ))}
         </div>
       </div>

@@ -9,8 +9,10 @@ import { dataContext } from "@/context/DataProvider";
 import { contentConverter, nameConverter } from "@/lib/nameConverter";
 
 import { IAboutUs, IPartners } from "@/types/backend";
+import { useLanguage } from "@/context/LanguageProvider";
 
 const AboutUsPage = () => {
+  const { selectedLanguage } = useLanguage();
   // const partners = [
   //   horseIcon.src,
   //   horseIcon.src,
@@ -33,14 +35,14 @@ const AboutUsPage = () => {
     const data = aboutUs?.filter(
       (data) => data.contenttype.name_en === filterText
     );
-    return data ? nameConverter(data[0]) : "Loading...";
+    return data ? nameConverter(data[0], selectedLanguage) : "Loading...";
   };
 
   const filterNamePartners = (filterText: string) => {
     const data = partners?.filter(
       (data) => data.contenttype.name_en === filterText
     );
-    return data ? nameConverter(data[0]) : "Loading...";
+    return data ? nameConverter(data[0], selectedLanguage) : "Loading...";
   };
 
   console.log("partners", partners);
@@ -52,7 +54,7 @@ const AboutUsPage = () => {
       (data) => data.contenttype.name_en === filterText
     );
     console.log("data in filterContent", data);
-    return data ? contentConverter(data[0]) : "Loading...";
+    return data ? contentConverter(data[0], selectedLanguage) : "Loading...";
   };
 
   const filterPicture = (filterText: string) => {
