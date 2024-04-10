@@ -23,13 +23,13 @@ const NewsCard = ({ news }: Props) => {
     <Link href={""}>
       <Card className="lg:flex-1 rounded-lg bg-muted border-0 max-w-[350px]">
         <CardContent className="p-0">
-          <Image
+          {/* <Image
             className="rounded-t-lg"
             height={216}
             width={350}
             src={news.images[0].url}
             alt=""
-          />
+          /> */}
         </CardContent>
         <CardHeader>
           <CardTitle className="line-clamp-2">{nameConverter(news)}</CardTitle>
