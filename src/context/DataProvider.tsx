@@ -12,8 +12,10 @@ import {
 
 interface ICreateDataContext {
   taxonomies: ITaxonomies[] | undefined;
-  news: INews[] | undefined;
+  allNews: INews[] | undefined;
   homePageNews: INews[] | undefined;
+  getNewsById: (id: string) => void;
+  oneNews: INews | undefined;
   aboutUs: IAboutUs[] | undefined;
   partners: IPartners[] | undefined;
 }
@@ -22,8 +24,9 @@ export const dataContext = createContext<ICreateDataContext>(
 );
 const DataProvider = ({ children }: PropsWithChildren) => {
   const [taxonomies, setTaxonomies] = useState<ITaxonomies[] | undefined>();
-  const [news, setNews] = useState<INews[] | undefined>();
+  const [allNews, setAllNews] = useState<INews[] | undefined>();
   const [homePageNews, setHomePageNews] = useState<INews[] | undefined>();
+  const [oneNews, setOneNews] = useState<INews | undefined>();
   const [aboutUs, setAboutUs] = useState<IAboutUs[] | undefined>();
   const [partners, setPartners] = useState<IPartners[] | undefined>();
   const getTaxonomies = async () => {
@@ -52,16 +55,24 @@ const DataProvider = ({ children }: PropsWithChildren) => {
   const getNews = async () => {
     try {
       const { data } = await axios.get(
-        "https://web-cms-psi.vercel.app/api/13238433-f5b8-4361-9134-8cab5e727005/contents"
+        " https://web-cms-psi.vercel.app/api/13238433-f5b8-4361-9134-8cab5e727005/contents?isFeatured=true&taxonomyPath=0007"
       );
-      console.log("news data", data);
-      setNews(data);
-      setHomePageNews(data.splice(0, 3));
+      setAllNews(data);
+      setHomePageNews(data.slice(0, 3));
     } catch (error) {
       console.log("ERROR IN GETNEWS", error);
     }
   };
-
+  const getNewsById = async (id: string) => {
+    try {
+      const { data } = await axios.get(
+        `https://web-cms-psi.vercel.app/api/13238433-f5b8-4361-9134-8cab5e727005/contents/${id}`
+      );
+      setOneNews(data);
+    } catch (error) {
+      console.log("ERROR IN GET NEWS BY ID");
+    }
+  };
   const getAboutUs = async () => {
     try {
       const { data } = await axios.get(
@@ -88,7 +99,15 @@ const DataProvider = ({ children }: PropsWithChildren) => {
 
   return (
     <dataContext.Provider
-      value={{ taxonomies, news, homePageNews, aboutUs, partners }}
+      value={{
+        taxonomies,
+        allNews,
+        homePageNews,
+        getNewsById,
+        aboutUs,
+        partners,
+        oneNews,
+      }}
     >
       {children}
     </dataContext.Provider>
