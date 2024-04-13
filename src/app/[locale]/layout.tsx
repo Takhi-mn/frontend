@@ -8,6 +8,7 @@ import { NavbarNew, Footer } from "@/components";
 import DataProvider from "@/context/DataProvider";
 import { Manrope } from "next/font/google";
 import { useTranslations } from "next-intl";
+import TourismProvider from "@/context/TourismProvider";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -41,21 +42,23 @@ export default function LocaleLayout({
         >
           <LanguageProvider>
             <DataProvider>
-              <main>
-                <NavbarNew language={l("language")} />
-                <div className="sm:ml-[102px] pt-16 sm:pt-0">{children}</div>
-                <Toaster />
-                <Footer
-                  company1={f("company1")}
-                  company2={f("company2")}
-                  company3={f("company3")}
-                  news={f("news")}
-                  donate={f("donate")}
-                  privacy={f("privacy")}
-                  terms={f("terms")}
-                  language={l("language")}
-                />
-              </main>
+              <TourismProvider>
+                <main>
+                  <NavbarNew language={l("language")} />
+                  <div className="sm:ml-[102px] pt-16 sm:pt-0">{children}</div>
+                  <Toaster />
+                  <Footer
+                    company1={f("company1")}
+                    company2={f("company2")}
+                    company3={f("company3")}
+                    news={f("news")}
+                    donate={f("donate")}
+                    privacy={f("privacy")}
+                    terms={f("terms")}
+                    language={l("language")}
+                  />
+                </main>
+              </TourismProvider>
             </DataProvider>
           </LanguageProvider>
         </ThemeProvider>

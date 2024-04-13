@@ -4,6 +4,7 @@ import { dataContext } from "@/context/DataProvider";
 import { languageContext } from "@/context/LanguageProvider";
 import { nameConverter } from "@/lib/nameConverter";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useContext } from "react";
 import { FaFacebookF, FaTwitter, FaYoutube } from "react-icons/fa";
 
@@ -52,11 +53,25 @@ const Footer = ({
             .map((taxonomie) => (
               <div key={taxonomie.id} className="w-1/2  mt-10 lg:mt-0">
                 <h2 className="text-xl font-semibold">
-                  {nameConverter(taxonomie, selectedLanguage)}
+                  <Link
+                    href={`/${selectedLanguage}/${taxonomie.name_en
+                      .replace(/\s/g, "-")
+                      .toLowerCase()}`}
+                  >
+                    {nameConverter(taxonomie, selectedLanguage)}
+                  </Link>
                 </h2>
                 {taxonomie?.children.map((child, index) => (
                   <p key={child.id + index}>
-                    {nameConverter(child, selectedLanguage)}
+                    <Link
+                      href={`/${selectedLanguage}/${taxonomie.name_en
+                        .replace(/\s/g, "-")
+                        .toLowerCase()}/${child.name_en
+                        .replace(/\s/g, "-")
+                        .toLowerCase()}`}
+                    >
+                      {nameConverter(child, selectedLanguage)}
+                    </Link>
                   </p>
                 ))}
               </div>
@@ -68,7 +83,13 @@ const Footer = ({
               ?.filter((taxonomie) => taxonomie.children.length === 0)
               .map((taxonomie) => (
                 <h3 key={taxonomie.id} className="text-xl font-semibold">
-                  {nameConverter(taxonomie, selectedLanguage)}
+                  <Link
+                    href={`/${selectedLanguage}/${taxonomie.name_en
+                      .replace(/\s/g, "-")
+                      .toLowerCase()}`}
+                  >
+                    {nameConverter(taxonomie, selectedLanguage)}
+                  </Link>
                 </h3>
               ))}
           </div>
