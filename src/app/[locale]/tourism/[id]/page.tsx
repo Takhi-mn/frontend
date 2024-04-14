@@ -76,18 +76,23 @@ const TourPage = ({ params }: { params: { id: string } }) => {
             <p>Back</p>
           </div>
           {oneTour?.map((data) => (
-            <CampSection2 data={data} selectedLanguage={selectedLanguage} />
+            <CampSection2
+              key={data.id}
+              data={data}
+              selectedLanguage={selectedLanguage}
+            />
           ))}
           <div>
             <h1 className="text-2xl font-bold mb-14 text-center">
               Top Highlights
             </h1>
             {oneTourHighlight?.map((data) => (
-              <PhotoSliderSmall photos={data.images} />
+              <PhotoSliderSmall key={data.id} photos={data.images} />
             ))}
           </div>
           {oneTourPrice?.map((data) => (
             <p
+              key={data.id}
               className="text-center Prosemirror"
               dangerouslySetInnerHTML={{
                 __html: contentConverter(data, selectedLanguage),

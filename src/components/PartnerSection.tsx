@@ -1,13 +1,13 @@
 import React from "react";
 
 import { nameConverter } from "@/lib/nameConverter";
-import { IPartners } from "@/types/backend";
+import { IPartner } from "@/types/backend";
 import Image from "next/image";
 
 interface IProps {
-  partners: IPartners[] | undefined;
+  partners: IPartner[] | undefined;
   selectedLanguage: string | string[];
-  filteredData: IPartners;
+  filteredData: IPartner;
 }
 
 const PartnerSection = ({

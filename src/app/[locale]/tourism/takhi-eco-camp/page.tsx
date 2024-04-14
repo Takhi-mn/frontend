@@ -5,10 +5,10 @@ import React from "react";
 
 type Props = {};
 
-const page = (props: Props) => {
+const TakhiEcoCampPage = (props: Props) => {
   const { selectedLanguage } = useLanguage();
   redirect(`/${selectedLanguage}/tourism`);
-  return <div>page</div>;
+  return <div>TakhiEcoCampPage</div>;
 };
 
-export default page;
+export default TakhiEcoCampPage;

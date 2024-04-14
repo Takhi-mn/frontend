@@ -71,6 +71,7 @@ const CampPageSections = ({ tourismData, selectedLanguage }: Props) => {
         .map((filteredData) => {
           return (
             <CampSection1
+              key={filteredData.id}
               data={filteredData}
               selectedLanguage={selectedLanguage}
             />
@@ -81,6 +82,7 @@ const CampPageSections = ({ tourismData, selectedLanguage }: Props) => {
         .map((filteredData) => {
           return (
             <CampSection2
+              key={filteredData.id}
               data={filteredData}
               selectedLanguage={selectedLanguage}
             />
@@ -91,6 +93,7 @@ const CampPageSections = ({ tourismData, selectedLanguage }: Props) => {
         .map((filteredData) => {
           return (
             <CampSection2
+              key={filteredData.id}
               data={filteredData}
               selectedLanguage={selectedLanguage}
             />
@@ -101,6 +104,7 @@ const CampPageSections = ({ tourismData, selectedLanguage }: Props) => {
         .map((filteredData) => {
           return (
             <CampSection2
+              key={filteredData.id}
               data={filteredData}
               selectedLanguage={selectedLanguage}
             />
@@ -110,7 +114,7 @@ const CampPageSections = ({ tourismData, selectedLanguage }: Props) => {
         ?.filter((data) => data.contenttype.name_en === "camp-section-5")
         .map((filteredData) => {
           return (
-            <div>
+            <div key={filteredData.id}>
               <CampSection2
                 data={filteredData}
                 selectedLanguage={selectedLanguage}

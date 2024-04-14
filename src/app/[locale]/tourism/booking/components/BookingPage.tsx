@@ -26,6 +26,7 @@ const BookingPageComp = (props: Props) => {
         )
         .map((filteredData) => (
           <CampSection1
+            key={filteredData.id}
             data={filteredData}
             selectedLanguage={selectedLanguage}
           />

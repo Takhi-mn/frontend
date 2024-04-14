@@ -16,7 +16,7 @@ type Props = {};
 const ShopCard = (props: Props) => {
   return (
     <Card className="p-3">
-      <img
+      <Image
         className="rounded-lg"
         src={camp1.src}
         width={500}
