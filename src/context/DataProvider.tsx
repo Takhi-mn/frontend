@@ -1,5 +1,12 @@
 "use client";
-import { INews, ITaxonomies, IAboutUs, IPartners } from "@/types/backend";
+import { contentConverter, nameConverter } from "@/lib/nameConverter";
+import {
+  INews,
+  ITaxonomies,
+  IAboutUs,
+  IPartner,
+  IMember,
+} from "@/types/backend";
 import axios from "axios";
 import { useParams } from "next/navigation";
 import {
@@ -17,7 +24,12 @@ interface ICreateDataContext {
   getNewsById: (id: string) => void;
   oneNews: INews | undefined;
   aboutUs: IAboutUs[] | undefined;
-  partners: IPartners[] | undefined;
+  partners: IPartner[] | undefined;
+  contacts: IPartner[] | undefined;
+  members: IMember[] | undefined;
+  getMembers: () => void;
+  getOurworks: () => void;
+  ourworks: IAboutUs[] | undefined;
 }
 export const dataContext = createContext<ICreateDataContext>(
   {} as ICreateDataContext
@@ -28,7 +40,10 @@ const DataProvider = ({ children }: PropsWithChildren) => {
   const [homePageNews, setHomePageNews] = useState<INews[] | undefined>();
   const [oneNews, setOneNews] = useState<INews | undefined>();
   const [aboutUs, setAboutUs] = useState<IAboutUs[] | undefined>();
-  const [partners, setPartners] = useState<IPartners[] | undefined>();
+  const [partners, setPartners] = useState<IPartner[] | undefined>();
+  const [contacts, setContacts] = useState<IPartner[] | undefined>();
+  const [members, setMembers] = useState<IMember[] | undefined>();
+  const [ourworks, setOurworks] = useState<IAboutUs[] | undefined>();
   const getTaxonomies = async () => {
     try {
       const { data } = await axios.get(
@@ -45,12 +60,6 @@ const DataProvider = ({ children }: PropsWithChildren) => {
       setTaxonomies(sortedData);
     } catch (error) {}
   };
-  useEffect(() => {
-    getTaxonomies();
-    getNews();
-    getAboutUs();
-    getPartners();
-  }, []);
 
   const getNews = async () => {
     try {
@@ -97,6 +106,50 @@ const DataProvider = ({ children }: PropsWithChildren) => {
     }
   };
 
+  const getContacts = async () => {
+    try {
+      const { data } = await axios.get(
+        "https://web-cms-psi.vercel.app/api/13238433-f5b8-4361-9134-8cab5e727005/contacts"
+      );
+      console.log("contacts", data);
+      setContacts(data);
+    } catch (error) {
+      console.log("ERROR IN GETABOUTUS", error);
+    }
+  };
+
+  const getMembers = async () => {
+    try {
+      const { data } = await axios.get(
+        "https://web-cms-psi.vercel.app/api/13238433-f5b8-4361-9134-8cab5e727005/employee"
+      );
+      console.log("members Context", data);
+      setMembers(data.reverse());
+    } catch (error) {
+      console.log("ERROR IN GETABOUTUS", error);
+    }
+  };
+
+  const getOurworks = async () => {
+    try {
+      const { data } = await axios.get(
+        "https://web-cms-psi.vercel.app/api/13238433-f5b8-4361-9134-8cab5e727005/ourworks"
+      );
+      console.log("Ourworks Context", data);
+      setOurworks(data.reverse());
+    } catch (error) {
+      console.log("ERROR IN GetOurWorks", error);
+    }
+  };
+
+  useEffect(() => {
+    getTaxonomies();
+    getNews();
+    getAboutUs();
+    getPartners();
+    getContacts();
+  }, []);
+
   return (
     <dataContext.Provider
       value={{
@@ -107,6 +160,11 @@ const DataProvider = ({ children }: PropsWithChildren) => {
         aboutUs,
         partners,
         oneNews,
+        contacts,
+        getMembers,
+        getOurworks,
+        members,
+        ourworks,
       }}
     >
       {children}

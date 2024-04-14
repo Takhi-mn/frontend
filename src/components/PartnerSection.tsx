@@ -1,26 +1,43 @@
-import { partners } from "@/data";
-import { SectionWrapper } from "@/hoc";
 import React from "react";
 
-type Props = {};
+import { nameConverter } from "@/lib/nameConverter";
+import { IPartners } from "@/types/backend";
+import Image from "next/image";
 
-const PartnerSection = (props: Props) => {
+interface IProps {
+  partners: IPartners[] | undefined;
+  selectedLanguage: string | string[];
+  filteredData: IPartners;
+}
+
+const PartnerSection = ({
+  selectedLanguage,
+  partners,
+  filteredData,
+}: IProps) => {
   return (
-    <div className="w-full max-w-7xl">
-      <h2 className="text-4xl text-center ">OUR PARTNERS AND SUPPORTERS</h2>
-      <div className="flex flex-wrap gap-10 mt-20 justify-center md:justify-between">
-        {partners.map((partner, index) => (
-          <div
-            key={partner.name + index}
-            className="bg-zinc-100 rounded-xl w-48 h-40 flex items-center justify-center"
-          >
-            <img
-              className="filter grayscale"
-              src={partner.partner.src}
-              alt=""
-            />
-          </div>
-        ))}
+    <div className="flex flex-col justify-center items-center">
+      <h1 className="font-bold text-[22px] sm:text-[45px] sm:font-medium">
+        {filteredData ? nameConverter(filteredData, selectedLanguage) : ""}
+      </h1>
+      <div className="flex flex-wrap justify-center items-center">
+        {partners
+          ? partners[0].images.map((partner: any, index: any) => (
+              <div
+                key={index}
+                className="mx-4 my-2 w-32 h-32 relative sm:w-[200px] sm:h-[200px]"
+              >
+                <Image
+                  key={index}
+                  fill
+                  alt={partner.url}
+                  src={partner.url}
+                  objectFit="contain"
+                  className="grayscale"
+                />
+              </div>
+            ))
+          : "Loading"}
       </div>
     </div>
   );

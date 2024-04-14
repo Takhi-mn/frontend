@@ -1,12 +1,13 @@
-export interface IMember {
+import { IMember } from "./backend";
+
+export interface IChildData {
   name: string;
-  img?: any;
-  desc: string;
   position: string;
+  desc: string;
 }
 export interface IPropsMember {
   member: IMember;
   handleImage: (src: string) => void;
   imageClick: () => void;
-  setDataFromChild: (data: IMember) => void;
+  setDataFromChild: (data: IChildData) => void;
 }

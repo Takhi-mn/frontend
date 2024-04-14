@@ -1,11 +1,26 @@
+"use client";
+import React, { useContext, useEffect } from "react";
+import IntroSection from "./intro-section";
+import PhotoSliderSection from "./photo-slider-section";
+import CardPhoto from "./card-photo";
+import HeroSection from "./hero-section";
+import LearnMoreSection from "../../components/learnMoreSection";
 import { coll1, coll2, coll3, coll4, map } from "@/assets";
-import PhotoSlider from "@/components/photoSlider";
-import Image from "next/image";
-import React from "react";
-import PhotoSliderSection from "./components/photo-slider-section";
-import LearnMoreSection from "../components/learnMoreSection";
+import { dataContext } from "@/context/DataProvider";
+import { useLanguage } from "@/context/LanguageProvider";
+import MapRISection from "./map-section";
+import MapRISection1 from "./map-section-1";
+import PhotoSliderReIntro from "./photo-section-reintro";
 
-const WildLifeConservation = () => {
+const TakhiConservationPrograms = () => {
+  const { getOurworks, ourworks } = useContext(dataContext);
+  const { selectedLanguage } = useLanguage();
+  useEffect(() => {
+    if (!ourworks) {
+      getOurworks();
+    }
+  });
+
   const datas = [
     {
       title: "Fauna",
@@ -29,43 +44,111 @@ const WildLifeConservation = () => {
     },
   ];
   return (
-    <div className="flex flex-col justify-center w-screen items-center container gap-10 ">
-      <h1 className="text-[44px] sm:[64px] w-full">Wildlife Conservation</h1>
-      <div className="flex justify-between items-center gap-10 w-full flex-wrap">
-        <Image
-          src={map.src}
-          width={0}
-          height={0}
-          sizes="100vw"
-          alt={map.src}
-          style={{
-            borderRadius: "8px",
-            objectFit: "cover",
-            width: "100%",
-            maxWidth: "700px",
-            minHeight: "150px",
-          }}
-        />
-        <h1 className=" min-w-[300px] text-[22px] max-w-[500px] font-semibold sm:text-[44px] sm:font-normal">
-          Khomyn Tal, an area dominated by desert steppe and arid steppe, is
-          located in the Great Lakes Depression in Western Mongolia.
-        </h1>
-        <p className="text-center text-lg">
-          Khomyn Tal contains the north-western edge of Ikh Mongol Els National
-          Park, extensive area covered by sand dunes, as well as critical
-          wetlands such as Khar Nuur, Baganuur and Durgon lakes and Zavkhan and
-          Teel rivers. It is a geographically isolated 2900 km2 natural island
-          surrounded by inter-connected lakes and rivers in the west, north and
-          east and sand dunes along the southern border.
-        </p>
-      </div>
-      {datas.map((data, index) => (
-        <PhotoSliderSection key={data.title + index} data={data} />
-      ))}
+    <div className="flex flex-col w-full container items-center gap-20">
+      <div className="flex flex-col w-full items-center gap-20 ">
+        <div className="w-full">
+          {ourworks
+            ?.filter(
+              (data) =>
+                data.contenttype.name_en === "takhi-conservation-programs-intro"
+            )
+            ?.map((data) => (
+              <IntroSection
+                selectedLanguage={selectedLanguage}
+                filteredData={data}
+              />
+            ))}
+        </div>
+        <div className="w-full flex flex-col gap-10 mt-20 sm:mt-32">
+          {ourworks
+            ?.filter(
+              (data) =>
+                data.contenttype.name_en === "takhi-conservation-programs-map-1"
+            )
+            ?.map((data) => (
+              <MapRISection
+                selectedLanguage={selectedLanguage}
+                filteredData={data}
+              />
+            ))}
+          {ourworks
+            ?.filter(
+              (data) =>
+                data.contenttype.name_en === "takhi-conservation-programs-map-2"
+            )
+            ?.map((data) => (
+              <MapRISection1
+                selectedLanguage={selectedLanguage}
+                filteredData={data}
+              />
+            ))}
+        </div>
 
-      <LearnMoreSection />
+        {/* <GraphDataSection /> */}
+        <div className="w-full flex flex-col gap-10">
+          {ourworks
+            ?.filter(
+              (data) =>
+                data.contenttype.name_en ===
+                "takhi-conservation-programs-slider-1"
+            )
+            ?.map((data) => (
+              <PhotoSliderReIntro
+                selectedLanguage={selectedLanguage}
+                filteredData={data}
+              />
+            ))}
+        </div>
+        <div className="w-full flex flex-col gap-20">
+          {ourworks
+            ?.filter(
+              (data) =>
+                data.contenttype.name_en ===
+                "takhi-conservation-programs-cardphoto"
+            )
+            ?.map((data) => (
+              <CardPhoto
+                selectedLanguage={selectedLanguage}
+                filteredData={data}
+              />
+            ))}
+        </div>
+      </div>
+      <div className="flex flex-col justify-center w-full items-center container gap-10 ">
+        <h1 className="text-[44px] sm:[64px] w-full">Wildlife Conservation</h1>
+        <div className="w-full flex flex-col gap-20">
+          {ourworks
+            ?.filter(
+              (data) =>
+                data.contenttype.name_en ===
+                "takhi-conservation-programs-intro-2"
+            )
+            ?.map((data) => (
+              <HeroSection
+                selectedLanguage={selectedLanguage}
+                filteredData={data}
+              />
+            ))}
+        </div>
+        <div className="w-full flex flex-col gap-20">
+          {ourworks
+            ?.filter(
+              (data) =>
+                data.contenttype.name_en ===
+                "takhi-conservation-programs-slider-2"
+            )
+            ?.map((data) => (
+              <PhotoSliderSection
+                selectedLanguage={selectedLanguage}
+                filteredData={data}
+              />
+            ))}
+        </div>
+
+        <LearnMoreSection />
+      </div>
     </div>
   );
 };
 
-export default WildLifeConservation;
+export default TakhiConservationPrograms;

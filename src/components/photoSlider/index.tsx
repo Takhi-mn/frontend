@@ -15,7 +15,7 @@ import "swiper/css/pagination";
 import "./style.css";
 
 // import required modules
-import { EffectCoverflow, Pagination } from "swiper/modules";
+import { EffectCoverflow, Autoplay } from "swiper/modules";
 
 export default function PhotoSlider({ photos }: any) {
   const [my_swiper, set_my_swiper] = useState<SwiperCore>();
@@ -36,13 +36,17 @@ export default function PhotoSlider({ photos }: any) {
           modifier: 1,
           slideShadows: false,
         }}
-        modules={[EffectCoverflow]}
+        autoplay={true}
+        modules={[EffectCoverflow, Autoplay]}
         className="mySwiper"
       >
         {photos?.map((photo: any, index: number) => (
           <div key={photo + index}>
             <SwiperSlide>
-              <img className="w-96 h-52 object-cover rounded-sm" src={photo} />
+              <img
+                className="w-96 h-52 object-cover rounded-sm"
+                src={photo.url}
+              />
             </SwiperSlide>
           </div>
         ))}
