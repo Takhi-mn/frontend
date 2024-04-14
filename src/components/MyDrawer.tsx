@@ -105,6 +105,7 @@ const MyDrawer = ({ isOpen, isMobile, setIsOpen }: Props) => {
                   href={`/${selectedLanguage}/${taxonomie.name_en
                     .replace(/\s/g, "-")
                     .toLowerCase()}`}
+                  rel={taxonomie.name_en}
                 >
                   {nameConverter(taxonomie, selectedLanguage)}
                 </Link>
@@ -146,6 +147,7 @@ const MyDrawer = ({ isOpen, isMobile, setIsOpen }: Props) => {
                         .toLowerCase()}/${child.name_en
                         .replace(/\s/g, "-")
                         .toLowerCase()}`}
+                      rel={child.name_en}
                     >
                       {nameConverter(child, selectedLanguage)}
                     </Link>

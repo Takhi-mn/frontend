@@ -15,11 +15,11 @@ const HoverCardTwo = (props: Props) => {
     <div className="absolute z-20 top-[40%] right-[43%]">
       <HoverCard>
         <HoverCardTrigger>
-          <div className="bg-primary z-10 rounded-full w-7 h-7 flex justify-center items-center">
+          <div className="bg-primary z-10 rounded-full w-12 h-12 flex justify-center items-center">
             <Image
               src={horseIcon.src}
-              width={17}
-              height={17}
+              width={25}
+              height={25}
               alt="takhi-reintroduction4"
             />
           </div>

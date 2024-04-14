@@ -1,6 +1,7 @@
 import React from "react";
 import ShopHeader from "./ShopHeader";
 import ShopCard from "./ShopCard";
+import ShopPageComp from "./ShopPageComp";
 
 type Props = {};
 
@@ -8,11 +9,7 @@ const ShopPage = (props: Props) => {
   return (
     <div className="text-foreground bg-background">
       <ShopHeader />
-      <div className="flex flex-wrap justify-center gap-5 my-20">
-        <ShopCard />
-        <ShopCard />
-        <ShopCard />
-      </div>
+      <ShopPageComp />
     </div>
   );
 };
