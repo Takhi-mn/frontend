@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import NewsPageComp from "./NewsPageComp";
 import { Metadata } from "next";
+import { useTranslations } from "next-intl";
 
 type Props = {};
 
@@ -11,9 +12,10 @@ export const metadata: Metadata = {
     "takhi, takhi reintroduction, takhi camp, camp,rangers, nature, tourism ,tour guide, Przewalski's horses, horse, Przewalski ",
 };
 const NewsPage = (props: Props) => {
+  const I = useTranslations("Index");
   return (
     <div className="w-full p-6 sm:p-16 sm:px-28 bg-background text-foreground">
-      <h1 className="text-5xl font-semibold ">News</h1>
+      <h1 className="text-5xl font-semibold ">{I("news")}</h1>
       <NewsPageComp />
     </div>
   );

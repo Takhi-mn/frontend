@@ -45,7 +45,7 @@ export default function PhotoSliderSmall({ photos }: any) {
               src={photo.url}
               width={384}
               height={208}
-              alt=""
+              alt="takhi.mn"
             />
           </SwiperSlide>
         ))}

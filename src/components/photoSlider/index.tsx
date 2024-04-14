@@ -46,6 +46,7 @@ export default function PhotoSlider({ photos }: any) {
               <img
                 className="w-96 h-52 object-cover rounded-sm"
                 src={photo.url}
+                alt="takhi.mn"
               />
             </SwiperSlide>
           </div>

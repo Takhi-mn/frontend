@@ -16,6 +16,7 @@ const MapSection = () => {
         alt="takhi-reintroduction4"
         className="w-full rounded-xl"
       />
+      <div className="w-full h-full absolute bg-black z-10 bg-opacity-50 top-0 rounded-xl" />
       <HoverCardOne />
       <HoverCardTwo />
       <HoverCardThird />

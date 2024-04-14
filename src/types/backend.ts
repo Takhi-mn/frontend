@@ -85,3 +85,6 @@ export interface IMember {
     name_fr: string;
   };
 }
+export interface IShop extends INews {
+  price: number;
+}

@@ -56,6 +56,7 @@ const Footer = ({
                     href={`/${selectedLanguage}/${taxonomie.name_en
                       .replace(/\s/g, "-")
                       .toLowerCase()}`}
+                    rel={taxonomie.name_en}
                   >
                     {nameConverter(taxonomie, selectedLanguage)}
                   </Link>
@@ -68,6 +69,7 @@ const Footer = ({
                         .toLowerCase()}/${child.name_en
                         .replace(/\s/g, "-")
                         .toLowerCase()}`}
+                      rel={child.name_en}
                     >
                       {nameConverter(child, selectedLanguage)}
                     </Link>
@@ -86,6 +88,7 @@ const Footer = ({
                     href={`/${selectedLanguage}/${taxonomie.name_en
                       .replace(/\s/g, "-")
                       .toLowerCase()}`}
+                    rel={taxonomie.name_en}
                   >
                     {nameConverter(taxonomie, selectedLanguage)}
                   </Link>
