@@ -20,6 +20,11 @@ const TakhiConservationPrograms = () => {
       getOurworks();
     }
   });
+  const detector = ourworks?.filter(
+    (data) =>
+      data.name_en === "Takhi Conservation Programs" &&
+      data?.contenttype.name_en === "our-work-selector"
+  );
 
   return (
     <div className="flex flex-col w-full container items-center gap-20">
@@ -130,7 +135,7 @@ const TakhiConservationPrograms = () => {
             ))}
         </div>
 
-        <LearnMoreSection />
+        <LearnMoreSection detector={detector ? detector[0] : null} />
       </div>
     </div>
   );

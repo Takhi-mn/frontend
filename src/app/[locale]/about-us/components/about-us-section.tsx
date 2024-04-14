@@ -17,20 +17,19 @@ const AboutUsSection = ({ selectedLanguage, filteredData }: IProps) => {
     <div
       className={`flex flex-col justify-center items-center w-full text-white h-[600px] bg-center gap-24 relative`}
     >
-      <div className="-z-10 absolute w-full h-full">
+      <div className="absolute w-full h-full">
         <Image
           alt="about-us-section"
           fill
           objectFit="cover"
-          src={filteredData ? filteredData.images[0].url : ""}
-          className=""
+          src={filteredData?.images[0].url}
         />
       </div>
-      <h1 className="text-[22px] font-bold sm:text-[40px] sm:font-semibold">
+      <h1 className=" z-10 text-[22px] font-bold sm:text-[40px] sm:font-semibold">
         {filteredData ? nameConverter(filteredData, selectedLanguage) : ""}
       </h1>
       <p
-        className="text-[14px] text-center sm:text-[22px] sm:font-semibold sm:max-w-[60%]"
+        className="text-[14px] z-10 text-center sm:text-[22px] sm:font-semibold sm:max-w-[60%]"
         dangerouslySetInnerHTML={{
           __html: filteredData
             ? contentConverter(filteredData, selectedLanguage)
