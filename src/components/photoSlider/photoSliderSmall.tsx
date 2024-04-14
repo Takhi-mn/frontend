@@ -39,7 +39,10 @@ export default function PhotoSliderSmall({ photos }: any) {
       >
         {photos?.map((photo: any) => (
           <SwiperSlide key={photo}>
-            <img className="w-96 h-52 object-cover rounded-sm" src={photo} />
+            <img
+              className="w-96 h-52 object-cover rounded-sm"
+              src={photo.url}
+            />
           </SwiperSlide>
         ))}
         <div className="w-full flex justify-center gap-6">

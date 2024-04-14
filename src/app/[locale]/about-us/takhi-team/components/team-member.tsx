@@ -1,5 +1,7 @@
 "use client";
 import { boldgiv } from "@/assets";
+import { useLanguage } from "@/context/LanguageProvider";
+import { contentConverter, nameConverter } from "@/lib/nameConverter";
 import { IPropsMember } from "@/types/member";
 import Image from "next/image";
 import React, { useState } from "react";
@@ -22,6 +24,7 @@ const TeamMember = ({
     setHandler("0");
     setHeightHandler("auto");
   };
+  const { selectedLanguage } = useLanguage();
   return (
     <div className="w-full sm:max-w-[200px]">
       {/* mobile Version */}
@@ -37,14 +40,18 @@ const TeamMember = ({
           <div className=" w-full h-[340px] relative overflow-hidden">
             <Image
               fill
-              alt={member.img.src}
-              src={member.img.src}
+              alt={member.images[0].url}
+              src={member.images[0].url}
               objectFit="cover"
             />
           </div>
           <div className="absolute z-10 h-[66px] w-full text-white bg-gradient-to-t from-black bottom-0 flex flex-col justify-center">
-            <h1 className="font-semibold text-[16px]">{member.name}</h1>
-            <p className="font-semibold text-xs">{member.position}</p>
+            <h1 className="font-semibold text-[16px]">
+              {nameConverter(member, selectedLanguage)}
+            </h1>
+            <p className="font-semibold text-xs">
+              {nameConverter(member.position, selectedLanguage)}
+            </p>
           </div>
         </div>
         <div
@@ -56,9 +63,15 @@ const TeamMember = ({
           >
             <IoMdClose size={"25px"} />
           </button>
-          <h1 className="text-[32px] font-semibold">{member.name}</h1>
-          <p className="text-lg font-semibold">{member.position}</p>
-          <p className="text-[16px]">{member.desc}</p>
+          <h1 className="text-[32px] font-semibold">
+            {nameConverter(member, selectedLanguage)}
+          </h1>
+          <p className="text-lg font-semibold">
+            {nameConverter(member.position, selectedLanguage)}
+          </p>
+          <p className="text-[16px]">
+            {contentConverter(member, selectedLanguage)}
+          </p>
         </div>
       </div>
       {/* sm */}
@@ -68,26 +81,30 @@ const TeamMember = ({
         onClick={() => {
           imageClick();
           setDataFromChild({
-            name: member.name,
-            position: member.position,
-            desc: member.desc,
+            name: nameConverter(member, selectedLanguage),
+            position: nameConverter(member.position, selectedLanguage),
+            desc: contentConverter(member, selectedLanguage),
           });
         }}
       >
         <div
-          onMouseEnter={() => handleImage(member.img.src)}
+          onMouseEnter={() => handleImage(member.images[0].url)}
           className=" w-full  h-[250px] relative overflow-hidden"
         >
           <Image
             fill
-            alt={member.img.src}
-            src={member.img.src}
+            alt={member.images[0].url}
+            src={member.images[0].url}
             objectFit="cover"
           />
         </div>
-        <div className="z-10 h-[66px] w-full bottom-0 flex flex-col justify-center">
-          <h1 className="font-semibold text-[16px]">{member.name}</h1>
-          <p className="font-semibold text-xs">{member.position}</p>
+        <div className="z-10 h-[100px] w-full bottom-0 flex flex-col justify-center">
+          <h1 className="font-semibold text-[16px]">
+            {nameConverter(member, selectedLanguage)}
+          </h1>
+          <p className="font-semibold text-xs">
+            {nameConverter(member.position, selectedLanguage)}
+          </p>
         </div>
       </div>
     </div>

@@ -20,7 +20,7 @@ const MapSection = () => {
         style={{
           width: "100%",
           height: "auto",
-          borderRadius: "64px",
+          borderRadius: "8px",
           objectFit: "cover",
         }}
       />
