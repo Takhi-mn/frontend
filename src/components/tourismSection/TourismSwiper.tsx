@@ -37,20 +37,20 @@ const TourismSwiper = (props: Props) => {
             slidesPerView: 1,
             spaceBetween: 20,
           },
-          768: {
+          1110: {
             slidesPerView: 2,
-            spaceBetween: 40,
+            spaceBetween: 30,
           },
-          1024: {
+          1485: {
             slidesPerView: 3,
-            spaceBetween: 50,
+            spaceBetween: 40,
           },
         }}
       >
         {bookingData
           ?.filter((data) => data.contenttype.name_en === "tourism-tours")
           .map((tourism, index) => (
-            <SwiperSlide className="" key={tourism.id + index}>
+            <SwiperSlide className="mx-auto" key={tourism.id + index}>
               <TourCard tourism={tourism} selectedLanguage={selectedLanguage} />
             </SwiperSlide>
           ))}

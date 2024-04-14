@@ -73,11 +73,11 @@ const MyDrawer = ({ isOpen, isMobile, setIsOpen }: Props) => {
         </div>
         <div
           onClick={() => {
-            handleLanguage("gr");
+            handleLanguage("de");
           }}
-          className={`cursor-pointer${
+          className={` ${
             selectedLanguage === "de" && "font-medium border-b-2 border-b-white"
-          }`}
+          } cursor-pointer`}
         >
           GR
         </div>
@@ -85,9 +85,9 @@ const MyDrawer = ({ isOpen, isMobile, setIsOpen }: Props) => {
           onClick={() => {
             handleLanguage("fr");
           }}
-          className={`cursor-pointer${
+          className={`${
             selectedLanguage === "fr" && "font-medium border-b-2 border-b-white"
-          }`}
+          } cursor-pointer`}
         >
           FR
         </div>

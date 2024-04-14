@@ -32,7 +32,7 @@ const Footer = ({
   const { taxonomies } = useContext(dataContext);
   const { handleLanguage, selectedLanguage } = useContext(languageContext);
   return (
-    <footer className="flex flex-wrap w-full sm:p-16 sm:px-28 p-6 bg-secondary text-foreground">
+    <footer className="flex flex-wrap w-full sm:p-16 sm:px-28 p-10 bg-secondary text-foreground">
       <div className=" lg:w-1/2 flex sm:block flex-col items-start">
         <div className="flex gap-5 sm:ml-4 ml-0">
           <FaFacebookF size={25} />
@@ -43,7 +43,6 @@ const Footer = ({
         <h2 className="text-3xl font-semibold">Born To Be Wild</h2>
         <p className="mt-7 pt-3 w-4/5 border-t-2">&#169; {company1}</p>
         <p>{company2}</p>
-        <p>{company3}</p>
       </div>
 
       <section className="lg:w-1/2 flex flex-wrap gap-10 lg:flex-nowrap">
@@ -117,9 +116,9 @@ const Footer = ({
                 MN
               </p>
               <p
-                onClick={() => handleLanguage("gr")}
+                onClick={() => handleLanguage("de")}
                 className={`text-xl ${
-                  selectedLanguage === "gr"
+                  selectedLanguage === "de"
                     ? "font-semibold border-b-2 border-b-primary"
                     : "font-light"
                 } cursor-pointer`}

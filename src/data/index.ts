@@ -76,9 +76,9 @@ export const donateValues = [5, 25, 50, 100, 500, "Other"];
 
 export const historyDatas = [
   {
-    month: "VIII",
+    month: "1999-2003",
 
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tortor nibh, aliquam id eros in, eleifend bibendum ex. Aenean quis eleifend tellus. Curabitur vel ullamcorper ex.",
+    text: "Takhi (the Mongolian name for the Przewalski horse) is the only wild horse species among the seven horse species that exist in the world. The last observation of a Przewalski's horse in the wild was in 1969. After that, the takhi was considered extinct in the wild according to the IUCN Red List. In the early 1980s, the National Commission of Mongolia Reintroduction of the Takhi in the wild, which aimed to support the reintroduction efforts and was responsible for the selection of suitable areas and the coordination of the preparatory work. Based on a study carried out in 1999-2000 by a transnational research team made up of members of the French Through a feasibility study conducted by the TAKH Association, WWF-Mongolia, the Biological Institute of the Mongolian Academy of Sciences and other organizations, Khomyn Tal was selected as the third release area for Przewalski's horses. In the spring of 2001, an agreement was signed between the TAKH Association and the Governor of Durvuljin Sum signed. This guaranteed the TAKH Association a special 30-year grazing right for the purpose of reintroducing the Przewalski horse on 25,000 hectares of a local protected area in the Seerin Nuruu Mountains area.",
   },
   {
     month: "IX",

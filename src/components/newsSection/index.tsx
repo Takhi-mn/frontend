@@ -13,7 +13,7 @@ const NewsSection = (props: Props) => {
   //   taxonomyPath: "0007",
   // });
   return (
-    <div className="flex flex-wrap gap-2 lg:justify-between justify-center">
+    <div className="flex flex-wrap gap-5 justify-center">
       {/* {contents?.map((news) => (
         <NewsCard news={news} />
       ))} */}

@@ -12,6 +12,7 @@ import PhotoSliderSmall from "@/components/photoSlider/photoSliderSmall";
 import CampSection1 from "../components/CampSection1";
 import { contentConverter } from "@/lib/nameConverter";
 import BookingCard from "../booking/components/BookingCard";
+import OneTourSkeleton from "./OneTourSkeleton";
 
 type Props = {};
 
@@ -28,17 +29,16 @@ const TourPage = ({ params }: { params: { id: string } }) => {
   }, []);
   useEffect(() => {
     if (bookingData) {
-      setOneTour(
-        bookingData
-          ?.filter((data) => data.taxonomy.name_en === "seeriin-nuruu")
-          .filter(
-            (filteredData) =>
-              filteredData.contenttype.name_en === "tourism-tours"
-          )
-      );
+      setOneTour(bookingData?.filter((data) => data.id === params.id));
+    }
+  }, [bookingData]);
+  useEffect(() => {
+    if (oneTour) {
       setOneTourHighlight(
         bookingData
-          ?.filter((data) => data.taxonomy.name_en === "seeriin-nuruu")
+          ?.filter(
+            (data) => data.taxonomy.name_en === oneTour[0].taxonomy.name_en
+          )
           .filter(
             (filteredData) =>
               filteredData.contenttype.name_en === "tourism-tours-highlight"
@@ -46,50 +46,57 @@ const TourPage = ({ params }: { params: { id: string } }) => {
       );
       setOneTourPrice(
         bookingData
-          ?.filter((data) => data.taxonomy.name_en === "seeriin-nuruu")
+          ?.filter(
+            (data) => data.taxonomy.name_en === oneTour[0].taxonomy.name_en
+          )
           .filter(
             (filteredData) =>
               filteredData.contenttype.name_en === "tourism-tours-price"
           )
       );
     }
-  }, [bookingData]);
+  }, [oneTour]);
   const router = useRouter();
   return (
     <div className="bg-background text-foreground pb-10">
       <NewImageScroller />
       <CampMenu page={"booking"} />
-      <section className="container">
-        <div
-          onClick={() => {
-            router.back();
-          }}
-          className="flex items-center gap-10 mt-10 cursor-pointer"
-        >
-          <IoIosArrowBack />
-          <p>Back</p>
-        </div>
-        {oneTour?.map((data) => (
-          <CampSection2 data={data} selectedLanguage={selectedLanguage} />
-        ))}
-        <div>
-          <h1 className="text-2xl font-bold mb-14 text-center">
-            Top Highlights
-          </h1>
-          {oneTourHighlight?.map((data) => (
-            <PhotoSliderSmall photos={data.images} />
-          ))}
-        </div>
-        {oneTourPrice?.map((data) => (
-          <p
-            className="text-center"
-            dangerouslySetInnerHTML={{
-              __html: contentConverter(data, selectedLanguage),
+
+      {!oneTour ? (
+        <OneTourSkeleton />
+      ) : (
+        <section className="container">
+          <div
+            onClick={() => {
+              router.back();
             }}
-          ></p>
-        ))}
-        <BookingCard />
-      </section>
+            className="flex items-center gap-10 mt-10 cursor-pointer"
+          >
+            <IoIosArrowBack />
+            <p>Back</p>
+          </div>
+          {oneTour?.map((data) => (
+            <CampSection2 data={data} selectedLanguage={selectedLanguage} />
+          ))}
+          <div>
+            <h1 className="text-2xl font-bold mb-14 text-center">
+              Top Highlights
+            </h1>
+            {oneTourHighlight?.map((data) => (
+              <PhotoSliderSmall photos={data.images} />
+            ))}
+          </div>
+          {oneTourPrice?.map((data) => (
+            <p
+              className="text-center"
+              dangerouslySetInnerHTML={{
+                __html: contentConverter(data, selectedLanguage),
+              }}
+            ></p>
+          ))}
+          <BookingCard />
+        </section>
+      )}
     </div>
   );
 };

@@ -1,21 +1,26 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { historyDatas } from "@/data";
+import { IAboutUs } from "@/types/backend";
+import { contentConverter } from "@/lib/nameConverter";
+import { useLanguage } from "@/context/LanguageProvider";
 
-type Props = {};
+type Props = {
+  historyDatas: IAboutUs[] | undefined;
+};
 
-const MobileHistory = (props: Props) => {
+const MobileHistory = ({ historyDatas }: Props) => {
   const [openIndex, setOpenIndex] = useState<number>(-1);
+  const { selectedLanguage } = useLanguage();
   const variants = {
     show: {
       marginTop: -17,
-      height: 400,
+      height: 750,
       transition: { duration: 0.3, type: "easeInOut" },
     },
     hide: {
       marginTop: -17,
-      height: 150,
+      height: 200,
       transition: { duration: 0.3, type: "easeInOut" },
     },
   };
@@ -31,10 +36,10 @@ const MobileHistory = (props: Props) => {
   };
   return (
     <div className=" lg:hidden justify-center text-white w-full rounded-xl">
-      {historyDatas.map((data, index) => {
+      {historyDatas?.map((data, index) => {
         return (
           <motion.div
-            key={data.month + index}
+            key={data.id + index}
             onClick={() => {
               if (openIndex === index) {
                 setOpenIndex(-1);
@@ -42,25 +47,23 @@ const MobileHistory = (props: Props) => {
                 setOpenIndex(index);
               }
             }}
-            initial={{ height: 150, marginTop: -17 }}
+            initial={{ height: 200, marginTop: -17 }}
             variants={variants}
             animate={openIndex === index ? "show" : "hide"}
             className={`bg-tahi${index} relative z-0 bg-center w-full cursor-pointer px-6 py-12 rounded-xl`}
           >
             <div className="absolute rounded-xl z-10 top-0 left-0 w-full h-full bg-black bg-opacity-60" />
             <div className="relative z-20">
-              <h1 className="text-4xl font-medium">{data.month}</h1>
-              <h3 className="text-2xl font-thin">Month</h3>
+              <h1 className="text-4xl font-medium">{data.name_en}</h1>
               <motion.p
                 variants={textVariants}
                 className="text-sm mt-8"
                 initial={{ opacity: 0 }}
                 animate={openIndex === index ? "show" : "hide"}
-              >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-                tortor nibh, aliquam id eros in, eleifend bibendum ex. Aenean
-                quis eleifend tellus. Curabitur vel ullamcorper ex.
-              </motion.p>
+                dangerouslySetInnerHTML={{
+                  __html: contentConverter(data, selectedLanguage),
+                }}
+              ></motion.p>
             </div>
           </motion.div>
         );

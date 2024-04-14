@@ -16,7 +16,7 @@ const LanguageProvider = ({ children }: PropsWithChildren) => {
   const path = usePathname();
   const [selectedLanguage, setSelectedLanguage] = useState(params.locale);
   const handleLanguage = (language: string) => {
-    const path1 = path.split("/").splice(0, 2).join("/");
+    const path1 = path.split("/").splice(2, 6).join("/");
     console.log("PARAMS", path1);
     router.replace(`/${language}/${path1}`);
   };
