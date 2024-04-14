@@ -15,7 +15,7 @@ const TakhiTeamSection = ({ selectedLanguage, filteredData }: IProps) => {
   const router = useRouter();
   return (
     <div className="w-full flex flex-col items-center justify-center gap-5  sm:min-h-[319px] sm:text-white sm:gap-10 sm:relative">
-      <div className="-z-10 absolute w-full h-full hidden sm:block">
+      <div className="absolute w-full h-full hidden sm:block">
         <Image
           alt="takhi-team-section"
           fill
@@ -23,11 +23,11 @@ const TakhiTeamSection = ({ selectedLanguage, filteredData }: IProps) => {
           src={filteredData ? filteredData.images[0].url : ""}
         />
       </div>
-      <h1 className="font-bold text-[22px] sm:text-[45px] sm:font-light">
+      <h1 className=" z-10 font-bold text-[22px] sm:text-[45px] sm:font-light">
         {filteredData ? nameConverter(filteredData, selectedLanguage) : ""}
       </h1>
       <p
-        className="text-center text-lg sm:max-w-[50%]"
+        className="z-10 text-center text-lg sm:max-w-[50%]"
         dangerouslySetInnerHTML={{
           __html: filteredData
             ? contentConverter(filteredData, selectedLanguage)
@@ -35,7 +35,7 @@ const TakhiTeamSection = ({ selectedLanguage, filteredData }: IProps) => {
         }}
       ></p>
       <Button
-        className="text-[14px] bg-primary"
+        className="z-10 text-[14px] bg-primary"
         onClick={() => router.push("about-us/takhi-team")}
       >
         Дэлгэрэнгүй
