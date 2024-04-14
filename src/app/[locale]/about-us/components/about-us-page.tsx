@@ -23,6 +23,7 @@ const AboutUsPageComp = () => {
         ?.filter((data) => data.contenttype.name_en === "about-us-section")
         ?.map((data) => (
           <AboutUsSection
+            key={data.id}
             selectedLanguage={selectedLanguage}
             filteredData={data}
           />
@@ -31,6 +32,7 @@ const AboutUsPageComp = () => {
         ?.filter((data) => data.contenttype.name_en === "goal-and-mission")
         ?.map((data) => (
           <GoalAndMissionSection
+            key={data.id}
             selectedLanguage={selectedLanguage}
             filteredData={data}
           />
@@ -42,6 +44,7 @@ const AboutUsPageComp = () => {
             ?.filter((data) => data.contenttype.name_en === "mission")
             ?.map((data) => (
               <MissionSection
+                key={data.id}
                 selectedLanguage={selectedLanguage}
                 filteredData={data}
               />
@@ -52,6 +55,7 @@ const AboutUsPageComp = () => {
             ?.filter((data) => data.contenttype.name_en === "goal")
             ?.map((data) => (
               <GoalSection
+                key={data.id}
                 selectedLanguage={selectedLanguage}
                 filteredData={data}
               />
@@ -62,6 +66,7 @@ const AboutUsPageComp = () => {
         ?.filter((data) => data.contenttype.name_en === "takhi-team")
         ?.map((data) => (
           <TakhiTeamSection
+            key={data.id}
             selectedLanguage={selectedLanguage}
             filteredData={data}
           />
@@ -70,6 +75,7 @@ const AboutUsPageComp = () => {
         ?.filter((data) => data.contenttype.name_en === "partners")
         ?.map((data) => (
           <PartnerSection
+            key={data.id}
             partners={partners}
             selectedLanguage={selectedLanguage}
             filteredData={data}

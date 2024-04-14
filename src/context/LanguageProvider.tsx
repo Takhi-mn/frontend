@@ -1,5 +1,5 @@
 "use client";
-import { useParams } from "next/navigation";
+import { useParams, usePathname } from "next/navigation";
 import { PropsWithChildren, createContext, useContext, useState } from "react";
 import { useRouter } from "next/navigation";
 
@@ -13,9 +13,12 @@ export const languageContext = createContext<ICreateLanguageContext>(
 const LanguageProvider = ({ children }: PropsWithChildren) => {
   const router = useRouter();
   const params = useParams();
+  const path = usePathname();
   const [selectedLanguage, setSelectedLanguage] = useState(params.locale);
   const handleLanguage = (language: string) => {
-    router.replace(`/${language}`);
+    const path1 = path.split("/").splice(2, 6).join("/");
+    console.log("PARAMS", path1);
+    router.replace(`/${language}/${path1}`);
   };
   return (
     <languageContext.Provider value={{ selectedLanguage, handleLanguage }}>

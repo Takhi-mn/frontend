@@ -44,7 +44,7 @@ export default function Index() {
       />
       <div className="w-full p-6 sm:p-16 sm:px-28">
         <NewsSection />
-      </div>{" "}
+      </div>
       <Subscribe
         subscribe={s("subscribe")}
         notify={s("notify")}

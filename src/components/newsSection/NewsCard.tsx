@@ -15,6 +15,7 @@ import Link from "next/link";
 import { INews } from "@/types/backend";
 import { contentConverter, nameConverter } from "@/lib/nameConverter";
 import { useLanguage } from "@/context/LanguageProvider";
+import { dateFormatter } from "@/lib/dateFormatter";
 type Props = {
   news: INews;
 };
@@ -53,10 +54,11 @@ const NewsCard = ({ news }: Props) => {
           </CardDescription>
         </CardHeader>
         <CardFooter>
-          <div className="font-semibold">24/07/03</div>
+          <div className="font-semibold">{dateFormatter(news.createdAt)}</div>
           <div className="flex justify-between mt-3">
-            <Badge className="">Marketing</Badge>
-            <p className="text-primary">Read 10 Min</p>
+            <Badge className="">
+              {nameConverter(news.taxonomy, selectedLanguage)}
+            </Badge>
           </div>
         </CardFooter>
       </Card>

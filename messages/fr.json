@@ -1,0 +1,57 @@
+{
+  "Index": {
+    "about": "About Us",
+    "work": "Our Work",
+    "tourism": "Tourism",
+    "news": "Nouvelles",
+    "shop": "boutique",
+    "gallery": "Galerie",
+    "blog": "Blog",
+    "donate": "Donate",
+    "place": "Takhi Reintroduction Places",
+    "history": "Our History",
+    "once": "Give Once",
+    "monthly": "Give Monthly",
+    "today": "Donate Today",
+    "donateText": "Together, we can protect vulnerable wildlife, conserve vital habitats, and build a future where people live in harmony with nature. Give to Khomyn Tal National Park today and power our global conservation solutions. Your donation makes you a member a Partner in Conservation "
+  },
+  "Footer": {
+    "company1": "2024 Khomyn Talyn Takhi NGO. Tous droits réservés.",
+    "company2": "Developed by ProHub",
+    "company3": "Designed by UXology",
+    "news": "News",
+    "donate": "Donate",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of use"
+  },
+  "Language": {
+    "language": "Langue",
+    "en": "EN",
+    "mn": "MN",
+    "gr": "GR",
+    "fr": "FR"
+  },
+  "Subscribe": {
+    "subscribe": "S'abonner",
+    "notify": "Nous vous informerons des nouvelles",
+    "email": "Écrivez votre email ici",
+    "submit": "Soumettre"
+  },
+  "Blog": {
+    "write": "Écrire un blog",
+    "name": "Nom et prénom (obligatoire)",
+    "namePlace": "Ècris ton nom içi",
+    "email": "Email (obligatoire)",
+    "emailPlace": "Écrivez votre email ici",
+    "title": "Titre (obligatoire)",
+    "titlePlace": "Écrivez votre titre ici",
+    "review": "Revoir ",
+    "reviewPlace": "Vous pouvez écrire plus d'informations",
+    "send": "Envoyer"
+  },
+  "Tourism": {
+    "tourism": "Tourisme",
+    "more": "voir plus",
+    "description": "Observer les chevaux de Przewalski dans l'immensité de la steppe et des dunes, apercevoir des bouquetins de Sibérie, des gazelles de Mongolie, des antilopes de la taïga et des traces de loups dans le sable, admirer un aigle des steppes dans le ciel : la réserve protégée du Mont Seer, à 1 400 kilomètres à l'ouest d'Oulan-Bator."
+  }
+}

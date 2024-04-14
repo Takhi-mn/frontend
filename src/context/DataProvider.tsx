@@ -64,7 +64,7 @@ const DataProvider = ({ children }: PropsWithChildren) => {
   const getNews = async () => {
     try {
       const { data } = await axios.get(
-        " https://web-cms-psi.vercel.app/api/13238433-f5b8-4361-9134-8cab5e727005/contents?isFeatured=true&taxonomyPath=0007"
+        " https://web-cms-psi.vercel.app/api/13238433-f5b8-4361-9134-8cab5e727005/news"
       );
       setAllNews(data);
       setHomePageNews(data.slice(0, 3));
@@ -75,7 +75,7 @@ const DataProvider = ({ children }: PropsWithChildren) => {
   const getNewsById = async (id: string) => {
     try {
       const { data } = await axios.get(
-        `https://web-cms-psi.vercel.app/api/13238433-f5b8-4361-9134-8cab5e727005/contents/${id}`
+        `https://web-cms-psi.vercel.app/api/13238433-f5b8-4361-9134-8cab5e727005/news/${id}`
       );
       setOneNews(data);
     } catch (error) {

@@ -4,6 +4,7 @@ import { dataContext } from "@/context/DataProvider";
 import { languageContext } from "@/context/LanguageProvider";
 import { nameConverter } from "@/lib/nameConverter";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useContext } from "react";
 import { FaFacebookF, FaTwitter, FaYoutube } from "react-icons/fa";
 
@@ -31,7 +32,7 @@ const Footer = ({
   const { taxonomies } = useContext(dataContext);
   const { handleLanguage, selectedLanguage } = useContext(languageContext);
   return (
-    <footer className="flex flex-wrap w-full sm:p-16 sm:px-28 p-6 bg-secondary text-foreground">
+    <footer className="flex flex-wrap w-full sm:p-16 sm:px-28 p-10 bg-secondary text-foreground">
       <div className=" lg:w-1/2 flex sm:block flex-col items-start">
         <div className="flex gap-5 sm:ml-4 ml-0">
           <FaFacebookF size={25} />
@@ -42,7 +43,6 @@ const Footer = ({
         <h2 className="text-3xl font-semibold">Born To Be Wild</h2>
         <p className="mt-7 pt-3 w-4/5 border-t-2">&#169; {company1}</p>
         <p>{company2}</p>
-        <p>{company3}</p>
       </div>
 
       <section className="lg:w-1/2 flex flex-wrap gap-10 lg:flex-nowrap">
@@ -52,11 +52,25 @@ const Footer = ({
             .map((taxonomie) => (
               <div key={taxonomie.id} className="w-1/2  mt-10 lg:mt-0">
                 <h2 className="text-xl font-semibold">
-                  {nameConverter(taxonomie, selectedLanguage)}
+                  <Link
+                    href={`/${selectedLanguage}/${taxonomie.name_en
+                      .replace(/\s/g, "-")
+                      .toLowerCase()}`}
+                  >
+                    {nameConverter(taxonomie, selectedLanguage)}
+                  </Link>
                 </h2>
                 {taxonomie?.children.map((child, index) => (
                   <p key={child.id + index}>
-                    {nameConverter(child, selectedLanguage)}
+                    <Link
+                      href={`/${selectedLanguage}/${taxonomie.name_en
+                        .replace(/\s/g, "-")
+                        .toLowerCase()}/${child.name_en
+                        .replace(/\s/g, "-")
+                        .toLowerCase()}`}
+                    >
+                      {nameConverter(child, selectedLanguage)}
+                    </Link>
                   </p>
                 ))}
               </div>
@@ -68,7 +82,13 @@ const Footer = ({
               ?.filter((taxonomie) => taxonomie.children.length === 0)
               .map((taxonomie) => (
                 <h3 key={taxonomie.id} className="text-xl font-semibold">
-                  {nameConverter(taxonomie, selectedLanguage)}
+                  <Link
+                    href={`/${selectedLanguage}/${taxonomie.name_en
+                      .replace(/\s/g, "-")
+                      .toLowerCase()}`}
+                  >
+                    {nameConverter(taxonomie, selectedLanguage)}
+                  </Link>
                 </h3>
               ))}
           </div>
@@ -96,9 +116,9 @@ const Footer = ({
                 MN
               </p>
               <p
-                onClick={() => handleLanguage("gr")}
+                onClick={() => handleLanguage("de")}
                 className={`text-xl ${
-                  selectedLanguage === "gr"
+                  selectedLanguage === "de"
                     ? "font-semibold border-b-2 border-b-primary"
                     : "font-light"
                 } cursor-pointer`}

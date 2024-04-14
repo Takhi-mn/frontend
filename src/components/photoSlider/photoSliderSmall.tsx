@@ -13,6 +13,7 @@ import "./style.css";
 
 // import required modules
 import { EffectCoverflow, Autoplay, Navigation } from "swiper/modules";
+import Image from "next/image";
 
 export default function PhotoSliderSmall({ photos }: any) {
   const [my_swiper, set_my_swiper] = useState<SwiperCore>();
@@ -38,14 +39,17 @@ export default function PhotoSliderSmall({ photos }: any) {
         className="mySwiper"
       >
         {photos?.map((photo: any) => (
-          <SwiperSlide key={photo}>
-            <img
-              className="w-96 h-52 object-cover rounded-sm"
+          <SwiperSlide className="w-[420px] max-h-64" key={photo}>
+            <Image
+              className="w-[420px] h-64 object-cover rounded-sm"
               src={photo.url}
+              width={384}
+              height={208}
+              alt=""
             />
           </SwiperSlide>
         ))}
-        <div className="w-full flex justify-center gap-6">
+        <div className="w-full flex justify-center gap-6 mt-3">
           <button
             onClick={() => {
               my_swiper?.slidePrev();

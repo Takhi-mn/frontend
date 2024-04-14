@@ -6,7 +6,7 @@ type Props = {};
 
 const ShopPage = (props: Props) => {
   return (
-    <div>
+    <div className="text-foreground bg-background">
       <ShopHeader />
       <div className="flex flex-wrap justify-center gap-5 my-20">
         <ShopCard />

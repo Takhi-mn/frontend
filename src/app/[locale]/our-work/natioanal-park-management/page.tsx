@@ -27,6 +27,7 @@ const NationalParkManagementPage = () => {
           )
           ?.map((data) => (
             <SectionHero
+              key={data.id}
               selectedLanguage={selectedLanguage}
               filteredData={data}
             />
@@ -38,7 +39,11 @@ const NationalParkManagementPage = () => {
             (data) => data.contenttype.name_en === "national-park-management-1"
           )
           ?.map((data) => (
-            <Section1 selectedLanguage={selectedLanguage} filteredData={data} />
+            <Section1
+              key={data.id}
+              selectedLanguage={selectedLanguage}
+              filteredData={data}
+            />
           ))}
       </div>
       <LearnMoreSection />

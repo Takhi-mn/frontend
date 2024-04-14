@@ -4,6 +4,9 @@
     "work": "Our Work",
     "tourism": "Tourism",
     "news": "News",
+    "shop": "Shop",
+    "gallery": "Gallery",
+    "blog": "Blog",
     "donate": "Donate",
     "place": "Takhi Reintroduction Places",
     "history": "Our History",
@@ -45,5 +48,10 @@
     "review": "Review ",
     "reviewPlace": "You can write more info",
     "send": "Send"
+  },
+  "Tourism": {
+    "tourism": "Tourism",
+    "more": "see more",
+    "description": "Watching Przewalski's horses in the vastness of the steppe and dunes, seeing Siberian ibex, Mongolian gazelles, Taiga antelopes and wolf tracks in the sand, admiring a steppe eagle in the sky: the protected reserve in the Seer Mountain,1400 kilometers west of Ulaanbaatar."
   }
 }

@@ -1,13 +1,13 @@
 import React from "react";
 
 import { nameConverter } from "@/lib/nameConverter";
-import { IPartners } from "@/types/backend";
+import { IPartner } from "@/types/backend";
 import Image from "next/image";
 
 interface IProps {
-  partners: IPartners[] | undefined;
+  partners: IPartner[] | undefined;
   selectedLanguage: string | string[];
-  filteredData: IPartners;
+  filteredData: IPartner;
 }
 
 const PartnerSection = ({
@@ -22,7 +22,7 @@ const PartnerSection = ({
       </h1>
       <div className="flex flex-wrap justify-center items-center">
         {partners
-          ? partners[0].images.map((partner, index) => (
+          ? partners[0].images.map((partner: any, index: any) => (
               <div
                 key={index}
                 className="mx-4 my-2 w-32 h-32 relative sm:w-[200px] sm:h-[200px]"

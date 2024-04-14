@@ -1,3 +1,5 @@
+import NewsSection from "@/components/newsSection";
+import { dateFormatter } from "@/lib/dateFormatter";
 import { contentConverter, nameConverter } from "@/lib/nameConverter";
 import { INews } from "@/types/backend";
 import Image from "next/image";
@@ -15,7 +17,7 @@ const OneNews = ({ news, selectedLanguage }: Props) => {
         <h1 className="text-3xl md:text-5xl font-bold mb-3">
           {nameConverter(news, selectedLanguage)}
         </h1>
-        <time>{news.createdAt}</time>
+        <time>{dateFormatter(news.createdAt)}</time>
       </div>
 
       <div className="my-14">
@@ -38,6 +40,9 @@ const OneNews = ({ news, selectedLanguage }: Props) => {
             __html: contentConverter(news, selectedLanguage),
           }}
         ></div>
+      </div>
+      <div className="w-full p-6 sm:p-16 sm:px-28">
+        <NewsSection />
       </div>
     </div>
   );

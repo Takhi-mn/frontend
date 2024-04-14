@@ -1,21 +1,27 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { historyDatas } from "@/data";
 
-type Props = {};
+import { contentConverter } from "@/lib/nameConverter";
+import { useLanguage } from "@/context/LanguageProvider";
+import { IAboutUs } from "@/types/backend";
 
-const DesktopHistory = (props: Props) => {
-  const [openIndex, setOpenIndex] = useState<number>(-1);
+type Props = {
+  historyDatas: IAboutUs[] | undefined;
+};
+
+const DesktopHistory = ({ historyDatas }: Props) => {
+  const [openIndex, setOpenIndex] = useState<number>(0);
+  const { selectedLanguage } = useLanguage();
   const variants = {
     show: {
       marginLeft: -17,
-      width: 400,
+      width: 600,
       transition: { duration: 0.3, type: "easeInOut" },
     },
     hide: {
       marginLeft: -17,
-      width: 150,
+      width: 200,
       transition: { duration: 0.3, type: "easeInOut" },
     },
   };
@@ -40,10 +46,10 @@ const DesktopHistory = (props: Props) => {
 
   return (
     <div className="lg:flex hidden justify-center text-white w-full rounded-xl">
-      {historyDatas.map((data, index) => {
+      {historyDatas?.map((data, index) => {
         return (
           <motion.div
-            key={data.month + index}
+            key={data?.id + index}
             onClick={() => {
               if (openIndex === index) {
                 setOpenIndex(-1);
@@ -51,25 +57,23 @@ const DesktopHistory = (props: Props) => {
                 setOpenIndex(index);
               }
             }}
-            initial={{ width: 150, marginLeft: -17 }}
+            initial={{ width: 200, marginLeft: -17 }}
             variants={variants}
             animate={openIndex === index ? "show" : "hide"}
-            className={`bg-tahi${index} relative z-0 bg-center h-[500px] cursor-pointer px-6 py-12 rounded-xl`}
+            className={`bg-tahi${index} relative z-0 bg-center h-[700px] cursor-pointer px-6 py-12 rounded-xl`}
           >
             <div className="absolute rounded-xl z-10 top-0 left-0 w-full h-full bg-black bg-opacity-60" />
             <div className="relative z-20">
-              <h1 className="text-4xl font-medium">{data.month}</h1>
-              <h3 className="text-2xl font-thin">Month</h3>
+              <h1 className="text-4xl font-medium">{data.name_en}</h1>
               <motion.p
                 variants={textVariants}
                 className="text-sm mt-8"
                 initial={{ opacity: 0 }}
                 animate={openIndex === index ? "show" : "hide"}
-              >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-                tortor nibh, aliquam id eros in, eleifend bibendum ex. Aenean
-                quis eleifend tellus. Curabitur vel ullamcorper ex.
-              </motion.p>
+                dangerouslySetInnerHTML={{
+                  __html: contentConverter(data, selectedLanguage),
+                }}
+              ></motion.p>
             </div>
           </motion.div>
         );
