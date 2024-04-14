@@ -4,6 +4,9 @@
     "work": "Our Work",
     "tourism": "Tourism",
     "news": "News",
+    "shop": "Geschäft",
+    "gallery": "Galerie",
+    "blog": "Blog",
     "donate": "Donate",
     "place": "Takhi Reintroduction Places",
     "history": "Our History",
@@ -13,7 +16,7 @@
     "donateText": "Together, we can protect vulnerable wildlife, conserve vital habitats, and build a future where people live in harmony with nature. Give to Khomyn Tal National Park today and power our global conservation solutions. Your donation makes you a member a Partner in Conservation "
   },
   "Footer": {
-    "company1": "2024 Khomyn Talyn Takhi NGO. All rights reserved.",
+    "company1": "2024 Khomyn Talyn Takhi NGO. Alle Rechte vorbehalten.",
     "company2": "Developed by ProHub",
     "company3": "Designed by UXology",
     "news": "News",
@@ -22,28 +25,33 @@
     "terms": "Terms of use"
   },
   "Language": {
-    "language": "Language",
+    "language": "Sprache",
     "en": "EN",
     "mn": "MN",
     "gr": "GR",
     "fr": "FR"
   },
   "Subscribe": {
-    "subscribe": "Subscribe",
-    "notify": "We will notify you with news",
-    "email": "Write your email here",
-    "submit": "Submit"
+    "subscribe": "Abonnieren",
+    "notify": "Wir informieren Sie über Neuigkeiten",
+    "email": "Schreiben Sie hier Ihre E-Mail",
+    "submit": "Einreichen"
   },
   "Blog": {
-    "write": "Write Blog",
-    "name": "Full name (required)",
-    "namePlace": "Write your name here",
-    "email": "Email (required)",
-    "emailPlace": "Write your email here",
-    "title": "Title (required)",
-    "titlePlace": "Write your title here",
-    "review": "Review ",
-    "reviewPlace": "You can write more info",
-    "send": "Send"
+    "write": "Blog schreiben",
+    "name": "Vollständiger Name (erforderlich)",
+    "namePlace": "Schreibe hier deinen Namen hin",
+    "email": "Email (erforderlich)",
+    "emailPlace": "Schreiben Sie hier Ihre E-Mail",
+    "title": "Titel (erforderlich)",
+    "titlePlace": "Schreiben Sie hier Ihren Titel",
+    "review": "Rezension ",
+    "reviewPlace": "Sie können weitere Informationen schreiben",
+    "send": "Schicken"
+  },
+  "Tourism": {
+    "tourism": "Tourismus",
+    "more": "Mehr sehen",
+    "description": "Beobachten Sie Przewalskis Pferde in der Weite der Steppe und Dünen, sehen Sie Sibirische Steinböcke, Mongolische Gazellen, Taiga-Antilopen und Wolfsspuren im Sand, bewundern Sie einen Steppenadler am Himmel: das Schutzgebiet im Seher-Gebirge, 1400 Kilometer westlich von Ulaanbaatar."
   }
 }

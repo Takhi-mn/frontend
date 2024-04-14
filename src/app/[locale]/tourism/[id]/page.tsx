@@ -88,7 +88,7 @@ const TourPage = ({ params }: { params: { id: string } }) => {
           </div>
           {oneTourPrice?.map((data) => (
             <p
-              className="text-center"
+              className="text-center Prosemirror"
               dangerouslySetInnerHTML={{
                 __html: contentConverter(data, selectedLanguage),
               }}

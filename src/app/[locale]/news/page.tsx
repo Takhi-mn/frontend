@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 const NewsPage = (props: Props) => {
   return (
-    <div className="w-full p-6 sm:p-16 sm:px-28">
+    <div className="w-full p-6 sm:p-16 sm:px-28 bg-background text-foreground">
       <h1 className="text-5xl font-semibold ">News</h1>
       <NewsPageComp />
     </div>

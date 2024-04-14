@@ -6,6 +6,7 @@ import React, { useContext, useEffect } from "react";
 import CampSection1 from "../../components/CampSection1";
 import BookingCard from "./BookingCard";
 import TourCard from "./TourCard";
+import TourPath from "./TourPath";
 
 type Props = {};
 
@@ -38,7 +39,7 @@ const BookingPageComp = (props: Props) => {
             </div>
           ))}
       </div>
-      {/* <TourPath /> */}
+      <TourPath />
       <BookingCard />
       {/* <PartnerSection /> */}
       {/* <Contact /> */}

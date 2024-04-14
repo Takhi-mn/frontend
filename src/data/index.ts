@@ -145,7 +145,7 @@ export const campRoutes = [
     route: "Route 5",
     title: "ARRIVAL ULAANBAATAR",
     text: "You will be picked up at the airport and taken to UB Grand Hotel, right in the city center next to Chinggis Khaan Square. By the end of the day, all riders will have tried their gear and are ready to leave Ulaanbaatar early the following day.",
-    top: "top-[23%]",
+    top: "top-[30%]",
     left: "right-[55%]",
   },
   {
@@ -153,7 +153,7 @@ export const campRoutes = [
     route: "Route 6",
     title: "ARRIVAL ULAANBAATAR",
     text: "You will be picked up at the airport and taken to UB Grand Hotel, right in the city center next to Chinggis Khaan Square. By the end of the day, all riders will have tried their gear and are ready to leave Ulaanbaatar early the following day.",
-    top: "top-[40px]",
-    left: "right-[250px]",
+    top: "top-[20%]",
+    left: "left-[25%]",
   },
 ];

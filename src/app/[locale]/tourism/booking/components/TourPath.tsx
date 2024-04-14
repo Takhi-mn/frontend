@@ -84,8 +84,14 @@ const TourPath = (props: Props) => {
   const [selectedRoute, setSelectedRoute] = useState(0);
   return (
     <div className="w-full flex flex-col lg:flex-row lg:justify-between items-center ">
-      <div className=" w-[335px] h-[248px] relative">
-        <img src={path.src} className="w-[335px] h-[248px]" />
+      <div className=" relative">
+        <Image
+          width={500}
+          height={350}
+          alt="Route"
+          src={path.src}
+          // className="w-[335px] h-[248px]"
+        />
         {campRoutes.map((route, index) => (
           <div
             key={route.route + index}

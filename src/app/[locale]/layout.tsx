@@ -43,9 +43,9 @@ export default function LocaleLayout({
           <LanguageProvider>
             <DataProvider>
               <TourismProvider>
-                <main>
+                <main className="bg-background text-foreground">
                   <NavbarNew language={l("language")} />
-                  <div className="sm:ml-[102px] pt-16 sm:pt-0">{children}</div>
+                  <div className="sm:ml-[102px] pt-16 sm:pt-0 ">{children}</div>
                   <Toaster />
                   <Footer
                     company1={f("company1")}

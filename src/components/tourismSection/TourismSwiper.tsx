@@ -11,9 +11,11 @@ import Link from "next/link";
 import { useLanguage } from "@/context/LanguageProvider";
 import { TourismContext } from "@/context/TourismProvider";
 
-type Props = {};
+type Props = {
+  more: string;
+};
 
-const TourismSwiper = (props: Props) => {
+const TourismSwiper = ({ more }: Props) => {
   const [my_swiper, set_my_swiper] = useState<SwiperCore>();
   const languageContext = useLanguage();
   const { bookingData, getBookingData } = useContext(TourismContext);
@@ -64,7 +66,7 @@ const TourismSwiper = (props: Props) => {
           <FaArrowLeft color="white" size={25} />
         </button>
         <Link href={`${languageContext.selectedLanguage}/tourism`}>
-          <button className="text-xl">See more</button>
+          <button className="text-xl">{more}</button>
         </Link>
         <button
           onClick={() => {
