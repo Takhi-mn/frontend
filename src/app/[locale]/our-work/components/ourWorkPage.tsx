@@ -1,7 +1,8 @@
 import { ourWorks } from "@/data/ourwork";
-import React from "react";
+import React, { useContext } from "react";
 import OurWorkPageCard from "../../../../components/ourWorkSelector/ourWorkPageCard";
 import OurWorkSelector from "@/components/ourWorkSelector";
+import { dataContext } from "@/context/DataProvider";
 
 const OurWorkPage = () => {
   return (

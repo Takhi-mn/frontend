@@ -30,9 +30,9 @@ export interface IAboutUs {
   name_de: string;
   name_fr: string;
   id: string;
-  contenttype: any;
+  contenttype: ITaxonomies;
   contenttypeId: string;
-  images: [{ url: string }];
+  images: { url: string }[];
   taxonomy: ITaxonomies;
   content_mn: string;
   content_en: string;
@@ -40,7 +40,7 @@ export interface IAboutUs {
   content_fr: string;
 }
 
-export interface IPartners {
+export interface IPartner {
   name_mn: string;
   name_en: string;
   name_de: string;
@@ -54,4 +54,34 @@ export interface IPartners {
   content_en: string;
   content_de: string;
   content_fr: string;
+}
+
+export interface IMember {
+  name_mn: string;
+  name_en: string;
+  name_de: string;
+  name_fr: string;
+  id: string;
+  contenttype: any;
+  contenttypeId: string;
+  images: [{ url: string }];
+  taxonomy: ITaxonomies;
+  content_mn: string;
+  content_en: string;
+  content_de: string;
+  content_fr: string;
+  department: {
+    id: string;
+    webId: string;
+    name_mn: string;
+    name_en: string;
+    name_de: string;
+    name_fr: string;
+  };
+  position: {
+    name_mn: string;
+    name_en: string;
+    name_de: string;
+    name_fr: string;
+  };
 }
