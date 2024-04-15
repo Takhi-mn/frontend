@@ -11,8 +11,8 @@ const TourCard = ({
   selectedLanguage: string | string[];
 }) => {
   return (
-    <Link href={`/${selectedLanguage}/tourism/${tourism.id}`}>
-      <div className="relative w-[350px] h-[220px] md:w-[400px] md:h-[300px] text-white group md:overflow-hidden cursor-pointer md:hover:scale-110 transition-all ease-in-out duration-300">
+    <Link rel="Takhi tour" href={`/${selectedLanguage}/tourism/${tourism.id}`}>
+      <div className="relative max-w-[350px] h-[220px] md:max-w-[400px] md:h-[300px] text-white group md:overflow-hidden cursor-pointer transition-all ease-in-out duration-300">
         <div
           className="absolute w-full h-full bg-gradient-to-b
        from-orange-700 opacity-50 md:opacity-0 

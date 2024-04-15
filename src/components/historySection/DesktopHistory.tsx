@@ -16,7 +16,7 @@ const DesktopHistory = ({ historyDatas }: Props) => {
   const variants = {
     show: {
       marginLeft: -17,
-      width: 600,
+      width: 400,
       transition: { duration: 0.3, type: "easeInOut" },
     },
     hide: {
@@ -60,7 +60,7 @@ const DesktopHistory = ({ historyDatas }: Props) => {
             initial={{ width: 200, marginLeft: -17 }}
             variants={variants}
             animate={openIndex === index ? "show" : "hide"}
-            className={`bg-tahi${index} relative z-0 bg-center h-[700px] cursor-pointer px-6 py-12 rounded-xl`}
+            className={`bg-tahi${index} relative z-0 bg-cover bg-center h-[560px] cursor-pointer px-6 py-12 rounded-xl`}
           >
             <div className="absolute rounded-xl z-10 top-0 left-0 w-full h-full bg-black bg-opacity-60" />
             <div className="relative z-20">

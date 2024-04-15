@@ -4,6 +4,7 @@ import DesktopHistory from "./DesktopHistory";
 import MobileHistory from "./MobileHistory";
 import { dataContext } from "@/context/DataProvider";
 import { IAboutUs } from "@/types/backend";
+import GetContents from "@/actions/getContents";
 
 type Props = {};
 
