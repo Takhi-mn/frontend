@@ -24,9 +24,9 @@ const ContactsSection = ({ selectedLanguage, contacts }: IProps) => {
   console.log("ph", filteredPhoneData);
   console.log("sms", filteredSmsData);
   return (
-    <div className="flex flex-col justify-center items-center gap-3 w-full">
+    <div className="flex flex-col justify-center items-center gap-5 w-full">
       <h1 className="text-[22px] font-bold">Contact</h1>
-      <div className="sm:flex sm:flex-wrap w-full gap-4 sm:justify-center sm:items-center">
+      <div className="sm:flex sm:flex-wrap w-full flex flex-col gap-5  sm:justify-center sm:items-center">
         {filteredPhoneData?.map((filteredData) => (
           <PhoneSection
             key={filteredData.id}

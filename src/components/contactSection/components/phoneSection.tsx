@@ -9,8 +9,14 @@ interface IProps {
 }
 
 const PhoneSection = ({ filteredData, selectedLanguage }: IProps) => {
+  const handleDivClick = () => {
+    window.open(`tel:+97670004680`);
+  };
   return (
-    <div className=" flex flex-col justify-center items-center bg-[#F9FAFB] rounded-2xl p-4 gap-2 w-full sm:max-w-[30%]">
+    <div
+      className=" flex flex-col justify-center items-center bg-[#F9FAFB] hover:cursor-pointer rounded-2xl p-4 gap-2 w-full sm:max-w-[30%]"
+      onClick={() => handleDivClick()}
+    >
       <div className=" w-12 h-12 relative">
         <Image
           fill
