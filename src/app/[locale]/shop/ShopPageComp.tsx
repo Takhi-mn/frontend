@@ -16,7 +16,11 @@ const ShopPageComp = (props: Props) => {
   return (
     <div className="flex flex-wrap justify-center gap-5 my-20">
       {items?.map((item) => (
-        <ShopCard item={item} selectedLanguage={selectedLanguage} />
+        <ShopCard
+          key={item.id}
+          item={item}
+          selectedLanguage={selectedLanguage}
+        />
       ))}
     </div>
   );

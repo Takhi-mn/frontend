@@ -42,7 +42,7 @@ const MajorAchievementsPage = () => {
           </li>
         </div>
       </div>
-      <LearnMoreSection />
+      {/* <LearnMoreSection /> */}
     </div>
   );
 };

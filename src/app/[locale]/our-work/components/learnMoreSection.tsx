@@ -32,6 +32,7 @@ const LearnMoreSection = ({ detector }: IProps) => {
           .filter((data) => data.id !== detector?.id)
           ?.map((filteredData, index) => (
             <div
+              key={filteredData.id}
               className={`relative w-[400px] min-h-44 group overflow-hidden flex`}
               onClick={() =>
                 router.push(
