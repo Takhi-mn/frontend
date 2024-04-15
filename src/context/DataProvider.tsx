@@ -64,7 +64,7 @@ const DataProvider = ({ children }: PropsWithChildren) => {
   const getNews = async () => {
     try {
       const { data } = await axios.get(
-        " https://web-cms-psi.vercel.app/api/13238433-f5b8-4361-9134-8cab5e727005/news"
+        " https://web-cms-psi.vercel.app/api/13238433-f5b8-4361-9134-8cab5e727005/news?isFeatured=true"
       );
       setAllNews(data);
       setHomePageNews(data.slice(0, 3));
@@ -88,7 +88,6 @@ const DataProvider = ({ children }: PropsWithChildren) => {
       const { data } = await axios.get(
         "https://web-cms-psi.vercel.app/api/13238433-f5b8-4361-9134-8cab5e727005/about"
       );
-      console.log("about-us data", data);
       setAboutUs(data);
     } catch (error) {
       console.log("ERROR IN GETABOUTUS", error);
@@ -100,7 +99,6 @@ const DataProvider = ({ children }: PropsWithChildren) => {
       const { data } = await axios.get(
         "https://web-cms-psi.vercel.app/api/13238433-f5b8-4361-9134-8cab5e727005/partners"
       );
-      console.log("partners", data);
       setPartners(data);
     } catch (error) {
       console.log("ERROR IN GETABOUTUS", error);
@@ -112,7 +110,6 @@ const DataProvider = ({ children }: PropsWithChildren) => {
       const { data } = await axios.get(
         "https://web-cms-psi.vercel.app/api/13238433-f5b8-4361-9134-8cab5e727005/contacts"
       );
-      console.log("contacts", data);
       setContacts(data);
     } catch (error) {
       console.log("ERROR IN GETABOUTUS", error);
@@ -124,7 +121,6 @@ const DataProvider = ({ children }: PropsWithChildren) => {
       const { data } = await axios.get(
         "https://web-cms-psi.vercel.app/api/13238433-f5b8-4361-9134-8cab5e727005/employee"
       );
-      console.log("members Context", data);
       setMembers(data.reverse());
     } catch (error) {
       console.log("ERROR IN GETABOUTUS", error);

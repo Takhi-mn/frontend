@@ -31,19 +31,6 @@ const DonateCard = ({ donate, once, monthly }: Props) => {
           </div>
         ))}
       </div>
-      <RadioGroup
-        defaultValue="comfortable"
-        className="flex justify-center gap-10 p-10"
-      >
-        <div className="flex items-center space-x-2">
-          <RadioGroupItem value="once" id="r1" className="md:w-8 md:h-8" />
-          <Label htmlFor="r1">{once}</Label>
-        </div>
-        <div className="flex items-center space-x-2">
-          <RadioGroupItem value="monthly" id="r2" className="md:w-8 md:h-8" />
-          <Label htmlFor="r2">{monthly}</Label>
-        </div>
-      </RadioGroup>
       <div className="w-full flex justify-center">
         <Button className="w-full md:w-2/3 md:mt-20 py-7 text-xl">
           {donate}

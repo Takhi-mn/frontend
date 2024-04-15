@@ -9,10 +9,8 @@ const OurWorkSelector = () => {
   const { getOurworks, ourworks } = useContext(dataContext);
   const { selectedLanguage } = useLanguage();
   useEffect(() => {
-    if (!ourworks) {
-      getOurworks();
-    }
-  });
+    getOurworks();
+  }, []);
   return (
     <div className="flex flex-wrap w-full justify-center gap-4 sm:grid sm:grid-cols-12 sm:grid-rows-12 sm:h-[714px] ">
       {ourworks

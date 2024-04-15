@@ -15,7 +15,7 @@ const MobileHistory = ({ historyDatas }: Props) => {
   const variants = {
     show: {
       marginTop: -17,
-      height: 750,
+      height: 650,
       transition: { duration: 0.3, type: "easeInOut" },
     },
     hide: {
