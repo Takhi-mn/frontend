@@ -3,6 +3,7 @@ import React from "react";
 import { nameConverter } from "@/lib/nameConverter";
 import { IPartner } from "@/types/backend";
 import Image from "next/image";
+import PhotoSlider from "./photoSlider";
 
 interface IProps {
   partners: IPartner[] | undefined;
@@ -16,11 +17,11 @@ const PartnerSection = ({
   filteredData,
 }: IProps) => {
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="flex flex-col w-full justify-center items-center">
       <h1 className="font-bold text-[22px] sm:text-[45px] sm:font-medium">
         {filteredData ? nameConverter(filteredData, selectedLanguage) : ""}
       </h1>
-      <div className="flex flex-wrap justify-center items-center">
+      {/* <div className="flex flex-wrap justify-center items-center">
         {partners
           ? partners[0].images.map((partner: any, index: any) => (
               <div
@@ -38,6 +39,9 @@ const PartnerSection = ({
               </div>
             ))
           : "Loading"}
+      </div> */}
+      <div className="w-full flex flex-col justify-center items-center">
+        <PhotoSlider photos={partners ? partners[0].images : []} />
       </div>
     </div>
   );

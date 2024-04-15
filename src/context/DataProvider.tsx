@@ -30,6 +30,8 @@ interface ICreateDataContext {
   getMembers: () => void;
   getOurworks: () => void;
   ourworks: IAboutUs[] | undefined;
+  getDepartments: () => void;
+  departments: IAboutUs[] | undefined;
 }
 export const dataContext = createContext<ICreateDataContext>(
   {} as ICreateDataContext
@@ -44,6 +46,7 @@ const DataProvider = ({ children }: PropsWithChildren) => {
   const [contacts, setContacts] = useState<IPartner[] | undefined>();
   const [members, setMembers] = useState<IMember[] | undefined>();
   const [ourworks, setOurworks] = useState<IAboutUs[] | undefined>();
+  const [departments, setDepartments] = useState<IAboutUs[] | undefined>();
   const getTaxonomies = async () => {
     try {
       const { data } = await axios.get(
@@ -138,6 +141,17 @@ const DataProvider = ({ children }: PropsWithChildren) => {
       console.log("ERROR IN GetOurWorks", error);
     }
   };
+  const getDepartments = async () => {
+    try {
+      const { data } = await axios.get(
+        "https://web-cms-psi.vercel.app/api/13238433-f5b8-4361-9134-8cab5e727005/department"
+      );
+      console.log("Departments Context", data);
+      setDepartments(data);
+    } catch (error) {
+      console.log("ERROR IN GetOurWorks", error);
+    }
+  };
 
   useEffect(() => {
     getTaxonomies();
@@ -162,6 +176,8 @@ const DataProvider = ({ children }: PropsWithChildren) => {
         getOurworks,
         members,
         ourworks,
+        getDepartments,
+        departments,
       }}
     >
       {children}

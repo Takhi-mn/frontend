@@ -8,6 +8,7 @@ import TeamMember from "../components/team-member";
 import { IoMdClose } from "react-icons/io";
 import { dataContext } from "@/context/DataProvider";
 import { IMember } from "@/types/backend";
+import TeamSelectorSection from "./teamSelector";
 
 const TakhiTeam = () => {
   const { members, getMembers } = useContext(dataContext);
@@ -54,45 +55,7 @@ const TakhiTeam = () => {
       <h1 className="absolute top-24 z-30 text-white font-bold text-[22px] sm:static sm:text-black sm:self-start sm:text-[64px] sm:font-normal">
         Takhi team
       </h1>
-      <div className="w-full">
-        <div className="w-full h-[200px] relative overflow-hidden sm:h-[471px]">
-          <Image
-            fill
-            alt={managementTeam.src}
-            src={managementTeam.src}
-            objectFit="cover"
-            style={{ scale: "1.5", left: "10%" }}
-          />
-        </div>
-        <div className="w-full mt-[50px] ">
-          <div className="w-full flex flex-col justify-center items-center sm:flex-row">
-            <h1
-              className="py-[31px] w-full border text-center sm:max-w-[33.33333333%]"
-              onClick={() => {
-                setFilterText("Board Members");
-              }}
-            >
-              Board Members
-            </h1>
-            <h1
-              className="py-[31px] w-full border text-center sm:max-w-[33.33333333%]"
-              onClick={() => {
-                setFilterText("Management and Operation");
-              }}
-            >
-              Management and Operation
-            </h1>
-            <h1
-              className="py-[31px] w-full border text-center sm:max-w-[33.33333333%]"
-              onClick={() => {
-                setFilterText("Field staff");
-              }}
-            >
-              Field staff
-            </h1>
-          </div>
-        </div>
-      </div>
+      <TeamSelectorSection setFilterText={setFilterText} />
 
       <div className="w-full container flex flex-col sm:flex-row sm:relative gap-x-20 ">
         {/* Left section // Image Selector*/}

@@ -18,7 +18,7 @@ const OurWorkPageCard = ({ filteredData, selectedLanguage, index }: IProps) => {
     <div
       className={`${
         "s" + index
-      } relative w-full min-h-44 group overflow-hidden`}
+      } relative w-full rounded-[8px] min-h-44 group overflow-hidden`}
       onClick={() =>
         router.push(
           `/${selectedLanguage}/our-work/${filteredData.name_en
