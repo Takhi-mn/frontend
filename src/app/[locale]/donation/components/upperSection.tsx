@@ -20,10 +20,6 @@ const UpperSection = ({ donateText }: Props) => {
           </p>
         </div>
       </section>
-      <div className="flex justify-center gap-32">
-        <Button className="shadow-lg px-16 py-8">Donation</Button>
-        <Button className="shadow-lg px-16 py-8">Adoption</Button>
-      </div>
     </div>
   );
 };
