@@ -96,7 +96,7 @@ const MyDrawer = ({ isOpen, isMobile, setIsOpen }: Props) => {
         {taxonomies?.map((taxonomie, index) => {
           return (
             <div
-              key={taxonomie.id}
+              key={taxonomie.id + index}
               className=" group font-sans text-2xl mt-4 gap-5
               transition-all"
             >
@@ -138,7 +138,7 @@ const MyDrawer = ({ isOpen, isMobile, setIsOpen }: Props) => {
               >
                 {taxonomie.children?.map((child, index) => (
                   <div
-                    key={child.id + index}
+                    key={child.id + index + child.name_mn}
                     className="font-sans text-lg hover:text-zinc-600 mt-5 cursor-pointer"
                   >
                     <Link

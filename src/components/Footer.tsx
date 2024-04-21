@@ -49,8 +49,11 @@ const Footer = ({
         <div className="flex flex-wrap ">
           {taxonomies
             ?.filter((taxonomie) => taxonomie.children.length > 0)
-            .map((taxonomie) => (
-              <div key={taxonomie.id} className="w-1/2  mt-10 lg:mt-0">
+            .map((taxonomie, index) => (
+              <div
+                key={taxonomie.id + index + taxonomie.name_mn}
+                className="w-1/2  mt-10 lg:mt-0"
+              >
                 <h2 className="text-xl font-semibold">
                   <Link
                     href={`/${selectedLanguage}/${taxonomie.name_en
@@ -62,7 +65,7 @@ const Footer = ({
                   </Link>
                 </h2>
                 {taxonomie?.children.map((child, index) => (
-                  <p key={child.id + index}>
+                  <p key={child.id + index + child.name_mn}>
                     <Link
                       href={`/${selectedLanguage}/${taxonomie.name_en
                         .replace(/\s/g, "-")

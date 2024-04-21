@@ -11,7 +11,7 @@ import { useRouter } from "next/navigation";
 import PhotoSliderSmall from "@/components/photoSlider/photoSliderSmall";
 import CampSection1 from "../components/CampSection1";
 import { contentConverter } from "@/lib/nameConverter";
-import BookingCard from "../booking/components/BookingCard";
+import BookingCard from "../tour-booking/components/BookingCard";
 import OneTourSkeleton from "./OneTourSkeleton";
 
 type Props = {};

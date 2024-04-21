@@ -34,6 +34,9 @@ const TourismProvider = ({ children }: PropsWithChildren) => {
       console.log("ERROR TO GET TOURISM DATA", error);
     }
   };
+
+  // TOURISM BOOKING POST SECTION
+
   return (
     <TourismContext.Provider
       value={{ tourismData, getTourismData, getBookingData, bookingData }}

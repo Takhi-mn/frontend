@@ -35,12 +35,8 @@ const Subscribe = ({ subscribe, notify, email, submit }: Props) => {
     try {
       await emailSchema.parseAsync(emailInput);
       setError("");
-      emailSubscribe(
-        emailInput,
-        "user_2enk6gH8ixWyp6f1IIVh6mcXf15",
-        "13238433-f5b8-4361-9134-8cab5e727005"
-      );
-      console.log("Form submitted with email:", emailInput);
+      emailSubscribe(emailInput);
+      setEmail("");
     } catch (err) {
       if (err instanceof ZodError) {
         setError(err.errors[0]?.message);
