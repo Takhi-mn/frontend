@@ -1,15 +1,22 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { getAdoptions } from "@/actions/getAdoptions";
+import AnimalSwiper from "./AnimalSwiper";
 
-type Props = {};
-
-const SelectAnimal = (props: Props) => {
-  const [animals, setAnimals] = useState();
-  useEffect(() => {
-    getAdoptions().then((data) => setAnimals(data));
-  }, []);
-  return <div className="w-full md:w-1/2 mb-10"></div>;
+const SelectAnimal = ({
+  animals,
+  handleSelectedAnimal,
+  selectedAnimal,
+}: any) => {
+  return (
+    <div className="w-full md:w-1/2 mb-10">
+      <AnimalSwiper
+        animals={animals}
+        handleSelectedAnimal={handleSelectedAnimal}
+        selectedAnimal={selectedAnimal}
+      />
+    </div>
+  );
 };
 
 export default SelectAnimal;
