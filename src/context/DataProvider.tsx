@@ -6,6 +6,7 @@ import {
   IAboutUs,
   IPartner,
   IMember,
+  IBlog,
 } from "@/types/backend";
 import axios from "axios";
 import { useParams } from "next/navigation";
@@ -31,7 +32,9 @@ interface ICreateDataContext {
   getOurworks: () => void;
   ourworks: IAboutUs[] | undefined;
   getDepartments: () => void;
+  getBlogs: () => void;
   departments: IAboutUs[] | undefined;
+  blogs: IBlog[] | undefined;
 }
 export const dataContext = createContext<ICreateDataContext>(
   {} as ICreateDataContext
@@ -47,6 +50,7 @@ const DataProvider = ({ children }: PropsWithChildren) => {
   const [members, setMembers] = useState<IMember[] | undefined>();
   const [ourworks, setOurworks] = useState<IAboutUs[] | undefined>();
   const [departments, setDepartments] = useState<IAboutUs[] | undefined>();
+  const [blogs, setBlogs] = useState<IBlog[] | undefined>();
   const getTaxonomies = async () => {
     try {
       const { data } = await axios.get(
@@ -152,6 +156,17 @@ const DataProvider = ({ children }: PropsWithChildren) => {
       console.log("ERROR IN GetOurWorks", error);
     }
   };
+  const getBlogs = async () => {
+    try {
+      const { data } = await axios.get(
+        "https://web-cms-psi.vercel.app/api/13238433-f5b8-4361-9134-8cab5e727005/blogs"
+      );
+      console.log("Blogs Context", data);
+      setBlogs(data);
+    } catch (error) {
+      console.log("ERROR IN GetOurWorks", error);
+    }
+  };
 
   useEffect(() => {
     getTaxonomies();
@@ -178,6 +193,8 @@ const DataProvider = ({ children }: PropsWithChildren) => {
         ourworks,
         getDepartments,
         departments,
+        getBlogs,
+        blogs,
       }}
     >
       {children}

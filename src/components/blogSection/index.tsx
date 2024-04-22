@@ -4,19 +4,29 @@ import { Button } from "../ui/button";
 import BlogModal from "./BlogModal";
 
 import { blogsData } from "@/data/blog";
+import { useTranslations } from "next-intl";
+import BlogCardSection from "./blogCardSection";
 
 type Props = {};
 
 const BlogSection = (props: Props) => {
+  const b = useTranslations("Blog");
   return (
     <section>
-      <div className="flex flex-wrap gap-2 md:justify-between justify-center">
-        <BlogCard blogData={blogsData[0]} />
-        <BlogCard blogData={blogsData[1]} />
-        <BlogCard blogData={blogsData[2]} />
-      </div>
+      <BlogCardSection />
       <div className="text-center mt-7">
-        <BlogModal />
+        <BlogModal
+          write={b("write")}
+          name={b("name")}
+          email={b("email")}
+          emailPlace={b("emailPlace")}
+          title={b("title")}
+          titlePlace={b("titlePlace")}
+          review={b("review")}
+          reviewPlace={b("reviewPlace")}
+          namePlace={b("namePlace")}
+          send={b("send")}
+        />
       </div>
     </section>
   );

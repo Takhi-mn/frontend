@@ -2,11 +2,16 @@
 import React, { useState } from "react";
 import { FaStar } from "react-icons/fa";
 
-type Props = {};
+type Props = {
+  checked: number | undefined;
+  setChecked?: any;
+  isClickable: boolean;
+  setIsChecked?: any;
+};
 
-const Rating = (props: Props) => {
+const Rating = ({ checked, setChecked, isClickable, setIsChecked }: Props) => {
   const stars = [1, 2, 3, 4, 5];
-  const [checked, setChecked] = useState<number>(0);
+
   return (
     <div className="flex gap-1">
       {stars.map((val) => {
@@ -15,9 +20,9 @@ const Rating = (props: Props) => {
             key={val}
             size={20}
             onClick={() => {
-              setChecked(val);
+              isClickable ? setChecked(val) | setIsChecked(false) : "";
             }}
-            className={`${val <= checked ? "text-orange-500" : ""} `}
+            className={`${val <= checked! ? "text-orange-500" : ""} `}
           />
         );
       })}
