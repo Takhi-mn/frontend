@@ -39,7 +39,10 @@ const AnimalSwiper = ({
       >
         {animals?.map((animal: any) => {
           return (
-            <SwiperSlide className="border-primary border-4 rounded-xl overflow-hidden">
+            <SwiperSlide
+              key={animal.id}
+              className="border-primary border-4 rounded-xl overflow-hidden"
+            >
               <Image
                 width={500}
                 height={350}

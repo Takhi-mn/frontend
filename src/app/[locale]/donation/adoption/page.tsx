@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 type Props = {};
 
-const page = (props: Props) => {
+const AdoptionPageMain = (props: Props) => {
   const t = useTranslations("Index");
   return (
     <div className="container mb-20">
@@ -23,4 +23,4 @@ const page = (props: Props) => {
   );
 };
 
-export default page;
+export default AdoptionPageMain;

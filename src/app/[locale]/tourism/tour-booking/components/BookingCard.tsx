@@ -129,7 +129,9 @@ const BookingCard = (props: Props) => {
           </div>
           <Button
             type="submit"
-            onClick={formik.handleSubmit}
+            onClick={() => {
+              formik.handleSubmit();
+            }}
             className="w-full"
           >
             Send
