@@ -5,7 +5,7 @@ import { languageContext } from "@/context/LanguageProvider";
 import { nameConverter } from "@/lib/nameConverter";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { FaFacebookF, FaTwitter, FaYoutube } from "react-icons/fa";
 
 type Props = {

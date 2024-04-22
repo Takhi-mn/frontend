@@ -1,5 +1,3 @@
-import React from "react";
-
 import { IPartner } from "@/types/backend";
 import PhoneSection from "./components/phoneSection";
 import LocationSection from "./components/locationSection";

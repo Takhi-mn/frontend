@@ -1,12 +1,10 @@
 "use client";
-import React, { useContext, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { CiMenuBurger } from "react-icons/ci";
 import { IoCloseOutline } from "react-icons/io5";
-import { IoSearchOutline } from "react-icons/io5";
 import Image from "next/image";
 import { logo } from "@/assets";
 import { ThemeController } from "./ThemeController";
-import { dataContext } from "@/context/DataProvider";
 import Link from "next/link";
 import MyDrawer from "./MyDrawer";
 

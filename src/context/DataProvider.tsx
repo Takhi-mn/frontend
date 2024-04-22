@@ -1,5 +1,4 @@
 "use client";
-import { contentConverter, nameConverter } from "@/lib/nameConverter";
 import {
   INews,
   ITaxonomies,
@@ -9,7 +8,6 @@ import {
   IBlog,
 } from "@/types/backend";
 import axios from "axios";
-import { useParams } from "next/navigation";
 import {
   PropsWithChildren,
   createContext,

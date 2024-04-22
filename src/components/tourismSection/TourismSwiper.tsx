@@ -1,6 +1,6 @@
 "use client";
-import React, { useContext, useEffect, useState } from "react";
-import { tourismData } from "@/data/camp";
+import { useContext, useEffect, useState } from "react";
+
 import TourCard from "@/app/[locale]/tourism/tour-booking/components/TourCard";
 import SwiperCore from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";

@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
-import NewsPageComp from "./NewsPageComp";
 import { Metadata } from "next";
 import { useTranslations } from "next-intl";
+
+import NewsPageComp from "./NewsPageComp";
 
 type Props = {};
 

@@ -1,8 +1,7 @@
 "use client";
-import React, { useEffect } from "react";
 import NewsCard from "./NewsCard";
 import { useDataContext } from "@/context/DataProvider";
-import GetContents from "@/actions/getContents";
+
 export const revalidate = 0;
 
 type Props = {};

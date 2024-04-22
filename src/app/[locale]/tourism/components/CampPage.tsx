@@ -1,9 +1,8 @@
 "use client";
+import { useContext, useEffect } from "react";
+
 import { TourismContext } from "@/context/TourismProvider";
-import React, { useContext, useEffect } from "react";
-import CampSection1 from "./CampSection1";
 import { useLanguage } from "@/context/LanguageProvider";
-import CampSection2 from "./CampSection2";
 import CampPageSkeleton from "./CampPageSkeleton";
 import CampPageSections from "./CampPageSections";
 

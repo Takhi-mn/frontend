@@ -1,5 +1,5 @@
 "use client";
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import DesktopHistory from "./DesktopHistory";
 import MobileHistory from "./MobileHistory";
 import { dataContext } from "@/context/DataProvider";

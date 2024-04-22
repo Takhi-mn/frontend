@@ -1,6 +1,5 @@
+import { useTranslations } from "next-intl";
 import {
-  PartnerSection,
-  Footer,
   Policy,
   HeroSection,
   MapSection,
@@ -8,12 +7,10 @@ import {
   Subscribe,
 } from "@/components";
 import BlogSection from "@/components/blogSection";
-
 import DonateSection from "@/components/donateSection";
 import HistorySection from "@/components/historySection";
 import NewsSection from "@/components/newsSection";
 import TourismSection from "@/components/tourismSection/TourismSection";
-import { useTranslations } from "next-intl";
 
 export default function Index() {
   const t = useTranslations("Index");

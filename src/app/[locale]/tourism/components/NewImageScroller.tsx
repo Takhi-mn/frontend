@@ -1,10 +1,9 @@
 "use client";
-import React from "react";
+
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { campImages } from "@/data/camp";
-import { motion } from "framer-motion";
 
 type Props = {};
 

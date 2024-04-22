@@ -1,15 +1,10 @@
 "use client";
-import React from "react";
 import Rating from "./Rating";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { IPropsBlogData } from "@/types/blog";
 import { useRouter } from "next/navigation";
 import { useLanguage } from "@/context/LanguageProvider";
-import { DateFormatter } from "react-day-picker";
 import { dateFormatter } from "@/lib/dateFormatter";
 import { IBlog } from "@/types/backend";
-import { contentConverter } from "@/lib/nameConverter";
-import { blogsData } from "@/data/blog";
 
 interface IProps {
   blogData: IBlog | undefined;

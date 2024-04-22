@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { IAboutUs } from "@/types/backend";
 import { contentConverter } from "@/lib/nameConverter";

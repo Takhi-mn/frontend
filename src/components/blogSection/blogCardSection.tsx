@@ -1,5 +1,5 @@
 "use client";
-import React, { useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import BlogCard from "./BlogCard";
 import { dataContext } from "@/context/DataProvider";
 

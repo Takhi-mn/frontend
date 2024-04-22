@@ -1,11 +1,9 @@
-import React, { useState } from "react";
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
 } from "../ui/hover-card";
-import { four, horseIcon, majorAchievements } from "@/assets";
-import { Card, CardContent, CardHeader } from "../ui/card";
+import { horseIcon, majorAchievements } from "@/assets";
 import Image from "next/image";
 
 type Props = {};

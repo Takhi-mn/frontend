@@ -1,4 +1,3 @@
-import React from "react";
 import TourismSwiper from "./TourismSwiper";
 import { useTranslations } from "next-intl";
 

@@ -1,12 +1,17 @@
-import DonateCard from "@/components/donateSection/DonateCard";
 import { useTranslations } from "next-intl";
-import React from "react";
-import DonateWithMailSection from "./components/donateWithMailSection";
-import Scroller from "./components/scroller";
-import UpperSection from "./components/upperSection";
-import { Button } from "@/components/ui/button";
+import { Metadata } from "next";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import UpperSection from "./components/upperSection";
 import DonationWithType from "./components/donationWithType";
+
+export const metadata: Metadata = {
+  title: "Takhi | Donation",
+  description:
+    "Rangers related by takhi, takhi community engagement,takhi national park managament,takih research and monitoring program,takhi conservation programs, takhi adoption",
+  keywords:
+    "takhi donation, takhi team,takhi rangers,Indigenous Community Interactions,Khomyn Talyn Cultural Experiences, takhi reintroduction, takhi camp, camp,rangers, nature, tourism ,tour guide, Przewalski's horses, horse, Przewalski, Wild Horse Conservation, Przewalski's Horse, Endangered Species Sanctuary, Biodiversity Conservation, Rare Wildlife Encounters,Saiga Antelope Mongolia, user review,review ",
+};
 
 const DonationPage = () => {
   const t = useTranslations("Index");

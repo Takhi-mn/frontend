@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import React, { PropsWithChildren } from "react";
 import "./style.css";
 import { useRouter } from "next/navigation";
 import { IAboutUs } from "@/types/backend";

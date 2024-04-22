@@ -1,13 +1,6 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { TreeNode } from "@/types";
+import { useEffect, useState } from "react";
 import axios from "axios";
-import { Button } from "./ui/button";
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "@/components/ui/hover-card";
 
 type Props = {};
 

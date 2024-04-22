@@ -1,5 +1,3 @@
-import React from "react";
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -10,7 +8,6 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
-import { camp1 } from "@/assets";
 import Link from "next/link";
 import { INews } from "@/types/backend";
 import { contentConverter, nameConverter } from "@/lib/nameConverter";

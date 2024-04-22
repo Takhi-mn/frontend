@@ -1,15 +1,14 @@
 "use client";
+import { useContext, useEffect, useState } from "react";
+import { IoIosArrowBack } from "react-icons/io";
+import { useRouter } from "next/navigation";
 import { TourismContext } from "@/context/TourismProvider";
-import React, { useContext, useEffect, useState } from "react";
 import NewImageScroller from "../components/NewImageScroller";
 import CampMenu from "../components/CampMenu";
 import { INews } from "@/types/backend";
 import { useLanguage } from "@/context/LanguageProvider";
 import CampSection2 from "../components/CampSection2";
-import { IoIosArrowBack } from "react-icons/io";
-import { useRouter } from "next/navigation";
 import PhotoSliderSmall from "@/components/photoSlider/photoSliderSmall";
-import CampSection1 from "../components/CampSection1";
 import { contentConverter } from "@/lib/nameConverter";
 import BookingCard from "../tour-booking/components/BookingCard";
 import OneTourSkeleton from "./OneTourSkeleton";
