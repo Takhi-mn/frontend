@@ -1,4 +1,5 @@
 import axios from "axios";
+import { fireAlert } from "./fireAlert";
 
 export const postBlog = async (
   name: string,
@@ -21,8 +22,8 @@ export const postBlog = async (
         taxonomyPath: "000A",
       }
     );
-    console.log("Blog Post WORKED", data);
-  } catch (error) {
-    console.log("ERROR IN BLOG POST", error);
+    fireAlert("Success", "Your blog successfully posted", "success");
+  } catch (error: any) {
+    fireAlert("Error", `<p>${error.response.data}</p>`, "error");
   }
 };

@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Button } from "../ui/button";
+import { useRouter } from "next/navigation";
+import { useLanguage } from "@/context/LanguageProvider";
 
 type Props = {
   donate: string;
@@ -13,6 +15,8 @@ type Props = {
 
 const DonateCard = ({ donate, once, monthly }: Props) => {
   const [selected, setSelected] = useState<number | string>();
+  const router = useRouter();
+  const { selectedLanguage } = useLanguage();
   return (
     <div className="bg-white text-black rounded-md mt-7 p-2 md:p-10 flex-1">
       <h1 className="text-center text-3xl md:5xl font-medium">{donate}</h1>
@@ -32,7 +36,10 @@ const DonateCard = ({ donate, once, monthly }: Props) => {
         ))}
       </div>
       <div className="w-full flex justify-center">
-        <Button className="w-full md:w-2/3 md:mt-20 py-7 text-xl">
+        <Button
+          onClick={() => router.push(`${selectedLanguage}/donation`)}
+          className="w-full md:w-2/3 md:mt-20 py-7 text-xl"
+        >
           {donate}
         </Button>
       </div>
