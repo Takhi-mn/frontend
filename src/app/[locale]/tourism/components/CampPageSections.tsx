@@ -1,5 +1,4 @@
 import { INews } from "@/types/backend";
-import React from "react";
 import CampSection1 from "./CampSection1";
 import CampSection2 from "./CampSection2";
 import { BiChalkboard } from "react-icons/bi";

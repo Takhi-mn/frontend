@@ -1,8 +1,7 @@
 "use client";
-import { useLanguage } from "@/context/LanguageProvider";
 import Link from "next/link";
-import React from "react";
 import { FaTag } from "react-icons/fa6";
+import { useLanguage } from "@/context/LanguageProvider";
 
 type Props = {
   page: string;

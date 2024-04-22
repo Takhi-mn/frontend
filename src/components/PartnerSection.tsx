@@ -1,8 +1,5 @@
-import React from "react";
-
 import { nameConverter } from "@/lib/nameConverter";
 import { IPartner } from "@/types/backend";
-import Image from "next/image";
 import PhotoSlider from "./photoSlider";
 
 interface IProps {

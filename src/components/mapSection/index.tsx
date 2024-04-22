@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
-
+import { useState } from "react";
 import { four } from "@/assets";
 import HoverCardOne from "./HoverCardOne";
 import HoverCardTwo from "./HoverCardTwo";

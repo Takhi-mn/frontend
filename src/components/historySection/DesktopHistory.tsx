@@ -1,7 +1,6 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
-
 import { contentConverter } from "@/lib/nameConverter";
 import { useLanguage } from "@/context/LanguageProvider";
 import { IAboutUs } from "@/types/backend";

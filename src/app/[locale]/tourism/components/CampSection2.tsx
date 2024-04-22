@@ -2,7 +2,6 @@
 import PhotoSliderSmall from "@/components/photoSlider/photoSliderSmall";
 import { contentConverter, nameConverter } from "@/lib/nameConverter";
 import { INews } from "@/types/backend";
-import React from "react";
 
 type Props = {
   data: INews;

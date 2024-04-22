@@ -1,10 +1,5 @@
-import React from "react";
-import BlogCard from "./BlogCard";
-import { Button } from "../ui/button";
-import BlogModal from "./BlogModal";
-
-import { blogsData } from "@/data/blog";
 import { useTranslations } from "next-intl";
+import BlogModal from "./BlogModal";
 import BlogCardSection from "./blogCardSection";
 
 type Props = {};

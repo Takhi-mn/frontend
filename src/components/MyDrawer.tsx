@@ -1,7 +1,7 @@
 "use client";
+import { useContext, useState } from "react";
 import { dataContext } from "@/context/DataProvider";
 import { languageContext } from "@/context/LanguageProvider";
-import React, { useContext, useState } from "react";
 import { motion } from "framer-motion";
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";

@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { logo } from "@/assets";

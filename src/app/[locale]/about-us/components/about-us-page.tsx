@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useContext } from "react";
+import { useContext } from "react";
 import AboutUsSection from "./about-us-section";
 import GoalAndMissionSection from "./goal-and-mission-section";
 import MissionSection from "./mission";

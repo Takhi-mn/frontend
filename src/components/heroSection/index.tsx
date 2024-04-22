@@ -1,9 +1,7 @@
 "use client";
-import React from "react";
+
 import { motion } from "framer-motion";
 import BackgroundVideo from "./backgroundVideo";
-import { hero } from "@/assets";
-import Image from "next/image";
 type Props = {};
 
 const HeroSection = (props: Props) => {

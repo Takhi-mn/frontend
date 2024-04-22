@@ -1,15 +1,13 @@
-// "use client";
-import Image from "next/image";
-import React, { useContext } from "react";
-import { location, sms, phone } from "@/assets";
-import AboutUsSection from "./components/about-us-section";
-import MissionSection from "./components/mission";
-import GoalSection from "./components/goal-section";
-import TakhiTeamSection from "./components/takhi-team-section";
-import { PartnerSection } from "@/components";
-import GoalAndMissionSection from "./components/goal-and-mission-section";
-import ContactsSection from "@/components/contactSection/contactsSection";
 import AboutUsPageComp from "./components/about-us-page";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Takhi | About us",
+  description:
+    "Rangers related by takhi, takhi community engagement,takhi national park managament,takih research and monitoring program,takhi conservation programs ",
+  keywords:
+    "takhi team,takhi rangers,Indigenous Community Interactions,Khomyn Talyn Cultural Experiences, takhi reintroduction, takhi camp, camp,rangers, nature, tourism ,tour guide, Przewalski's horses, horse, Przewalski, Wild Horse Conservation, Przewalski's Horse, Endangered Species Sanctuary, Biodiversity Conservation, Rare Wildlife Encounters,Saiga Antelope Mongolia ",
+};
 
 const AboutUsPage = () => {
   return (

@@ -1,9 +1,8 @@
-import React from "react";
+import { Metadata } from "next";
+
 import CampMenu from "./components/CampMenu";
 import NewImageScroller from "./components/NewImageScroller";
-
 import CampPage from "./components/CampPage";
-import { Metadata } from "next";
 type Props = {};
 
 export const metadata: Metadata = {

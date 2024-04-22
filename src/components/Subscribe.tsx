@@ -1,9 +1,7 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "./ui/button";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
 import { ZodError, z } from "zod";
 import { emailSubscribe } from "@/actions/EmailSubscribe";
 

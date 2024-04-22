@@ -1,5 +1,3 @@
-import React, { useContext, useEffect } from "react";
-
 import { contentConverter, nameConverter } from "@/lib/nameConverter";
 import { IAboutUs } from "@/types/backend";
 

@@ -2,8 +2,8 @@
 import OurWorkPageCard from "@/components/ourWorkSelector/ourWorkPageCard";
 import { dataContext } from "@/context/DataProvider";
 import { useLanguage } from "@/context/LanguageProvider";
-import { ourWorks } from "@/data/ourwork";
-import React, { useContext, useEffect } from "react";
+
+import { useContext, useEffect } from "react";
 
 const OurWorkSelector = () => {
   const { getOurworks, ourworks } = useContext(dataContext);
