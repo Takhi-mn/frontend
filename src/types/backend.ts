@@ -34,6 +34,7 @@ export interface IAboutUs {
   contenttypeId: string;
   images: { url: string }[];
   taxonomy: ITaxonomies;
+  price?: string;
   content_mn: string;
   content_en: string;
   content_de: string;

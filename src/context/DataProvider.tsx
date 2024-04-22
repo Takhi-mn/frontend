@@ -33,8 +33,10 @@ interface ICreateDataContext {
   ourworks: IAboutUs[] | undefined;
   getDepartments: () => void;
   getBlogs: () => void;
+  getDonationType: () => void;
   departments: IAboutUs[] | undefined;
   blogs: IBlog[] | undefined;
+  donationType: IAboutUs[] | undefined;
 }
 export const dataContext = createContext<ICreateDataContext>(
   {} as ICreateDataContext
@@ -51,6 +53,7 @@ const DataProvider = ({ children }: PropsWithChildren) => {
   const [ourworks, setOurworks] = useState<IAboutUs[] | undefined>();
   const [departments, setDepartments] = useState<IAboutUs[] | undefined>();
   const [blogs, setBlogs] = useState<IBlog[] | undefined>();
+  const [donationType, setDonationType] = useState<IAboutUs[] | undefined>();
   const getTaxonomies = async () => {
     try {
       const { data } = await axios.get(
@@ -97,7 +100,7 @@ const DataProvider = ({ children }: PropsWithChildren) => {
       );
       setAboutUs(data);
     } catch (error) {
-      console.log("ERROR IN GETABOUTUS", error);
+      console.log("ERROR IN getAboutUs", error);
     }
   };
 
@@ -108,7 +111,7 @@ const DataProvider = ({ children }: PropsWithChildren) => {
       );
       setPartners(data);
     } catch (error) {
-      console.log("ERROR IN GETABOUTUS", error);
+      console.log("ERROR IN getPartners", error);
     }
   };
 
@@ -119,7 +122,7 @@ const DataProvider = ({ children }: PropsWithChildren) => {
       );
       setContacts(data);
     } catch (error) {
-      console.log("ERROR IN GETABOUTUS", error);
+      console.log("ERROR IN getContacts", error);
     }
   };
 
@@ -130,7 +133,7 @@ const DataProvider = ({ children }: PropsWithChildren) => {
       );
       setMembers(data.reverse());
     } catch (error) {
-      console.log("ERROR IN GETABOUTUS", error);
+      console.log("ERROR IN getMembers", error);
     }
   };
 
@@ -153,7 +156,7 @@ const DataProvider = ({ children }: PropsWithChildren) => {
       console.log("Departments Context", data);
       setDepartments(data);
     } catch (error) {
-      console.log("ERROR IN GetOurWorks", error);
+      console.log("ERROR IN getDepartments", error);
     }
   };
   const getBlogs = async () => {
@@ -164,7 +167,18 @@ const DataProvider = ({ children }: PropsWithChildren) => {
       console.log("Blogs Context", data);
       setBlogs(data);
     } catch (error) {
-      console.log("ERROR IN GetOurWorks", error);
+      console.log("ERROR IN getBlogs", error);
+    }
+  };
+  const getDonationType = async () => {
+    try {
+      const { data } = await axios.get(
+        "https://web-cms-psi.vercel.app/api/13238433-f5b8-4361-9134-8cab5e727005/donationtype?isFeatured=true"
+      );
+      console.log("DonationType Context", data);
+      setDonationType(data.reverse());
+    } catch (error) {
+      console.log("ERROR IN getDonationType", error);
     }
   };
 
@@ -195,6 +209,8 @@ const DataProvider = ({ children }: PropsWithChildren) => {
         departments,
         getBlogs,
         blogs,
+        getDonationType,
+        donationType,
       }}
     >
       {children}

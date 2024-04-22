@@ -12,10 +12,8 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import Rating from "./Rating";
 import { Textarea } from "../ui/textarea";
-import { useTranslations } from "next-intl";
 import * as yup from "yup";
 import { useFormik } from "formik";
 import { postBlog } from "@/actions/postBlog";
