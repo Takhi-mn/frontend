@@ -1,3 +1,5 @@
+import { IBlog } from "./backend";
+
 export interface IBlogComment {
   userName: string;
   userImage: string;
@@ -24,5 +26,5 @@ export interface IBlogData {
 }
 
 export interface IPropsBlogData {
-  blogData: IBlogData;
+  blogData: IBlog;
 }
