@@ -29,9 +29,9 @@ const AdoptionPage = ({ donateText }: Props) => {
   return (
     <div className="flex flex-col container justify-center items-center max-w-[1074px] mb-10">
       <UpperSection donateText={donateText} />
-      <div className="flex justify-center gap-32 mt-14">
+      <div className="flex justify-center sm:gap-32 md:gap-20 gap-5 mt-14">
         <Link href={"../donation"}>
-          <Button className="shadow-lg px-16 py-8 bg-white text-black">
+          <Button className="shadow-lg px-14 py-8 bg-white text-black">
             Donation
           </Button>
         </Link>

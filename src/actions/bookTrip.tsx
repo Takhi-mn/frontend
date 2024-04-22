@@ -1,4 +1,5 @@
 import axios from "axios";
+import { fireAlert } from "./fireAlert";
 
 export const bookTrip = async (
   fullname: any,
@@ -21,8 +22,12 @@ export const bookTrip = async (
         taxonomyPath: "00050002",
       }
     );
-    console.log("SUCCESFULLY BOOKED TRIP", data);
-  } catch (error) {
-    console.log("ERROR IN BOOK TRIP", error);
+    fireAlert(
+      "Success",
+      "Thank you for booking our trip. We will contact you soon",
+      "success"
+    );
+  } catch (error: any) {
+    fireAlert("Error", `<p>${error.response.data}</p>`, "error");
   }
 };

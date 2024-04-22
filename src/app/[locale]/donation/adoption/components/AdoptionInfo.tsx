@@ -19,6 +19,13 @@ const AdoptionInfo = (props: Props) => {
         <h1 className="font-medium text-xl">{a("title3")}</h1>
         <p>{a("text3")}</p>
       </div>
+      <div>
+        <h1 className="font-medium text-xl">{a("title4")}</h1>
+        <p>{a("text4")}</p>
+      </div>
+      <div>
+        <h1 className="font-medium text-xl text-center">{a("text5")}</h1>
+      </div>
     </div>
   );
 };

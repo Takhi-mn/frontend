@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { getAdoptions } from "@/actions/getAdoptions";
 import AnimalSwiper from "./AnimalSwiper";
+import AnimalSkeleton from "./AnimalSkeleton";
 
 const SelectAnimal = ({
   animals,
@@ -10,11 +11,15 @@ const SelectAnimal = ({
 }: any) => {
   return (
     <div className="w-full md:w-1/2 mb-10">
-      <AnimalSwiper
-        animals={animals}
-        handleSelectedAnimal={handleSelectedAnimal}
-        selectedAnimal={selectedAnimal}
-      />
+      {animals ? (
+        <AnimalSwiper
+          animals={animals}
+          handleSelectedAnimal={handleSelectedAnimal}
+          selectedAnimal={selectedAnimal}
+        />
+      ) : (
+        <AnimalSkeleton />
+      )}
     </div>
   );
 };

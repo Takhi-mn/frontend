@@ -20,6 +20,7 @@ const AdoptionForm = ({ selectedAnimal, price }: Props) => {
     onSubmit: ({ fullname, email, country }) => {
       console.log("ON SUBMIT WORKING", fullname, email, country);
       submitAdopt(fullname, email, country, selectedAnimal, price);
+      formik.resetForm();
     },
     initialValues: {
       fullname: "",
@@ -38,6 +39,7 @@ const AdoptionForm = ({ selectedAnimal, price }: Props) => {
           <span className="text-red-400">{formik.errors.fullname}</span>
         </p>
         <Input
+          value={formik.values.fullname}
           onChange={formik.handleChange}
           name="fullname"
           className="bg-white"
@@ -49,6 +51,7 @@ const AdoptionForm = ({ selectedAnimal, price }: Props) => {
           Email <span className="text-red-400">{formik.errors.fullname}</span>
         </p>
         <Input
+          value={formik.values.email}
           onChange={formik.handleChange}
           name="email"
           className="bg-white"
@@ -60,6 +63,7 @@ const AdoptionForm = ({ selectedAnimal, price }: Props) => {
           Country <span className="text-red-400">{formik.errors.fullname}</span>
         </p>
         <Input
+          value={formik.values.country}
           onChange={formik.handleChange}
           name="country"
           className="bg-white"

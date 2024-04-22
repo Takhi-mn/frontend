@@ -30,7 +30,7 @@ const CampMenu = ({ page }: Props) => {
           className={`${
             page === "booking" && "text-destructive"
           } flex items-center justify-center`}
-          href={`/${selectedLanguage}/tourism/booking`}
+          href={`/${selectedLanguage}/tourism/tour-booking`}
           rel="booking"
         >
           <FaTag />
