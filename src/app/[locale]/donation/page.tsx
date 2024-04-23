@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import UpperSection from "./components/upperSection";
 import DonationWithType from "./components/donationWithType";
+import AdoptionInfo from "./adoption/components/AdoptionInfo";
 
 export const metadata: Metadata = {
   title: "Takhi | Donation",
@@ -26,7 +27,10 @@ const DonationPage = () => {
           </Button>
         </Link>
       </div>
-      <DonationWithType />
+      <div className="flex flex-col gap-20">
+        <DonationWithType />
+        <AdoptionInfo />
+      </div>
     </div>
   );
 };

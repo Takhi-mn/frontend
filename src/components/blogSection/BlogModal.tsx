@@ -46,34 +46,27 @@ const BlogModal = ({
   const validationSchema = yup.object({
     name: yup
       .string()
-      .required("Required")
-      .max(25, "Too long")
-      .min(2, "Too short"),
+      .required("(Required)")
+      .max(25, "(Too long)")
+      .min(2, "(Too short)"),
 
     email: yup
       .string()
       .matches(
         /^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+$/,
-        "Ta email ee zuv oruulna uu"
+        "(Wrong Email)"
       )
-      .max(50, "email hayag 50 temdegtees hetreheergui bailgana uu")
-      .required("Email haygiig zaaval buglunu uu")
-      .email("Huchintei email hayg baih ystoi"),
-    title: yup.string().required("title zaaval oruulna uu"),
-    review: yup
-      .string()
-      .required("review zaaval buglunu uu")
-      .min(6, "Nuuts ug hamgiin bagadaa 6 temdegt baih ystoi"),
+      .max(50, "(Too long)")
+      .required("(Required)")
+      .email("(Wrong Email)"),
+    title: yup.string().required("(Required)"),
+    review: yup.string().required("(Required)").min(6, "(Too short)"),
   });
   const formik = useFormik({
     onSubmit: ({ email, name, title, review }) => {
-      console.log(email);
-      console.log(name);
-      console.log(title);
-      console.log(review);
-      console.log(checked);
       postBlog(name, email, title, review, checked);
       setDialogHandler(false);
+      formik.resetForm();
     },
     initialValues: {
       email: "",

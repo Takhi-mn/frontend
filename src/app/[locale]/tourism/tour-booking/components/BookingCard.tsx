@@ -25,13 +25,13 @@ const BookingCard = ({ trips }: Props) => {
   const validationSchema = yup.object({
     email: yup
       .string()
-      .max(100, "too long")
-      .required("required")
-      .email("must be email"),
-    fullname: yup.string().max(100, "too long").required("required"),
-    startdate: yup.string().required("required"),
-    tourists: yup.number().required("required").moreThan(0, "required"),
-    country: yup.string().required("required"),
+      .max(100, "(Too long)")
+      .required("(Required)")
+      .email("(Must be email)"),
+    fullname: yup.string().max(100, "too long").required("(Required)"),
+    startdate: yup.string().required("(Required)"),
+    tourists: yup.number().required("(Required)").moreThan(0, "(Required)"),
+    country: yup.string().required("(Required)"),
   });
   const formik = useFormik({
     onSubmit: ({ fullname, email, startdate, tourists, country, enddate }) => {
@@ -61,10 +61,8 @@ const BookingCard = ({ trips }: Props) => {
         <div className="w-full flex flex-col gap-5 mt-10">
           <div>
             <p>
-              Full name{" "}
-              <span className="text-red-400">
-                &#40;{formik.errors.fullname}&#41;
-              </span>
+              Full name
+              <span className="text-red-400">{formik.errors.fullname}</span>
             </p>
             <Input
               value={formik.values.fullname}
@@ -78,9 +76,7 @@ const BookingCard = ({ trips }: Props) => {
           <div>
             <p>
               Trip name{" "}
-              <span className="text-red-400">
-                &#40;{formik.errors.country}&#41;
-              </span>
+              <span className="text-red-400">{formik.errors.country}</span>
             </p>
             <Select
               value={formik.values.country}
@@ -108,10 +104,7 @@ const BookingCard = ({ trips }: Props) => {
           </div>
           <div>
             <p>
-              Email{" "}
-              <span className="text-red-400">
-                &#40;{formik.errors.email}&#41;
-              </span>
+              Email <span className="text-red-400">{formik.errors.email}</span>
             </p>
             <Input
               value={formik.values.email}
@@ -125,9 +118,7 @@ const BookingCard = ({ trips }: Props) => {
           <div>
             <p>
               Start date{" "}
-              <span className="text-red-400">
-                &#40;{formik.errors.startdate}&#41;
-              </span>
+              <span className="text-red-400">{formik.errors.startdate}</span>
             </p>
             <Input
               value={formik.values.startdate}
@@ -140,9 +131,7 @@ const BookingCard = ({ trips }: Props) => {
           <div>
             <p>
               End date{" "}
-              <span className="text-red-400">
-                &#40;{formik.errors.startdate}&#41;
-              </span>
+              <span className="text-red-400">{formik.errors.startdate}</span>
             </p>
             <Input
               value={formik.values.enddate}
@@ -155,9 +144,7 @@ const BookingCard = ({ trips }: Props) => {
           <div>
             <p>
               Number of tourists{" "}
-              <span className="text-red-400">
-                &#40;{formik.errors.tourists}&#41;
-              </span>
+              <span className="text-red-400">{formik.errors.tourists}</span>
             </p>
             <Input
               value={formik.values.tourists}

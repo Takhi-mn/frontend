@@ -14,9 +14,9 @@ type Props = {
 const AdoptionForm = ({ selectedAnimal, price }: Props) => {
   const [checked, setChecked] = useState(false);
   const validationSchema = yup.object({
-    fullname: yup.string().required("required"),
-    email: yup.string().required("required").email("Must be email"),
-    country: yup.string().required("required"),
+    fullname: yup.string().required("(Required)"),
+    email: yup.string().required("(Required)").email("(Must be email)"),
+    country: yup.string().required("(Required)"),
   });
   const formik = useFormik({
     onSubmit: ({ fullname, email, country }) => {
@@ -36,7 +36,7 @@ const AdoptionForm = ({ selectedAnimal, price }: Props) => {
     <div className="w-full md:w-1/2 flex flex-col gap-6">
       <figure>
         <p>
-          Full name{" "}
+          Full name
           <span className="text-red-400">{formik.errors.fullname}</span>
         </p>
         <Input

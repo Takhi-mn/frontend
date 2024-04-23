@@ -25,24 +25,21 @@ const DonateWithMailSection = ({
   const validationSchema = yup.object({
     name: yup
       .string()
-      .required("Required")
-      .max(25, "Too long")
-      .min(2, "Too short"),
+      .required("(Required)")
+      .max(25, "(Too long)")
+      .min(2, "(Too short)"),
 
     email: yup
       .string()
       .matches(
         /^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+$/,
-        "Ta email ee zuv oruulna uu"
+        "Wrong Email"
       )
-      .max(50, "email hayag 50 temdegtees hetreheergui bailgana uu")
-      .required("Email haygiig zaaval buglunu uu")
-      .email("Huchintei email hayg baih ystoi"),
-    country: yup.string().required("title zaaval oruulna uu"),
-    price: yup
-      .number()
-      .required("Price zaaval buglunu uu")
-      .moreThan(0, "0-s ih price hiine uu"),
+      .max(50, "(Too long)")
+      .required("(Required)")
+      .email("(Wrong Email)"),
+    country: yup.string().required("(Required)"),
+    price: yup.number().required("(Required)").moreThan(0, "(More than 0)"),
   });
   const formik = useFormik({
     onSubmit: ({ email, name, country, price }) => {
@@ -65,6 +62,7 @@ const DonateWithMailSection = ({
           checked
         );
       }
+      formik.resetForm();
     },
     initialValues: {
       email: "",

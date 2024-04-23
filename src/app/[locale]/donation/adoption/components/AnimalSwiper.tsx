@@ -11,6 +11,7 @@ import { contentConverter } from "@/lib/nameConverter";
 import { useLanguage } from "@/context/LanguageProvider";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 
 const AnimalSwiper = ({
   animals,
@@ -50,12 +51,24 @@ const AnimalSwiper = ({
                 alt={animal?.name_en}
               />
               <div className="p-5">
-                <h1 className="font-medium text-xl">{animal.name_en}</h1>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: contentConverter(animal, selectedLanguage),
-                  }}
-                />
+                <div className="flex justify-between items-center">
+                  <div>
+                    <h1 className="font-medium text-xl">
+                      {animal.name_en}{" "}
+                      <span className="text-base font-light">
+                        ID:{animal.IDnumber}
+                      </span>
+                    </h1>
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: contentConverter(animal, selectedLanguage),
+                      }}
+                    />
+                  </div>
+                  <div className="h-6 bg-primary p-3 flex justify-center items-center text-white rounded-full">
+                    {animal.sex}
+                  </div>
+                </div>
                 <div className="flex justify-between">
                   <Button
                     variant={

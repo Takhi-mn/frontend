@@ -11,6 +11,7 @@ import Section4 from "./section-4";
 import { dataContext } from "@/context/DataProvider";
 import { useLanguage } from "@/context/LanguageProvider";
 import SectionHero from "./section-hero";
+import SkeletonLoader from "@/components/skeleton";
 
 const CommunityEngagement = () => {
   const { getOurworks, ourworks } = useContext(dataContext);
@@ -27,66 +28,72 @@ const CommunityEngagement = () => {
   );
 
   return (
-    <div className="container flex flex-col justify-center items-center w-screen gap-5 sm:gap-20">
-      {ourworks
-        ?.filter(
-          (data) => data.contenttype.name_en === "community-engagement-hero"
-        )
-        ?.map((data) => (
-          <SectionHero
-            key={data.id}
-            selectedLanguage={selectedLanguage}
-            filteredData={data}
-          />
-        ))}
+    <>
+      {ourworks ? (
+        <div className="container flex flex-col justify-center items-center w-screen gap-5 sm:gap-20">
+          {ourworks
+            ?.filter(
+              (data) => data.contenttype.name_en === "community-engagement-hero"
+            )
+            ?.map((data) => (
+              <SectionHero
+                key={data.id}
+                selectedLanguage={selectedLanguage}
+                filteredData={data}
+              />
+            ))}
 
-      {ourworks
-        ?.filter(
-          (data) => data.contenttype.name_en === "community-engagement-1"
-        )
-        ?.map((data) => (
-          <Section1
-            key={data.id}
-            selectedLanguage={selectedLanguage}
-            filteredData={data}
-          />
-        ))}
-      {ourworks
-        ?.filter(
-          (data) => data.contenttype.name_en === "community-engagement-2"
-        )
-        ?.map((data) => (
-          <Section2
-            key={data.id}
-            selectedLanguage={selectedLanguage}
-            filteredData={data}
-          />
-        ))}
-      {ourworks
-        ?.filter(
-          (data) => data.contenttype.name_en === "community-engagement-3"
-        )
-        ?.map((data) => (
-          <Section3
-            key={data.id}
-            selectedLanguage={selectedLanguage}
-            filteredData={data}
-          />
-        ))}
-      {ourworks
-        ?.filter(
-          (data) => data.contenttype.name_en === "community-engagement-4"
-        )
-        ?.map((data) => (
-          <Section4
-            key={data.id}
-            selectedLanguage={selectedLanguage}
-            filteredData={data}
-          />
-        ))}
+          {ourworks
+            ?.filter(
+              (data) => data.contenttype.name_en === "community-engagement-1"
+            )
+            ?.map((data) => (
+              <Section1
+                key={data.id}
+                selectedLanguage={selectedLanguage}
+                filteredData={data}
+              />
+            ))}
+          {ourworks
+            ?.filter(
+              (data) => data.contenttype.name_en === "community-engagement-2"
+            )
+            ?.map((data) => (
+              <Section2
+                key={data.id}
+                selectedLanguage={selectedLanguage}
+                filteredData={data}
+              />
+            ))}
+          {ourworks
+            ?.filter(
+              (data) => data.contenttype.name_en === "community-engagement-3"
+            )
+            ?.map((data) => (
+              <Section3
+                key={data.id}
+                selectedLanguage={selectedLanguage}
+                filteredData={data}
+              />
+            ))}
+          {ourworks
+            ?.filter(
+              (data) => data.contenttype.name_en === "community-engagement-4"
+            )
+            ?.map((data) => (
+              <Section4
+                key={data.id}
+                selectedLanguage={selectedLanguage}
+                filteredData={data}
+              />
+            ))}
 
-      <LearnMoreSection detector={detector ? detector[0] : null} />
-    </div>
+          <LearnMoreSection detector={detector ? detector[0] : null} />
+        </div>
+      ) : (
+        <SkeletonLoader />
+      )}
+    </>
   );
 };
 

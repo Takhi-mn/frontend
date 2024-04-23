@@ -1,4 +1,6 @@
 import axios from "axios";
+import { fireAlert } from "./fireAlert";
+import { sendEmail } from "./sendEmail";
 
 export const postDonate = async (
   name: string,
@@ -23,6 +25,12 @@ export const postDonate = async (
         isNewsletter: checked,
       }
     );
+    fireAlert(
+      "Thank you for Donate",
+      "<p>Thank you for your invaluable support. Together, we're making a difference in safeguarding this remarkable species for future generations to cherish.</p> <h2>BANK: TDB</h2><h2>ACCOUNT NUMBER: 470020830</h2>",
+      "success"
+    );
+    sendEmail(email, true);
     console.log("Blog Post WORKED", data);
   } catch (error) {
     console.log("ERROR IN BLOG POST", error);
