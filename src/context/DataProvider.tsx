@@ -1,4 +1,5 @@
 "use client";
+import { fireAlert } from "@/actions/fireAlert";
 import {
   INews,
   ITaxonomies,
@@ -35,6 +36,13 @@ interface ICreateDataContext {
   departments: IAboutUs[] | undefined;
   blogs: IBlog[] | undefined;
   donationType: IAboutUs[] | undefined;
+  postBlog: (
+    name: string,
+    email: string,
+    title: string,
+    review: string,
+    stars: number
+  ) => void;
 }
 export const dataContext = createContext<ICreateDataContext>(
   {} as ICreateDataContext
@@ -55,7 +63,7 @@ const DataProvider = ({ children }: PropsWithChildren) => {
   const getTaxonomies = async () => {
     try {
       const { data } = await axios.get(
-        "https://web-cms-psi.vercel.app/api/13238433-f5b8-4361-9134-8cab5e727005/menu"
+        "https://web-cms-psi.vercel.app/api/13238433-f5b8-4361-9134-8cab5e727005/menu?isFeatured=true"
       );
 
       const sortedData = data.sort(function (a: ITaxonomies, b: ITaxonomies) {
@@ -94,7 +102,7 @@ const DataProvider = ({ children }: PropsWithChildren) => {
   const getAboutUs = async () => {
     try {
       const { data } = await axios.get(
-        "https://web-cms-psi.vercel.app/api/13238433-f5b8-4361-9134-8cab5e727005/about"
+        "https://web-cms-psi.vercel.app/api/13238433-f5b8-4361-9134-8cab5e727005/about?isFeatured=true"
       );
       setAboutUs(data);
     } catch (error) {
@@ -105,7 +113,7 @@ const DataProvider = ({ children }: PropsWithChildren) => {
   const getPartners = async () => {
     try {
       const { data } = await axios.get(
-        "https://web-cms-psi.vercel.app/api/13238433-f5b8-4361-9134-8cab5e727005/partners"
+        "https://web-cms-psi.vercel.app/api/13238433-f5b8-4361-9134-8cab5e727005/partners?isFeatured=true"
       );
       setPartners(data);
     } catch (error) {
@@ -116,7 +124,7 @@ const DataProvider = ({ children }: PropsWithChildren) => {
   const getContacts = async () => {
     try {
       const { data } = await axios.get(
-        "https://web-cms-psi.vercel.app/api/13238433-f5b8-4361-9134-8cab5e727005/contacts"
+        "https://web-cms-psi.vercel.app/api/13238433-f5b8-4361-9134-8cab5e727005/contacts?isFeatured=true"
       );
       setContacts(data);
     } catch (error) {
@@ -127,7 +135,7 @@ const DataProvider = ({ children }: PropsWithChildren) => {
   const getMembers = async () => {
     try {
       const { data } = await axios.get(
-        "https://web-cms-psi.vercel.app/api/13238433-f5b8-4361-9134-8cab5e727005/employee"
+        "https://web-cms-psi.vercel.app/api/13238433-f5b8-4361-9134-8cab5e727005/employee?isFeatured=true"
       );
       setMembers(data.reverse());
     } catch (error) {
@@ -138,7 +146,7 @@ const DataProvider = ({ children }: PropsWithChildren) => {
   const getOurworks = async () => {
     try {
       const { data } = await axios.get(
-        "https://web-cms-psi.vercel.app/api/13238433-f5b8-4361-9134-8cab5e727005/ourworks"
+        "https://web-cms-psi.vercel.app/api/13238433-f5b8-4361-9134-8cab5e727005/ourworks?isFeatured=true"
       );
       console.log("Ourworks Context", data);
       setOurworks(data.reverse());
@@ -149,7 +157,7 @@ const DataProvider = ({ children }: PropsWithChildren) => {
   const getDepartments = async () => {
     try {
       const { data } = await axios.get(
-        "https://web-cms-psi.vercel.app/api/13238433-f5b8-4361-9134-8cab5e727005/department"
+        "https://web-cms-psi.vercel.app/api/13238433-f5b8-4361-9134-8cab5e727005/department?isFeatured=true"
       );
       console.log("Departments Context", data);
       setDepartments(data);
@@ -160,7 +168,7 @@ const DataProvider = ({ children }: PropsWithChildren) => {
   const getBlogs = async () => {
     try {
       const { data } = await axios.get(
-        "https://web-cms-psi.vercel.app/api/13238433-f5b8-4361-9134-8cab5e727005/blogs"
+        "https://web-cms-psi.vercel.app/api/13238433-f5b8-4361-9134-8cab5e727005/blogs?isFeatured=true"
       );
       console.log("Blogs Context", data);
       setBlogs(data);
@@ -177,6 +185,34 @@ const DataProvider = ({ children }: PropsWithChildren) => {
       setDonationType(data.reverse());
     } catch (error) {
       console.log("ERROR IN getDonationType", error);
+    }
+  };
+
+  const postBlog = async (
+    name: string,
+    email: string,
+    title: string,
+    review: string,
+    stars: number
+  ) => {
+    try {
+      const { data } = await axios.post(
+        "https://www.web-cms.uz.mn/api/13238433-f5b8-4361-9134-8cab5e727005/blogpost",
+        {
+          fullname: name,
+          email,
+          name_mn: title,
+          content_mn: review,
+          stars: stars,
+          contenttypeId: "34ed2376-5b06-45c2-a2d2-c908402436af",
+          taxonomyPath: "000A",
+        }
+      );
+      getBlogs();
+
+      fireAlert("Success", "Your blog successfully posted", "success");
+    } catch (error: any) {
+      fireAlert("Error", `<p>${error.response.data}</p>`, "error");
     }
   };
 
@@ -209,6 +245,7 @@ const DataProvider = ({ children }: PropsWithChildren) => {
         blogs,
         getDonationType,
         donationType,
+        postBlog,
       }}
     >
       {children}

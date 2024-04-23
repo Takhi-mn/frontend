@@ -10,6 +10,7 @@ import { PartnerSection } from "@/components";
 import ContactsSection from "@/components/contactSection/contactsSection";
 import { useLanguage } from "@/context/LanguageProvider";
 import { dataContext } from "@/context/DataProvider";
+import { nameConverter } from "@/lib/nameConverter";
 
 const AboutUsPageComp = () => {
   const { selectedLanguage } = useLanguage();
@@ -72,15 +73,14 @@ const AboutUsPageComp = () => {
           />
         ))}
       {partners
-        ?.filter((data) => data.contenttype.name_en === "partners")
+        ?.filter((data) => data.contenttype.name_en === "partners-title")
         ?.map((data) => (
-          <PartnerSection
-            key={data.id}
-            partners={partners}
-            selectedLanguage={selectedLanguage}
-            filteredData={data}
-          />
+          <h1 className="font-bold text-[22px] sm:text-[45px] sm:font-medium">
+            {nameConverter(data, selectedLanguage)}
+          </h1>
         ))}
+
+      <PartnerSection />
 
       <ContactsSection
         contacts={contacts}

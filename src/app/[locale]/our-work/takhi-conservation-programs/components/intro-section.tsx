@@ -14,7 +14,7 @@ interface IProps {
 const IntroSection = ({ selectedLanguage, filteredData }: IProps) => {
   return (
     <div className="relative w-full h-[550px] z-30 flex flex-col ">
-      <h1 className="text-[32px] font-semibold sm:text-6xl sm:font-normal">
+      <h1 className="text-[24px] font-semibold sm:text-5xl sm:font-normal my-[30px]">
         {nameConverter(filteredData, selectedLanguage)}
       </h1>
       <Image

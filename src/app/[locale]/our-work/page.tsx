@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 const OurWork = () => {
   return (
-    <div>
+    <div className="w-full">
       <OurWorkPage />
     </div>
   );

@@ -13,17 +13,17 @@ const HeroSection = (props: Props) => {
       </div>
       <motion.div
         initial={{ color: "#ffffff" }}
-        animate={{ color: "#753100" }}
+        animate={{ color: "#FCBB55" }}
         transition={{ duration: 0.5, delay: 2.5 }}
         className="w-full h-screen relative z-20 flex flex-col justify-center items-center"
       >
-        <h1 className="text-[#FF7F50] font-bold text-3xl md:text-5xl xl:7xl">
+        <h1 className="text-[#FCBB55] font-bold text-3xl md:text-5xl xl:7xl">
           KHOMYN TALYN
         </h1>
         <h1
           className=" xl:text-[350px] 
         lg:text-[250px] md:text-[180px] text-8xl  
-        font-bold stroke-black text-[#FF7F50]"
+        font-bold stroke-black text-[#FCBB55]"
         >
           TAKHI
         </h1>

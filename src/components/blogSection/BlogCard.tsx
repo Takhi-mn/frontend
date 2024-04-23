@@ -16,11 +16,7 @@ const BlogCard = ({ blogData }: IProps) => {
   return (
     <div className=" min-w-[390px] max-w-[390px] min-h-[350px] flex flex-col rounded-[8px] justify-between bg-muted p-5 gap-3">
       <div
-        onClick={() =>
-          router.push(
-            `http://localhost:3000/${selectedLanguage}/blog/${blogData?.id}`
-          )
-        }
+        onClick={() => router.push(`/${selectedLanguage}/blog/${blogData?.id}`)}
         className="hover:cursor-pointer flex flex-col gap-3 "
       >
         <h1 className="text-xl font-bold line-clamp-2 ">{blogData?.name_mn}</h1>

@@ -1,23 +1,26 @@
+"use client";
 import { nameConverter } from "@/lib/nameConverter";
 import { IPartner } from "@/types/backend";
-import PhotoSlider from "./photoSlider";
+import PhotoSliderPartners from "./photoSlider/photoSliderPartners";
+import { dataContext } from "@/context/DataProvider";
+import { useContext } from "react";
 
-interface IProps {
-  partners: IPartner[] | undefined;
-  selectedLanguage: string | string[];
-  filteredData: IPartner;
-}
+interface IProps {}
 
-const PartnerSection = ({
-  selectedLanguage,
-  partners,
-  filteredData,
-}: IProps) => {
+const PartnerSection = ({}: IProps) => {
+  const { partners } = useContext(dataContext);
+  const filteredData = partners
+    ?.filter((data) => data.contenttype.name_en === "partners")
+    ?.map((data) => data.images)
+    .flat();
+
+  console.log("FILTERED DATA PARTNERS", filteredData);
+
   return (
     <div className="flex flex-col w-full justify-center items-center">
-      <h1 className="font-bold text-[22px] sm:text-[45px] sm:font-medium">
+      {/* <h1 >
         {filteredData ? nameConverter(filteredData, selectedLanguage) : ""}
-      </h1>
+      </h1> */}
       {/* <div className="flex flex-wrap justify-center items-center">
         {partners
           ? partners[0].images.map((partner: any, index: any) => (
@@ -38,7 +41,7 @@ const PartnerSection = ({
           : "Loading"}
       </div> */}
       <div className="w-full flex flex-col justify-center items-center">
-        <PhotoSlider photos={partners ? partners[0].images : []} />
+        <PhotoSliderPartners photos={filteredData} />
       </div>
     </div>
   );

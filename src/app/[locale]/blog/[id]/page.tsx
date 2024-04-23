@@ -15,8 +15,8 @@ const BlogByIdPage = ({ params }: { params: { id: string } }) => {
     <div className="container">
       <BlogPage id={params.id} />
 
-      <div className="hidden sm:flex flex-col gap-10">
-        <h1 className="text-[32px] font-bold">Read More</h1>
+      <div className="flex flex-col gap-10">
+        <h1 className="text-[32px] font-bold mt-10">Read More</h1>
         <BlogSection />
       </div>
     </div>
