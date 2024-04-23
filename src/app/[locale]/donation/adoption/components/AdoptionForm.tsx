@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import React from "react";
+import React, { useState } from "react";
 import * as yup from "yup";
 import { useFormik } from "formik";
 import { submitAdopt } from "@/actions/submitAdopt";
+import { Checkbox } from "@/components/ui/checkbox";
 
 type Props = {
   selectedAnimal: string;
@@ -11,6 +12,7 @@ type Props = {
 };
 
 const AdoptionForm = ({ selectedAnimal, price }: Props) => {
+  const [checked, setChecked] = useState(false);
   const validationSchema = yup.object({
     fullname: yup.string().required("required"),
     email: yup.string().required("required").email("Must be email"),
@@ -18,8 +20,7 @@ const AdoptionForm = ({ selectedAnimal, price }: Props) => {
   });
   const formik = useFormik({
     onSubmit: ({ fullname, email, country }) => {
-      console.log("ON SUBMIT WORKING", fullname, email, country);
-      submitAdopt(fullname, email, country, selectedAnimal, price);
+      submitAdopt(fullname, email, country, selectedAnimal, price, checked);
       formik.resetForm();
     },
     initialValues: {
@@ -70,6 +71,22 @@ const AdoptionForm = ({ selectedAnimal, price }: Props) => {
           placeholder="Write your country here"
         />
       </figure>
+      <div className="flex items-center space-x-2">
+        <Checkbox
+          checked={checked}
+          onCheckedChange={() => {
+            console.log("CHECKED", checked);
+            setChecked(!checked);
+          }}
+          id="terms"
+        />
+        <label
+          htmlFor="terms"
+          className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+        >
+          Get emails
+        </label>
+      </div>
       <Button
         type="submit"
         onClick={() => {

@@ -8,6 +8,7 @@ import { IAboutUs } from "@/types/backend";
 import * as yup from "yup";
 import { useFormik } from "formik";
 import { postDonate } from "@/actions/postDonate";
+import { Checkbox } from "@/components/ui/checkbox";
 type Props = {
   isClicked: string;
   donationType: IAboutUs[] | undefined;
@@ -20,9 +21,7 @@ const DonateWithMailSection = ({
   setIsClicked,
 }: Props) => {
   const filteredPrice = donationType?.filter((data) => data.id === isClicked);
-  console.log("donationType", donationType);
-  console.log("filteredPrice", filteredPrice);
-
+  const [checked, setChecked] = useState(false);
   const validationSchema = yup.object({
     name: yup
       .string()
@@ -48,14 +47,22 @@ const DonateWithMailSection = ({
   const formik = useFormik({
     onSubmit: ({ email, name, country, price }) => {
       if (filteredPrice?.length) {
-        postDonate(email, name, country, filteredPrice[0].price!, isClicked);
+        postDonate(
+          email,
+          name,
+          country,
+          filteredPrice[0].price!,
+          isClicked,
+          checked
+        );
       } else {
         postDonate(
           email,
           name,
           country,
           price!,
-          "987dd469-f7fb-437c-bcf1-d8cb2bdf185d"
+          "987dd469-f7fb-437c-bcf1-d8cb2bdf185d",
+          checked
         );
       }
     },
@@ -63,14 +70,12 @@ const DonateWithMailSection = ({
       email: "",
       name: "",
       country: "",
-      price: filteredPrice?.length ? filteredPrice[0].price : "0",
+      price: filteredPrice?.length ? filteredPrice[0].price : "1",
     },
     validateOnChange: false,
     validateOnBlur: false,
     validationSchema,
   });
-
-  console.log("test", filteredPrice?.length ? filteredPrice[0].price : "");
 
   return (
     <div className="bg-white text-black rounded-md p-2 md:p-10 flex flex-col gap-2 flex-1">
@@ -113,11 +118,11 @@ const DonateWithMailSection = ({
       >
         <div className="flex items-center space-x-2">
           <RadioGroupItem value="once" id="r1" className="md:w-8 md:h-8" />
-          <Label htmlFor="r1">{once}</Label>
+          <Label htmlFor="r1">once</Label>
         </div>
         <div className="flex items-center space-x-2">
           <RadioGroupItem value="monthly" id="r2" className="md:w-8 md:h-8" />
-          <Label htmlFor="r2">{monthly}</Label>
+          <Label htmlFor="r2">monthly</Label>
         </div>
       </RadioGroup> */}
       <div className="flex flex-col gap-3">
@@ -173,8 +178,24 @@ const DonateWithMailSection = ({
             onChange={formik.handleChange}
           />
         </div>
+        <div className="flex items-center space-x-2">
+          <Checkbox
+            checked={checked}
+            onCheckedChange={() => {
+              console.log("CHECKED", checked);
+              setChecked(!checked);
+            }}
+            id="terms"
+          />
+          <label
+            htmlFor="terms"
+            className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+          >
+            Get emails
+          </label>
+        </div>
         {/* <div className="flex flex-col gap-2">
-          <p className="text-sm">Card Number</p>
+          <p className="text-sm">Notify</p>
           <Input placeholder="Write card number here" />
         </div> */}
         {/* <div className="flex gap-10">

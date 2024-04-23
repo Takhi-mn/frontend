@@ -23,6 +23,7 @@ export default function PhotoSliderSmall({ photos }: any) {
         onInit={(ev) => {
           set_my_swiper(ev);
         }}
+        loop={true}
         effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
@@ -38,8 +39,8 @@ export default function PhotoSliderSmall({ photos }: any) {
         modules={[EffectCoverflow, Autoplay]}
         className="mySwiper"
       >
-        {photos?.map((photo: any) => (
-          <SwiperSlide className="w-[420px] max-h-64" key={photo}>
+        {photos?.map((photo: any, index: number) => (
+          <SwiperSlide className="w-[420px] max-h-64" key={photo + index}>
             <Image
               className="w-[420px] h-64 object-cover rounded-sm"
               src={photo.url}

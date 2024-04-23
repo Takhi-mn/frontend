@@ -11,7 +11,7 @@ import { Car } from "lucide-react";
 import Image from "next/image";
 import { camp1 } from "@/assets";
 import { IShop } from "@/types/backend";
-import { nameConverter } from "@/lib/nameConverter";
+import { contentConverter, nameConverter } from "@/lib/nameConverter";
 
 type Props = {
   item: IShop;
@@ -30,7 +30,14 @@ const ShopCard = ({ item, selectedLanguage }: Props) => {
       />
 
       <CardDescription className="my-4">
-        {nameConverter(item, selectedLanguage)}
+        <h1 className="text-xl font-medium text-black">
+          {nameConverter(item, selectedLanguage)}
+        </h1>
+        <p
+          dangerouslySetInnerHTML={{
+            __html: contentConverter(item, selectedLanguage),
+          }}
+        />
       </CardDescription>
       <CardTitle>{item.price}₮</CardTitle>
     </Card>

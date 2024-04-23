@@ -31,7 +31,7 @@ const BookingPageComp = (props: Props) => {
             selectedLanguage={selectedLanguage}
           />
         ))}
-      <div className="flex flex-wrap md:gap-4 gap-10 justify-center lg:justify-between my-14">
+      <div className="flex flex-wrap md:gap-16 gap-10 my-14 justify-center">
         {bookingData
           ?.filter((data) => data.contenttype.name_en === "tourism-tours")
           .map((tourism, index) => (
@@ -41,7 +41,11 @@ const BookingPageComp = (props: Props) => {
           ))}
       </div>
       <TourPath />
-      <BookingCard />
+      <BookingCard
+        trips={bookingData?.filter((data) => {
+          return data.contenttype.name_en === "tourism-tours";
+        })}
+      />
       {/* <PartnerSection /> */}
       {/* <Contact /> */}
     </div>

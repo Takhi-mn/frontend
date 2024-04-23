@@ -5,7 +5,8 @@ export const postDonate = async (
   email: string,
   country: string,
   price: string,
-  donationtypeId: string
+  donationtypeId: string,
+  checked: boolean
 ) => {
   console.log(name, email, country, price, donationtypeId);
   try {
@@ -19,6 +20,7 @@ export const postDonate = async (
         contenttypeId: "ae504396-99dc-4594-9ff5-d1c0ed69bca4",
         taxonomyPath: "0006",
         donationtypeId,
+        isNewsletter: checked,
       }
     );
     console.log("Blog Post WORKED", data);

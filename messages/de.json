@@ -64,5 +64,10 @@
     "title4": "After Naming a Foal: What Comes Next?",
     "text4": "Your chosen foal will be given a unique personal number assigned by our team, this genealogical database encompassing all foals worldwide. You'll receive quarterly updates about your foal, its habitat, and group, accompanied by photos, directly from the Takhi newsroom. Stay connected with the progress of your chosen foal and its environment through regular updates.",
     "text5": "Thank you for your invaluable support. Together, we're making a difference in safeguarding this remarkable species for future generations to cherish"
+  },
+  "Policy": {
+    "policy": "Datenschutzerklärung",
+    "text": "Durch die Anmeldung zu unserem Newsletter erklären Sie sich damit einverstanden, periodisch E-Mails mit Updates, Werbeaktionen und anderen Informationen zu unseren Dienstleistungen zu erhalten.",
+    "accept": "akzeptieren"
   }
 }

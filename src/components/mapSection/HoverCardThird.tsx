@@ -16,7 +16,7 @@ const HoverCardThird = ({
   selected: number;
 }) => {
   return (
-    <div className="absolute z-20 left-[18%] sm:bottom-[33%] bottom-[28%]">
+    <div className="absolute left-[18%] sm:bottom-[33%] bottom-[28%]">
       <HoverCard>
         <HoverCardTrigger
           onClick={() => {
@@ -40,7 +40,7 @@ const HoverCardThird = ({
             />
           </div>
         </HoverCardTrigger>
-        <HoverCardContent className="p-0 rounded-xl">
+        <HoverCardContent className="p-0 rounded-xl z-50">
           <Image
             className="w-full rounded-t-xl"
             src={majorAchievements.src}

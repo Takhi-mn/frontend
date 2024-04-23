@@ -13,6 +13,10 @@ export const emailSubscribe = async (email: string) => {
       "success"
     );
   } catch (error: any) {
-    fireAlert("Error", `<p>${error.response.data}</p>`, "error");
+    fireAlert(
+      "Warning",
+      `<p>Your email already subscribed our newsletter</p>`,
+      "warning"
+    );
   }
 };
