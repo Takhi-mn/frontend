@@ -2,9 +2,13 @@
 import { useEffect, useState } from "react";
 import { IoClose } from "react-icons/io5";
 import { Button } from "./ui/button";
-type Props = {};
+type Props = {
+  policy: string;
+  text: string;
+  accept: string;
+};
 
-const Policy = (props: Props) => {
+const Policy = ({ policy, text, accept }: Props) => {
   const [open, setOpen] = useState(false);
   useEffect(() => {
     const policy = localStorage.getItem("policy");
@@ -21,8 +25,8 @@ const Policy = (props: Props) => {
 
   return (
     <div
-      className={`fixed z-50 bottom-8 right-8 
-    bg-background shadow-xl w-[400px] p-5 rounded-xl ${!open && "hidden"}`}
+      className={`fixed z-50 bottom-8 right-4
+    bg-background shadow-xl w-[350px] p-5 rounded-xl ${!open && "hidden"}`}
     >
       <IoClose
         onClick={() => {
@@ -32,11 +36,8 @@ const Policy = (props: Props) => {
         size={25}
       />
       <div>
-        <h3 className="font-semibold text-xl">Policy</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia,
-          temporibus similique. Commodi quas, neque libero
-        </p>
+        <h3 className="font-semibold text-xl">{policy}</h3>
+        <p>{text}</p>
         <div className="mt-4">
           <Button
             onClick={() => {
@@ -44,7 +45,7 @@ const Policy = (props: Props) => {
             }}
             className="px-10"
           >
-            Accept
+            {accept}
           </Button>
         </div>
       </div>

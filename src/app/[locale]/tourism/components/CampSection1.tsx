@@ -13,6 +13,7 @@ const CampSection1 = ({ data, selectedLanguage }: Props) => {
         {nameConverter(data, selectedLanguage)}
       </h1>
       <p
+        className="text-pretty ProseMirror"
         dangerouslySetInnerHTML={{
           __html: contentConverter(data, selectedLanguage),
         }}

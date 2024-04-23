@@ -6,7 +6,8 @@ export const bookTrip = async (
   email: any,
   tourists: any,
   country: any,
-  startdate: any
+  startdate: any,
+  enddate: any
 ) => {
   try {
     const { data } = await axios.post(
@@ -17,9 +18,9 @@ export const bookTrip = async (
         tourists,
         country,
         startdate,
-        enddate: "2024-09-20",
+        enddate,
         contenttypeId: "cd83249f-970e-40e3-b0a9-a63bb38583e6",
-        taxonomyPath: "00050002",
+        taxonomyPath: country,
       }
     );
     fireAlert(

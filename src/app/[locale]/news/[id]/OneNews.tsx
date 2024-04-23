@@ -41,7 +41,7 @@ const OneNews = ({ news, selectedLanguage }: Props) => {
         </div>
         <div className="flex flex-col items-center mb-16">
           <div
-            className="px-6 sm:px-28 w-2/3"
+            className="px-6 sm:px-28 w-2/3 text-xl text-pretty ProseMirror"
             dangerouslySetInnerHTML={{
               __html: contentConverter(news, selectedLanguage),
             }}

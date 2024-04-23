@@ -25,6 +25,7 @@ export default function PhotoSlider({ photos }: any) {
         onInit={(ev) => {
           set_my_swiper(ev);
         }}
+        loop={true}
         effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}

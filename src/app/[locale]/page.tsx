@@ -14,7 +14,7 @@ import TourismSection from "@/components/tourismSection/TourismSection";
 
 export default function Index() {
   const t = useTranslations("Index");
-
+  const p = useTranslations("Policy");
   const s = useTranslations("Subscribe");
   return (
     <div className="bg-background text-foreground">
@@ -51,7 +51,7 @@ export default function Index() {
       <div className="w-full p-6 sm:p-16 sm:px-28">
         <BlogSection />
       </div>
-      <Policy />
+      <Policy policy={p("policy")} text={p("text")} accept={p("accept")} />
     </div>
   );
 }

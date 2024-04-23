@@ -7,9 +7,9 @@ export const submitAdopt = async (
   email: string,
   country: string,
   selectedAnimal: string,
-  price: string
+  price: string,
+  checked: boolean
 ) => {
-  console.log("SUBMIT WOKRING", price);
   try {
     const { data } = await axios.post(
       "https://www.web-cms.uz.mn/api/13238433-f5b8-4361-9134-8cab5e727005/adoptionpost",
@@ -21,6 +21,7 @@ export const submitAdopt = async (
         contenttypeId: "c4a5b321-eb42-4b6b-ac5a-6445b83ce4a2",
         adoptiontypeId: selectedAnimal,
         price,
+        isNewsletter: checked,
       }
     );
     fireAlert(

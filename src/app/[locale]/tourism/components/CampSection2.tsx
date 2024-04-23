@@ -15,13 +15,14 @@ const CampSection2 = ({ data, selectedLanguage }: Props) => {
         {nameConverter(data, selectedLanguage)}
       </h1>
       <p
-        className="Prosemirror"
+        className="Prosemirror text-pretty"
         dangerouslySetInnerHTML={{
           __html: contentConverter(data, selectedLanguage),
         }}
       ></p>
-
-      <PhotoSliderSmall photos={data.images} />
+      <div>
+        <PhotoSliderSmall photos={data.images} />
+      </div>
     </div>
   );
 };

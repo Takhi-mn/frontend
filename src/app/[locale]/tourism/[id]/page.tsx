@@ -89,16 +89,22 @@ const TourPage = ({ params }: { params: { id: string } }) => {
               <PhotoSliderSmall key={data.id} photos={data.images} />
             ))}
           </div>
-          {oneTourPrice?.map((data) => (
-            <p
-              key={data.id}
-              className="text-center Prosemirror"
-              dangerouslySetInnerHTML={{
-                __html: contentConverter(data, selectedLanguage),
-              }}
-            ></p>
-          ))}
-          <BookingCard />
+          <div className="flex justify-center">
+            {oneTourPrice?.map((data) => (
+              <div
+                key={data.id}
+                className="text-pretty ProseMirror"
+                dangerouslySetInnerHTML={{
+                  __html: contentConverter(data, selectedLanguage),
+                }}
+              />
+            ))}
+          </div>
+          <BookingCard
+            trips={bookingData?.filter((data) => {
+              return data.contenttype.name_en === "tourism-tours";
+            })}
+          />
         </section>
       )}
     </div>

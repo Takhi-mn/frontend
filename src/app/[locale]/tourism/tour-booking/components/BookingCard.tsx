@@ -6,10 +6,22 @@ import { Button } from "@/components/ui/button";
 import * as yup from "yup";
 import { useFormik } from "formik";
 import { bookTrip } from "@/actions/bookTrip";
+import { INews } from "@/types/backend";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
-type Props = {};
+type Props = {
+  trips: INews[] | undefined;
+};
 
-const BookingCard = (props: Props) => {
+const BookingCard = ({ trips }: Props) => {
   const validationSchema = yup.object({
     email: yup
       .string()
@@ -18,19 +30,21 @@ const BookingCard = (props: Props) => {
       .email("must be email"),
     fullname: yup.string().max(100, "too long").required("required"),
     startdate: yup.string().required("required"),
-    tourists: yup.number().required("required"),
+    tourists: yup.number().required("required").moreThan(0, "required"),
     country: yup.string().required("required"),
   });
   const formik = useFormik({
-    onSubmit: ({ fullname, email, startdate, tourists, country }) => {
+    onSubmit: ({ fullname, email, startdate, tourists, country, enddate }) => {
       console.log("onSubmit working");
-      bookTrip(fullname, email, tourists, country, startdate);
+      bookTrip(fullname, email, tourists, country, startdate, enddate);
+      formik.resetForm();
     },
     initialValues: {
       email: "",
       fullname: "",
       startdate: "",
-      tourists: null,
+      enddate: "",
+      tourists: 0,
       country: "",
     },
     validateOnChange: false,
@@ -53,6 +67,7 @@ const BookingCard = (props: Props) => {
               </span>
             </p>
             <Input
+              value={formik.values.fullname}
               onChange={formik.handleChange}
               name="fullname"
               className="w-full"
@@ -60,7 +75,6 @@ const BookingCard = (props: Props) => {
               placeholder="Write your name her"
             />
           </div>
-
           <div>
             <p>
               Trip name{" "}
@@ -68,13 +82,29 @@ const BookingCard = (props: Props) => {
                 &#40;{formik.errors.country}&#41;
               </span>
             </p>
-            <Input
-              onChange={formik.handleChange}
+            <Select
+              value={formik.values.country}
               name="country"
-              className="w-full"
-              type="email"
-              placeholder="Write tour name here"
-            />
+              onValueChange={(e) => {
+                formik.values.country = e;
+              }}
+            >
+              <SelectTrigger className="w-full">
+                <SelectValue placeholder="Select trip" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectGroup>
+                  <SelectLabel>Trips</SelectLabel>
+                  {trips?.map((trip) => {
+                    return (
+                      <SelectItem value={trip.taxonomyPath}>
+                        {trip.name_en}
+                      </SelectItem>
+                    );
+                  })}
+                </SelectGroup>
+              </SelectContent>
+            </Select>
           </div>
           <div>
             <p>
@@ -84,6 +114,7 @@ const BookingCard = (props: Props) => {
               </span>
             </p>
             <Input
+              value={formik.values.email}
               onChange={formik.handleChange}
               name="email"
               className="w-full"
@@ -93,14 +124,30 @@ const BookingCard = (props: Props) => {
           </div>
           <div>
             <p>
-              Book date{" "}
+              Start date{" "}
               <span className="text-red-400">
                 &#40;{formik.errors.startdate}&#41;
               </span>
             </p>
             <Input
+              value={formik.values.startdate}
               onChange={formik.handleChange}
               name="startdate"
+              className="w-full"
+              type="date"
+            />
+          </div>
+          <div>
+            <p>
+              End date{" "}
+              <span className="text-red-400">
+                &#40;{formik.errors.startdate}&#41;
+              </span>
+            </p>
+            <Input
+              value={formik.values.enddate}
+              onChange={formik.handleChange}
+              name="enddate"
               className="w-full"
               type="date"
             />
@@ -113,18 +160,12 @@ const BookingCard = (props: Props) => {
               </span>
             </p>
             <Input
+              value={formik.values.tourists}
               onChange={formik.handleChange}
               name="tourists"
               className="w-full"
               type="number"
               placeholder="Write tourists number here"
-            />
-          </div>
-          <div>
-            <p>More info </p>
-            <Textarea
-              className="w-full h-28"
-              placeholder="You can write more info."
             />
           </div>
           <Button
