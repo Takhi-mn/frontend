@@ -21,7 +21,7 @@ const NewsCard = ({ news }: Props) => {
   const { selectedLanguage } = useLanguage();
   return (
     <Link href={`/${selectedLanguage}/news/${news.id}`}>
-      <Card className="lg:flex-1 rounded-lg bg-muted border-0 max-w-[350px]">
+      <Card className="lg:flex-1 rounded-lg bg-muted border-0 max-w-[350px] h-[440px]">
         <CardContent className="p-0">
           {news.images.length > 0 ? (
             <Image
@@ -38,7 +38,7 @@ const NewsCard = ({ news }: Props) => {
           )}
         </CardContent>
         <CardHeader>
-          <CardTitle className="line-clamp-2">
+          <CardTitle className="line-clamp-1">
             {nameConverter(news, selectedLanguage)}
           </CardTitle>
           <CardDescription>
