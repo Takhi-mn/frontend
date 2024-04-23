@@ -37,7 +37,7 @@ const IntroSection = ({ selectedLanguage, filteredData }: IProps) => {
         height={0}
         sizes="100vw"
         alt="takhi-reintroduction2"
-        className="absolute w-1/2 h-[150px] bottom-[140px] right-0 sm:right-[10%] sm:w-1/4 sm:bottom-[10px] sm:h-[200px]"
+        className="absolute w-1/2 h-[150px] bottom-[140px] right-0 sm:right-[10%] sm:w-1/4 sm:-bottom-[100px] sm:h-[200px]"
         style={{
           borderRadius: "8px",
           zIndex: 60,

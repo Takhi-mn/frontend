@@ -35,7 +35,13 @@ const NavbarNew = (language: Props) => {
         className="fixed sm:h-screen w-screen sm:w-auto bg-primary z-50 flex sm:flex-col justify-between items-center sm:py-9 sm:px-3 px-4 py-2"
       >
         <Link className="relative z-50" href="/">
-          <Image src={logo.src} width={80} height={80} alt="logo" />
+          <Image
+            src={logo.src}
+            width={80}
+            height={80}
+            alt="logo"
+            className="w-[60px] h-[60px] sm:w-[80px] sm:h-[80px]"
+          />
         </Link>
         <div className="relative z-50">
           {isOpen ? (

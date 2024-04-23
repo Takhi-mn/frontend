@@ -39,7 +39,13 @@ const Footer = ({
           <FaTwitter size={25} />
           <FaYoutube size={25} />
         </div>
-        <Image src={logo.src} width={200} height={170} alt="logo" />
+        <Image
+          src={logo.src}
+          width={200}
+          height={170}
+          alt="logo"
+          className="w-[120px] h-[120px] sm:w-[200px] sm:h-[200px] my-5"
+        />
         <h2 className="text-3xl font-semibold">Born To Be Wild</h2>
         <p className="mt-7 pt-3 w-4/5 border-t-2">&#169; {company1}</p>
         <p>{company2}</p>

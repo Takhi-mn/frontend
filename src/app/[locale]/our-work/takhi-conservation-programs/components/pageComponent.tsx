@@ -34,7 +34,7 @@ const TakhiConservationPrograms = () => {
           <div className="flex flex-col w-full items-center gap-20 ">
             <div className="w-full">
               <h1 className="text-[30px] font-semibold sm:text-6xl sm:font-normal">
-                Community Engagement
+                Takhi Conservation Programs
               </h1>
               {ourworks
                 ?.filter(
