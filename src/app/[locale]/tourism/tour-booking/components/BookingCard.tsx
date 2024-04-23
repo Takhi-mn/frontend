@@ -97,7 +97,7 @@ const BookingCard = ({ trips }: Props) => {
                   <SelectLabel>Trips</SelectLabel>
                   {trips?.map((trip) => {
                     return (
-                      <SelectItem value={trip.taxonomyPath}>
+                      <SelectItem key={trip.id} value={trip.taxonomyPath}>
                         {trip.name_en}
                       </SelectItem>
                     );
