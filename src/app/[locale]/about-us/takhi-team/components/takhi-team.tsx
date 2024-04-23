@@ -80,17 +80,26 @@ const TakhiTeam = () => {
             ))}
           {/* right slider section */}
           <div
-            className={` bg-[#110E0D] text-white absolute gap-10 hidden sm:justify-between sm:flex flex-col justify-center items-start w-full h-full -right-full top-0 transform transition-all duration-700 -translate-x-${handler} top-0 z-20 p-10 `}
+            className={` bg-[#110E0D] text-white absolute gap-10 hidden sm:justify-start sm:flex flex-col justify-center items-start w-full h-full -right-full top-0 transform transition-all duration-700 -translate-x-${handler} top-0 z-20 p-10 `}
           >
-            <button
-              className="self-end justify-self-end hover:scale-125 "
-              onClick={() => setHandler("0")}
-            >
-              <IoMdClose size={"25px"} />
-            </button>
-            <h1 className="text-[32px] font-semibold">{dataFromChild?.name}</h1>
-            <p className="text-lg font-semibold">{dataFromChild?.position}</p>
-            <p className="text-[16px]">{dataFromChild?.desc}</p>
+            <div className="flex flex-col w-full">
+              <button
+                className="self-end justify-self-end hover:scale-125 "
+                onClick={() => setHandler("0")}
+              >
+                <IoMdClose size={"25px"} />
+              </button>
+              <h1 className="text-[32px] font-semibold">
+                {dataFromChild?.name}
+              </h1>
+              <p className="text-lg font-semibold">{dataFromChild?.position}</p>
+            </div>
+            <p
+              className="text-[24px]"
+              dangerouslySetInnerHTML={{
+                __html: dataFromChild ? dataFromChild?.desc : "",
+              }}
+            ></p>
           </div>
         </div>
       </div>

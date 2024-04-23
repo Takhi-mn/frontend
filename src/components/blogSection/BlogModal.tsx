@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -14,7 +14,8 @@ import Rating from "./Rating";
 import { Textarea } from "../ui/textarea";
 import * as yup from "yup";
 import { useFormik } from "formik";
-import { postBlog } from "@/actions/postBlog";
+import { dataContext } from "@/context/DataProvider";
+
 type Props = {
   write: string;
   name: string;
@@ -41,6 +42,7 @@ const BlogModal = ({
   send,
 }: Props) => {
   const [dialogHandler, setDialogHandler] = useState(false);
+  const { postBlog } = useContext(dataContext);
   const validationSchema = yup.object({
     name: yup
       .string()
@@ -89,9 +91,7 @@ const BlogModal = ({
 
   return (
     <Dialog open={dialogHandler}>
-      <DialogTrigger asChild>
-        <Button onClick={() => setDialogHandler(true)}>{write}</Button>
-      </DialogTrigger>
+      <Button onClick={() => setDialogHandler(true)}>{write}</Button>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader className="text-start">
           <DialogTitle>{write}</DialogTitle>
@@ -159,7 +159,7 @@ const BlogModal = ({
             />
           </div>
         </div>
-        <DialogFooter>
+        <DialogFooter className="gap-2">
           <Button
             disabled={isChecked}
             type="submit"

@@ -6,7 +6,7 @@ import { dataContext } from "@/context/DataProvider";
 
 const OurWorkPage = () => {
   return (
-    <div className="flex flex-col items-center container ">
+    <div className="flex flex-col items-center container w-full">
       <h1 className="text-[64px] self-start">Our Works</h1>
       <OurWorkSelector />
     </div>

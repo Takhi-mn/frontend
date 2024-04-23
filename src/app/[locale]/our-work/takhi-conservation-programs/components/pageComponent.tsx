@@ -30,6 +30,9 @@ const TakhiConservationPrograms = () => {
     <div className="flex flex-col w-full container items-center gap-20">
       <div className="flex flex-col w-full items-center gap-20 ">
         <div className="w-full">
+          <h1 className="text-[30px] font-semibold sm:text-6xl sm:font-normal">
+            Community Engagement
+          </h1>
           {ourworks
             ?.filter(
               (data) =>
@@ -103,7 +106,9 @@ const TakhiConservationPrograms = () => {
         </div>
       </div>
       <div className="flex flex-col justify-center w-full items-center container gap-10 ">
-        <h1 className="text-[44px] sm:[64px] w-full">Wildlife Conservation</h1>
+        <h1 className="text-[24px] font-semibold sm:text-5xl sm:font-normal my-[30px]">
+          Wildlife Conservation
+        </h1>
         <div className="w-full flex flex-col gap-20">
           {ourworks
             ?.filter(

@@ -69,9 +69,12 @@ const TeamMember = ({
           <p className="text-lg font-semibold">
             {nameConverter(member.position, selectedLanguage)}
           </p>
-          <p className="text-[16px]">
-            {contentConverter(member, selectedLanguage)}
-          </p>
+          <p
+            className="text-[16px]"
+            dangerouslySetInnerHTML={{
+              __html: member ? contentConverter(member, selectedLanguage) : "",
+            }}
+          ></p>
         </div>
       </div>
       {/* sm */}

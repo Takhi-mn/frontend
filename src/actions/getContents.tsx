@@ -1,7 +1,7 @@
 "use server";
 import { INews as Contents } from "@/types/backend";
 import qs from "query-string";
-const URL = `https://web-cms-psi.vercel.app/api/13238433-f5b8-4361-9134-8cab5e727005/contents`;
+const URL = `https://web-cms-psi.vercel.app/api/13238433-f5b8-4361-9134-8cab5e727005/contents?isFeatured=true`;
 
 interface Query {
   contenttypeId?: string;

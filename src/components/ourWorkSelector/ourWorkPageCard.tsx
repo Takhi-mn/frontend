@@ -8,15 +8,21 @@ interface IProps {
   selectedLanguage: string | string[];
   filteredData: IAboutUs;
   index: number;
+  flexer?: string;
 }
 
-const OurWorkPageCard = ({ filteredData, selectedLanguage, index }: IProps) => {
+const OurWorkPageCard = ({
+  filteredData,
+  selectedLanguage,
+  index,
+  flexer,
+}: IProps) => {
   const router = useRouter();
   // url: "/ourwork/reintroduction",
   return (
     <div
       className={`${
-        "s" + index
+        flexer === "flex" ? "sm:flex-1 w-full" : "s" + index
       } relative w-full rounded-[8px] min-h-44 group overflow-hidden`}
       onClick={() =>
         router.push(
