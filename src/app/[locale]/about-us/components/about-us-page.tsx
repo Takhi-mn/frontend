@@ -75,7 +75,10 @@ const AboutUsPageComp = () => {
       {partners
         ?.filter((data) => data.contenttype.name_en === "partners-title")
         ?.map((data) => (
-          <h1 className="font-bold text-[22px] sm:text-[45px] sm:font-medium">
+          <h1
+            key={data.id}
+            className="font-bold text-[22px] sm:text-[45px] sm:font-medium"
+          >
             {nameConverter(data, selectedLanguage)}
           </h1>
         ))}
